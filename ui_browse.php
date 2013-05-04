@@ -60,7 +60,39 @@
 				<li><a href="#">Library</a> <span class="divider">/</span></li>
 				<li class="active">Data</li>
 	</ul> 
+	<table class="table .table-striped .table-hover .table-condensed" id="ui_list">
+  <caption>Music files</caption>
+  <thead>
+    <tr>
+      <th>file</th>
+      <th>artist</th>
+      <th>song</th>
+      <th>album</th>
+    </tr>
+  </thead>
 
+  <tbody>
+    <tr>
+      <td>col1</td>
+      <td>col1</td>
+      <td>col2</td>
+      <td>col2</td>
+    </tr>
+    <tr>
+      <td>col1</td>
+      <td>col1</td>
+      <td>col2</td>
+      <td>col2</td>
+    </tr>
+    <tr>
+      <td>col1</td>
+      <td>col1</td>
+      <td>col2</td>
+      <td>col2</td>
+    </tr>
+  </tbody>
+		
+	</table>
 
 </div>
 <!-- END: Right pane -->

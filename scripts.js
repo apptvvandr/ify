@@ -1,4 +1,6 @@
 
+var glob_path_sep = "/";
+
 console.log('Script.js loadad! :)')
 
 
@@ -54,13 +56,13 @@ function req_update(callback,args) {
 function Path( path ) {
 	this.path = path;
 	this.append = function (folder) {
-		this.path = this.path + folder + '/';
+		this.path = this.path + glob_path_sep + folder;
 		console.log('New path is (append): ' + this.path)
 	}
 	this.back = function (level){
 		array = this.path.split("/");
 		array = array.slice(0, array.length - 1);
-		this.path = array.join("/");
+		this.path = array.join("/") ;
 		console.log('New path is (back): ' + this.path)
 	}
 	this.init = function() {
@@ -81,28 +83,51 @@ function ui_browser_refresh(list) {
 	$('#ui_browser_list > tr').on("click", function(e) {
 		e.preventDefault(); // Empêche le navigateur de suivre le lien.
 		glob_rel_path.append($(this).text());
-		req_update(ui_browser_refresh,"action=browse_dir&args=" +  glob_rel_path.path);
-		console.log("Pressing " + $(this).index() + ": " +  $(this).text() + "(going to: " + glob_rel_path.path + ")");
-
+		
+		var req = {action:"browse_dir", args:glob_rel_path.path};
+	
+		$.post( "tests/browser.php", req, function(data){
+			data = jQuery.parseJSON(data);
+			console.log(data);
+			glob_rel_path.path = data.path;
+			ui_browser_refresh(data.html);}
+		)
+		.fail(function() { console.log("Maj de la list failed, going backward"); })
 	});
 }
 
 
-// UI Requests
+
+// UI Requests (Static)
 //////////////
 
 
 // Browser: refresh folder list
 $('#ui_browser_refresh').bind('click', function () {
-	console.log("Refreshing browser list: " + glob_rel_path.path);
-	req_update(ui_browser_refresh,"action=browse_dir&args=" + glob_rel_path.path);
+	console.log('refresh')
+	var req = {action:"browse_dir", args:glob_rel_path.path};
+	$.post( "tests/browser.php", req, function(data){
+		console.log(data);
+		data = jQuery.parseJSON(data);
+		glob_rel_path.path = data.path;
+		console.log(data);
+		ui_browser_refresh(data.html);}
+	)
+	.fail(function() { console.log("Maj de la list failed"); })
 })
+
 
 // Browser: go backward
 $('#ui_browser_back').on('click', function (e) {
 	glob_rel_path.back();
-	console.log("Going backward: " + glob_rel_path.path);
-	req_update(ui_browser_refresh,"action=browse_dir&args=" + glob_rel_path.path);	
+	var req = {action:"browse_dir", args:glob_rel_path.path};
+	$.post( "tests/browser.php", req, function(data){
+		data = jQuery.parseJSON(data);
+		glob_rel_path.path = data.path;
+		console.log(data);
+		ui_browser_refresh(data.html);}
+	)
+	.fail(function() { console.log("Maj de la list failed, going backward"); })
 })
 
 
@@ -112,7 +137,7 @@ var glob_rel_path = new Path("") ;
 
 // Code
 ///////////////
-$('#ui_browser_back').click()
+$('#ui_browser_refresh').click()
 
 
 
