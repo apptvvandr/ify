@@ -1,0 +1,365 @@
+04-05-2013, 11:42 - Lib called: browse_dir 
+04-05-2013, 11:42 - Lib called: browse_dir Alpha Blondie
+04-05-2013, 11:42 - Lib called: browse_dir Cocody Rock
+04-05-2013, 11:45 - Lib called: browse_dir 
+04-05-2013, 11:45 - Lib called: browse_dir 
+04-05-2013, 11:45 - Lib called: browse_dir 
+04-05-2013, 11:45 - Lib called: browse_dir 3 Doors Down
+04-05-2013, 11:46 - Lib called: browse_dir 
+04-05-2013, 11:46 - Lib called: browse_dir Air
+04-05-2013, 11:47 - Lib called: browse_dir 
+04-05-2013, 11:47 - Lib called: browse_dir Air
+04-05-2013, 11:47 - Lib called: browse_dir Moon Safari
+04-05-2013, 11:47 - Lib called: browse_dir 
+04-05-2013, 11:47 - Lib called: browse_dir 
+04-05-2013, 11:47 - Lib called: browse_dir Air
+04-05-2013, 11:48 - Lib called: browse_dir 
+04-05-2013, 11:48 - Lib called: browse_dir Alpha Blondie
+04-05-2013, 11:48 - Lib called: browse_dir ..
+04-05-2013, 12:36 - Lib called: browse_dir 
+04-05-2013, 12:36 - Lib called: browse_dir Amadou 
+04-05-2013, 12:36 - Lib called: browse_dir ..
+04-05-2013, 12:36 - Lib called: browse_dir ..
+04-05-2013, 12:36 - Lib called: browse_dir ..
+04-05-2013, 12:36 - Lib called: browse_dir ..
+04-05-2013, 12:36 - Lib called: browse_dir ..
+04-05-2013, 12:36 - Lib called: browse_dir ..
+04-05-2013, 12:36 - Lib called: browse_dir ..
+04-05-2013, 12:36 - Lib called: browse_dir ..
+04-05-2013, 12:36 - Lib called: browse_dir 
+04-05-2013, 12:36 - Lib called: browse_dir 
+04-05-2013, 12:36 - Lib called: browse_dir 
+04-05-2013, 12:36 - Lib called: browse_dir 
+04-05-2013, 12:36 - Lib called: browse_dir 
+04-05-2013, 12:36 - Lib called: browse_dir 
+04-05-2013, 12:36 - Lib called: browse_dir Aerosmith
+04-05-2013, 12:36 - Lib called: browse_dir ..
+04-05-2013, 12:39 - Lib called: browse_dir 
+04-05-2013, 12:40 - Lib called: browse_dir Aerosmith
+04-05-2013, 12:40 - Lib called: browse_dir 
+04-05-2013, 12:40 - Lib called: browse_dir Air
+04-05-2013, 12:40 - Lib called: browse_dir 
+04-05-2013, 12:40 - Lib called: browse_dir Air
+04-05-2013, 12:43 - Lib called: browse_dir 
+04-05-2013, 12:43 - Lib called: browse_dir Air
+04-05-2013, 12:43 - Lib called: browse_dir Moon Safari
+04-05-2013, 12:44 - Lib called: browse_dir 
+04-05-2013, 12:44 - Lib called: browse_dir Antydot - Zèbre
+04-05-2013, 12:44 - Lib called: browse_dir 
+04-05-2013, 12:44 - Lib called: browse_dir Air
+04-05-2013, 12:44 - Lib called: browse_dir 
+04-05-2013, 12:44 - Lib called: browse_dir Aqme
+04-05-2013, 12:44 - Lib called: browse_dir 
+04-05-2013, 12:44 - Lib called: browse_dir Aerosmith
+04-05-2013, 12:44 - Lib called: browse_dir Pump
+04-05-2013, 12:44 - Lib called: browse_dir 
+04-05-2013, 12:44 - Lib called: browse_dir 
+04-05-2013, 12:44 - Lib called: browse_dir 
+04-05-2013, 12:44 - Lib called: browse_dir 
+04-05-2013, 12:44 - Lib called: browse_dir 
+04-05-2013, 12:44 - Lib called: browse_dir 
+04-05-2013, 12:44 - Lib called: browse_dir 
+04-05-2013, 12:44 - Lib called: browse_dir 
+04-05-2013, 12:44 - Lib called: browse_dir 
+04-05-2013, 12:45 - Lib called: browse_dir 
+04-05-2013, 12:46 - Lib called: browse_dir 
+04-05-2013, 12:46 - Lib called: browse_dir AAA_tests
+04-05-2013, 12:46 - Lib called: browse_dir tutututtu
+04-05-2013, 12:47 - Lib called: browse_dir 
+04-05-2013, 12:47 - browse_dir(): /home/jez/fiji zik/
+04-05-2013, 12:47 - Lib called: browse_dir AAA_tests
+04-05-2013, 12:47 - browse_dir(): /home/jez/fiji zik/AAA_tests
+04-05-2013, 12:47 - Lib called: browse_dir tutututtu
+04-05-2013, 12:47 - browse_dir(): /home/jez/fiji zik/tutututtu
+04-05-2013, 12:48 - Lib called: browse_dir 
+04-05-2013, 12:48 - browse_dir(): /home/jez/fiji zik/
+04-05-2013, 12:48 - Lib called: browse_dir AAA_tests
+04-05-2013, 12:48 - browse_dir(): /home/jez/fiji zik/AAA_tests
+04-05-2013, 12:48 - Lib called: browse_dir tutututtu
+04-05-2013, 12:48 - browse_dir(): /home/jez/fiji zik/tutututtu
+04-05-2013, 12:49 - Lib called: browse_dir 
+04-05-2013, 12:49 - browse_dir(): /home/jez/fiji zik/
+04-05-2013, 12:49 - Lib called: browse_dir AAA_tests
+04-05-2013, 12:49 - browse_dir(): /home/jez/fiji zik/AAA_tests
+04-05-2013, 12:49 - Lib called: browse_dir tutututtu
+04-05-2013, 12:49 - browse_dir(): /home/jez/fiji zik/tutututtu
+04-05-2013, 12:51 - Lib called: browse_dir 
+04-05-2013, 12:51 - browse_dir(): /home/jez/fiji zik/
+04-05-2013, 12:51 - Lib called: browse_dir /AAA_tests
+04-05-2013, 12:51 - browse_dir(): /home/jez/fiji zik//AAA_tests
+04-05-2013, 12:51 - Lib called: browse_dir /AAA_tests/tutututtu
+04-05-2013, 12:51 - browse_dir(): /home/jez/fiji zik//AAA_tests/tutututtu
+04-05-2013, 12:51 - Lib called: browse_dir /AAA_tests/tutututtu/test3
+04-05-2013, 12:51 - browse_dir(): /home/jez/fiji zik//AAA_tests/tutututtu/test3
+04-05-2013, 12:51 - Lib called: browse_dir /AAA_tests/tutututtu/test3/dsfsdf
+04-05-2013, 12:51 - browse_dir(): /home/jez/fiji zik//AAA_tests/tutututtu/test3/dsfsdf
+04-05-2013, 12:51 - Lib called: browse_dir /AAA_tests/tutututtu/test3/dsfsdf/gfdgds
+04-05-2013, 12:51 - browse_dir(): /home/jez/fiji zik//AAA_tests/tutututtu/test3/dsfsdf/gfdgds
+04-05-2013, 12:51 - Lib called: browse_dir /AAA_tests/tutututtu/test3/dsfsdf/gfdgds/ghfg
+04-05-2013, 12:51 - browse_dir(): /home/jez/fiji zik//AAA_tests/tutututtu/test3/dsfsdf/gfdgds/ghfg
+04-05-2013, 12:51 - Lib called: browse_dir /AAA_tests/tutututtu/test3/dsfsdf/gfdgds/ghfg/..
+04-05-2013, 12:51 - browse_dir(): /home/jez/fiji zik//AAA_tests/tutututtu/test3/dsfsdf/gfdgds/ghfg/..
+04-05-2013, 12:51 - Lib called: browse_dir /AAA_tests/tutututtu/test3/dsfsdf/gfdgds/ghfg/../..
+04-05-2013, 12:51 - browse_dir(): /home/jez/fiji zik//AAA_tests/tutututtu/test3/dsfsdf/gfdgds/ghfg/../..
+04-05-2013, 12:51 - Lib called: browse_dir /AAA_tests/tutututtu/test3/dsfsdf/gfdgds/ghfg/../../..
+04-05-2013, 12:51 - browse_dir(): /home/jez/fiji zik//AAA_tests/tutututtu/test3/dsfsdf/gfdgds/ghfg/../../..
+04-05-2013, 12:51 - Lib called: browse_dir /AAA_tests/tutututtu/test3/dsfsdf/gfdgds/ghfg/../../../..
+04-05-2013, 12:51 - browse_dir(): /home/jez/fiji zik//AAA_tests/tutututtu/test3/dsfsdf/gfdgds/ghfg/../../../..
+04-05-2013, 12:51 - Lib called: browse_dir /AAA_tests/tutututtu/test3/dsfsdf/gfdgds/ghfg/../../../../..
+04-05-2013, 12:51 - browse_dir(): /home/jez/fiji zik//AAA_tests/tutututtu/test3/dsfsdf/gfdgds/ghfg/../../../../..
+04-05-2013, 12:51 - Lib called: browse_dir /AAA_tests/tutututtu/test3/dsfsdf/gfdgds/ghfg/../../../../../..
+04-05-2013, 12:51 - browse_dir(): /home/jez/fiji zik//AAA_tests/tutututtu/test3/dsfsdf/gfdgds/ghfg/../../../../../..
+04-05-2013, 12:51 - Lib called: browse_dir /AAA_tests/tutututtu/test3/dsfsdf/gfdgds/ghfg/../../../../../../Air
+04-05-2013, 12:51 - browse_dir(): /home/jez/fiji zik//AAA_tests/tutututtu/test3/dsfsdf/gfdgds/ghfg/../../../../../../Air
+04-05-2013, 12:51 - Lib called: browse_dir /AAA_tests/tutututtu/test3/dsfsdf/gfdgds/ghfg/../../../../../../Air/Talkie Walkie
+04-05-2013, 12:51 - browse_dir(): /home/jez/fiji zik//AAA_tests/tutututtu/test3/dsfsdf/gfdgds/ghfg/../../../../../../Air/Talkie Walkie
+04-05-2013, 13:02 - Lib called: browse_dir 
+04-05-2013, 13:02 - browse_dir(): /home/jez/fiji zik/
+04-05-2013, 13:02 - Lib called: browse_dir 
+04-05-2013, 13:02 - browse_dir(): /home/jez/fiji zik/
+04-05-2013, 13:02 - Lib called: browse_dir 
+04-05-2013, 13:02 - browse_dir(): /home/jez/fiji zik/
+04-05-2013, 13:02 - Lib called: browse_dir 
+04-05-2013, 13:02 - browse_dir(): /home/jez/fiji zik/
+04-05-2013, 13:04 - Lib called: browse_dir 
+04-05-2013, 13:04 - browse_dir(): /home/jez/fiji zik/
+04-05-2013, 13:04 - Lib called: browse_dir /AAA_tests
+04-05-2013, 13:04 - browse_dir(): /home/jez/fiji zik//AAA_tests
+04-05-2013, 13:05 - Lib called: browse_dir /AAA_tests/testsaccentséàû
+04-05-2013, 13:05 - browse_dir(): /home/jez/fiji zik//AAA_tests/testsaccentséàû
+04-05-2013, 13:05 - Lib called: browse_dir /AAA_tests/testsaccentséàû/..
+04-05-2013, 13:05 - browse_dir(): /home/jez/fiji zik//AAA_tests/testsaccentséàû/..
+04-05-2013, 13:05 - Lib called: browse_dir /AAA_tests/testsaccentséàû/../.
+04-05-2013, 13:05 - browse_dir(): /home/jez/fiji zik//AAA_tests/testsaccentséàû/../.
+04-05-2013, 13:05 - Lib called: browse_dir /AAA_tests/testsaccentséàû/.././.
+04-05-2013, 13:05 - browse_dir(): /home/jez/fiji zik//AAA_tests/testsaccentséàû/.././.
+04-05-2013, 13:05 - Lib called: browse_dir /AAA_tests/testsaccentséàû/../././.
+04-05-2013, 13:05 - browse_dir(): /home/jez/fiji zik//AAA_tests/testsaccentséàû/../././.
+04-05-2013, 13:05 - Lib called: browse_dir /AAA_tests/testsaccentséàû/.././././.
+04-05-2013, 13:05 - browse_dir(): /home/jez/fiji zik//AAA_tests/testsaccentséàû/.././././.
+04-05-2013, 13:05 - Lib called: browse_dir /AAA_tests/testsaccentséàû/../././././.
+04-05-2013, 13:05 - browse_dir(): /home/jez/fiji zik//AAA_tests/testsaccentséàû/../././././.
+04-05-2013, 13:05 - Lib called: browse_dir 
+04-05-2013, 13:05 - browse_dir(): /home/jez/fiji zik/
+04-05-2013, 13:05 - Lib called: browse_dir 
+04-05-2013, 13:05 - browse_dir(): /home/jez/fiji zik/
+04-05-2013, 13:05 - Lib called: browse_dir 
+04-05-2013, 13:05 - browse_dir(): /home/jez/fiji zik/
+04-05-2013, 13:05 - Lib called: browse_dir 
+04-05-2013, 13:05 - browse_dir(): /home/jez/fiji zik/
+04-05-2013, 13:05 - Lib called: browse_dir 
+04-05-2013, 13:05 - browse_dir(): /home/jez/fiji zik/
+04-05-2013, 13:05 - Lib called: browse_dir 
+04-05-2013, 13:05 - browse_dir(): /home/jez/fiji zik/
+04-05-2013, 13:06 - Lib called: browse_dir 
+04-05-2013, 13:06 - browse_dir(): /home/jez/fiji zik/
+04-05-2013, 13:06 - Lib called: browse_dir /AAA_tests
+04-05-2013, 13:06 - browse_dir(): /home/jez/fiji zik//AAA_tests
+04-05-2013, 13:06 - Lib called: browse_dir 
+04-05-2013, 13:06 - browse_dir(): /home/jez/fiji zik/
+04-05-2013, 13:08 - Lib called: browse_dir 
+04-05-2013, 13:08 - browse_dir(): /home/jez/fiji zik/
+04-05-2013, 13:08 - Lib called: browse_dir /AAA_tests
+04-05-2013, 13:08 - browse_dir(): /home/jez/fiji zik//AAA_tests
+04-05-2013, 13:08 - Lib called: browse_dir 
+04-05-2013, 13:08 - browse_dir(): /home/jez/fiji zik/
+04-05-2013, 13:08 - Lib called: browse_dir /AAA_tests
+04-05-2013, 13:08 - browse_dir(): /home/jez/fiji zik//AAA_tests
+04-05-2013, 13:08 - Lib called: browse_dir /AAA_tests/tutututtu
+04-05-2013, 13:08 - browse_dir(): /home/jez/fiji zik//AAA_tests/tutututtu
+04-05-2013, 13:08 - Lib called: browse_dir /AAA_tests/tutututtu/test2
+04-05-2013, 13:08 - browse_dir(): /home/jez/fiji zik//AAA_tests/tutututtu/test2
+04-05-2013, 13:08 - Lib called: browse_dir 
+04-05-2013, 13:08 - browse_dir(): /home/jez/fiji zik/
+04-05-2013, 13:09 - Lib called: browse_dir 
+04-05-2013, 13:09 - browse_dir(): /home/jez/fiji zik/
+04-05-2013, 13:09 - Lib called: browse_dir /Air
+04-05-2013, 13:09 - browse_dir(): /home/jez/fiji zik//Air
+04-05-2013, 13:09 - Lib called: browse_dir /Air/Moon Safari
+04-05-2013, 13:09 - browse_dir(): /home/jez/fiji zik//Air/Moon Safari
+04-05-2013, 13:09 - Lib called: browse_dir /Air
+04-05-2013, 13:09 - browse_dir(): /home/jez/fiji zik//Air
+04-05-2013, 13:09 - Lib called: browse_dir 
+04-05-2013, 13:09 - browse_dir(): /home/jez/fiji zik/
+04-05-2013, 13:10 - Lib called: browse_dir /AAA_tests
+04-05-2013, 13:10 - browse_dir(): /home/jez/fiji zik//AAA_tests
+04-05-2013, 13:10 - Lib called: browse_dir /AAA_tests/tutututtu
+04-05-2013, 13:10 - browse_dir(): /home/jez/fiji zik//AAA_tests/tutututtu
+04-05-2013, 13:10 - Lib called: browse_dir /AAA_tests/tutututtu/test3
+04-05-2013, 13:10 - browse_dir(): /home/jez/fiji zik//AAA_tests/tutututtu/test3
+04-05-2013, 13:10 - Lib called: browse_dir /AAA_tests/tutututtu/test3/dsfsdf
+04-05-2013, 13:10 - browse_dir(): /home/jez/fiji zik//AAA_tests/tutututtu/test3/dsfsdf
+04-05-2013, 13:10 - Lib called: browse_dir /AAA_tests/tutututtu/test3/dsfsdf/gfdgds
+04-05-2013, 13:10 - browse_dir(): /home/jez/fiji zik//AAA_tests/tutututtu/test3/dsfsdf/gfdgds
+04-05-2013, 13:10 - Lib called: browse_dir /AAA_tests/tutututtu/test3/dsfsdf/gfdgds/ghfg
+04-05-2013, 13:10 - browse_dir(): /home/jez/fiji zik//AAA_tests/tutututtu/test3/dsfsdf/gfdgds/ghfg
+04-05-2013, 13:10 - Lib called: browse_dir /AAA_tests/tutututtu/test3/dsfsdf/gfdgds
+04-05-2013, 13:10 - browse_dir(): /home/jez/fiji zik//AAA_tests/tutututtu/test3/dsfsdf/gfdgds
+04-05-2013, 13:10 - Lib called: browse_dir /AAA_tests/tutututtu/test3/dsfsdf
+04-05-2013, 13:10 - browse_dir(): /home/jez/fiji zik//AAA_tests/tutututtu/test3/dsfsdf
+04-05-2013, 13:10 - Lib called: browse_dir /AAA_tests/tutututtu/test3
+04-05-2013, 13:10 - browse_dir(): /home/jez/fiji zik//AAA_tests/tutututtu/test3
+04-05-2013, 13:10 - Lib called: browse_dir /AAA_tests/tutututtu
+04-05-2013, 13:10 - browse_dir(): /home/jez/fiji zik//AAA_tests/tutututtu
+04-05-2013, 13:10 - Lib called: browse_dir /AAA_tests
+04-05-2013, 13:10 - browse_dir(): /home/jez/fiji zik//AAA_tests
+04-05-2013, 13:10 - Lib called: browse_dir 
+04-05-2013, 13:10 - browse_dir(): /home/jez/fiji zik/
+04-05-2013, 13:11 - Lib called: browse_dir 
+04-05-2013, 13:11 - browse_dir(): /home/jez/fiji zik/
+04-05-2013, 13:11 - Lib called: browse_dir /AAA_tests
+04-05-2013, 13:11 - browse_dir(): /home/jez/fiji zik//AAA_tests
+04-05-2013, 13:11 - Lib called: browse_dir /AAA_tests/testsaccentséàû
+04-05-2013, 13:11 - browse_dir(): /home/jez/fiji zik//AAA_tests/testsaccentséàû
+04-05-2013, 13:11 - Lib called: browse_dir /AAA_tests/testsaccentséàû/..
+04-05-2013, 13:11 - browse_dir(): /home/jez/fiji zik//AAA_tests/testsaccentséàû/..
+04-05-2013, 13:11 - Lib called: browse_dir /AAA_tests/testsaccentséàû
+04-05-2013, 13:11 - browse_dir(): /home/jez/fiji zik//AAA_tests/testsaccentséàû
+04-05-2013, 13:11 - Lib called: browse_dir /AAA_tests
+04-05-2013, 13:11 - browse_dir(): /home/jez/fiji zik//AAA_tests
+04-05-2013, 13:12 - Lib called: browse_dir /AAA_tests/.
+04-05-2013, 13:12 - browse_dir(): /home/jez/fiji zik//AAA_tests/.
+04-05-2013, 13:12 - Lib called: browse_dir /AAA_tests/./.
+04-05-2013, 13:12 - browse_dir(): /home/jez/fiji zik//AAA_tests/./.
+04-05-2013, 13:12 - Lib called: browse_dir /AAA_tests/././.
+04-05-2013, 13:12 - browse_dir(): /home/jez/fiji zik//AAA_tests/././.
+04-05-2013, 13:12 - Lib called: browse_dir /AAA_tests/./././.
+04-05-2013, 13:12 - browse_dir(): /home/jez/fiji zik//AAA_tests/./././.
+04-05-2013, 13:12 - Lib called: browse_dir /AAA_tests/././././.
+04-05-2013, 13:12 - browse_dir(): /home/jez/fiji zik//AAA_tests/././././.
+04-05-2013, 13:12 - Lib called: browse_dir /AAA_tests/./././././.
+04-05-2013, 13:12 - browse_dir(): /home/jez/fiji zik//AAA_tests/./././././.
+04-05-2013, 13:12 - Lib called: browse_dir /AAA_tests/././././.
+04-05-2013, 13:12 - browse_dir(): /home/jez/fiji zik//AAA_tests/././././.
+04-05-2013, 13:12 - Lib called: browse_dir /AAA_tests/./././.
+04-05-2013, 13:12 - browse_dir(): /home/jez/fiji zik//AAA_tests/./././.
+04-05-2013, 13:12 - Lib called: browse_dir /AAA_tests/././.
+04-05-2013, 13:12 - browse_dir(): /home/jez/fiji zik//AAA_tests/././.
+04-05-2013, 13:12 - Lib called: browse_dir /AAA_tests/./.
+04-05-2013, 13:12 - browse_dir(): /home/jez/fiji zik//AAA_tests/./.
+04-05-2013, 13:12 - Lib called: browse_dir /AAA_tests/.
+04-05-2013, 13:12 - browse_dir(): /home/jez/fiji zik//AAA_tests/.
+04-05-2013, 13:12 - Lib called: browse_dir /AAA_tests
+04-05-2013, 13:12 - browse_dir(): /home/jez/fiji zik//AAA_tests
+04-05-2013, 13:12 - Lib called: browse_dir 
+04-05-2013, 13:12 - browse_dir(): /home/jez/fiji zik/
+04-05-2013, 13:12 - Lib called: browse_dir /Antydot - Zèbre
+04-05-2013, 13:12 - browse_dir(): /home/jez/fiji zik//Antydot - Zèbre
+04-05-2013, 13:12 - Lib called: browse_dir 
+04-05-2013, 13:12 - browse_dir(): /home/jez/fiji zik/
+04-05-2013, 13:12 - Lib called: browse_dir /Black Sabbath
+04-05-2013, 13:12 - browse_dir(): /home/jez/fiji zik//Black Sabbath
+04-05-2013, 13:12 - Lib called: browse_dir /Black Sabbath/Reunion
+04-05-2013, 13:12 - browse_dir(): /home/jez/fiji zik//Black Sabbath/Reunion
+04-05-2013, 13:12 - Lib called: browse_dir /Black Sabbath
+04-05-2013, 13:12 - browse_dir(): /home/jez/fiji zik//Black Sabbath
+04-05-2013, 13:12 - Lib called: browse_dir 
+04-05-2013, 13:12 - browse_dir(): /home/jez/fiji zik/
+04-05-2013, 13:12 - Lib called: browse_dir /AAA_tests
+04-05-2013, 13:12 - browse_dir(): /home/jez/fiji zik//AAA_tests
+04-05-2013, 13:12 - Lib called: browse_dir /AAA_tests/tests accents éàû
+04-05-2013, 13:12 - browse_dir(): /home/jez/fiji zik//AAA_tests/tests accents éàû
+04-05-2013, 13:12 - Lib called: browse_dir /AAA_tests/tests accents éàû/hihihi
+04-05-2013, 13:12 - browse_dir(): /home/jez/fiji zik//AAA_tests/tests accents éàû/hihihi
+04-05-2013, 13:12 - Lib called: browse_dir /AAA_tests/tests accents éàû
+04-05-2013, 13:12 - browse_dir(): /home/jez/fiji zik//AAA_tests/tests accents éàû
+04-05-2013, 13:12 - Lib called: browse_dir /AAA_tests
+04-05-2013, 13:12 - browse_dir(): /home/jez/fiji zik//AAA_tests
+04-05-2013, 13:12 - Lib called: browse_dir /AAA_tests/testsaccentséàû
+04-05-2013, 13:12 - browse_dir(): /home/jez/fiji zik//AAA_tests/testsaccentséàû
+04-05-2013, 13:12 - Lib called: browse_dir /AAA_tests
+04-05-2013, 13:12 - browse_dir(): /home/jez/fiji zik//AAA_tests
+04-05-2013, 13:12 - Lib called: browse_dir /AAA_tests/test espace
+04-05-2013, 13:12 - browse_dir(): /home/jez/fiji zik//AAA_tests/test espace
+04-05-2013, 13:12 - Lib called: browse_dir /AAA_tests
+04-05-2013, 13:12 - browse_dir(): /home/jez/fiji zik//AAA_tests
+04-05-2013, 13:12 - Lib called: browse_dir 
+04-05-2013, 13:12 - browse_dir(): /home/jez/fiji zik/
+04-05-2013, 13:12 - Lib called: browse_dir /Apocalyptica - Reflections
+04-05-2013, 13:12 - browse_dir(): /home/jez/fiji zik//Apocalyptica - Reflections
+04-05-2013, 13:12 - Lib called: browse_dir 
+04-05-2013, 13:12 - browse_dir(): /home/jez/fiji zik/
+04-05-2013, 13:12 - Lib called: browse_dir /Amadou 
+04-05-2013, 13:12 - browse_dir(): /home/jez/fiji zik//Amadou 
+04-05-2013, 13:13 - Lib called: browse_dir 
+04-05-2013, 13:13 - browse_dir(): /home/jez/fiji zik
+04-05-2013, 13:13 - Lib called: browse_dir /Alpha Blondie
+04-05-2013, 13:13 - browse_dir(): /home/jez/fiji zik/Alpha Blondie
+04-05-2013, 13:13 - Lib called: browse_dir /Alpha Blondie/Cocody Rock
+04-05-2013, 13:13 - browse_dir(): /home/jez/fiji zik/Alpha Blondie/Cocody Rock
+04-05-2013, 13:13 - Lib called: browse_dir /Alpha Blondie
+04-05-2013, 13:13 - browse_dir(): /home/jez/fiji zik/Alpha Blondie
+04-05-2013, 13:13 - Lib called: browse_dir 
+04-05-2013, 13:13 - browse_dir(): /home/jez/fiji zik
+04-05-2013, 13:13 - Lib called: browse_dir 
+04-05-2013, 13:13 - browse_dir(): /home/jez/fiji zik
+04-05-2013, 13:13 - Lib called: browse_dir 
+04-05-2013, 13:13 - browse_dir(): /home/jez/fiji zik
+04-05-2013, 13:13 - Lib called: browse_dir 
+04-05-2013, 13:13 - browse_dir(): /home/jez/fiji zik
+04-05-2013, 13:13 - Lib called: browse_dir 
+04-05-2013, 13:13 - browse_dir(): /home/jez/fiji zik
+04-05-2013, 13:13 - Lib called: browse_dir 
+04-05-2013, 13:13 - browse_dir(): /home/jez/fiji zik
+04-05-2013, 13:13 - Lib called: browse_dir 
+04-05-2013, 13:13 - browse_dir(): /home/jez/fiji zik
+04-05-2013, 13:13 - Lib called: browse_dir 
+04-05-2013, 13:13 - browse_dir(): /home/jez/fiji zik
+04-05-2013, 13:13 - Lib called: browse_dir 
+04-05-2013, 13:13 - browse_dir(): /home/jez/fiji zik
+04-05-2013, 13:13 - Lib called: browse_dir 
+04-05-2013, 13:13 - browse_dir(): /home/jez/fiji zik
+04-05-2013, 13:13 - Lib called: browse_dir 
+04-05-2013, 13:13 - browse_dir(): /home/jez/fiji zik
+04-05-2013, 13:13 - Lib called: browse_dir 
+04-05-2013, 13:13 - browse_dir(): /home/jez/fiji zik
+04-05-2013, 13:13 - Lib called: browse_dir /Bérurier Noir - Viva Bertaga
+04-05-2013, 13:13 - browse_dir(): /home/jez/fiji zik/Bérurier Noir - Viva Bertaga
+04-05-2013, 13:14 - Lib called: browse_dir B�rurier Noir - Viva Bertaga
+04-05-2013, 13:14 - browse_dir(): /home/jez/fiji zikB�rurier Noir - Viva Bertaga
+04-05-2013, 13:14 - Lib called: browse_dir 
+04-05-2013, 13:14 - browse_dir(): /home/jez/fiji zik/
+04-05-2013, 13:14 - Lib called: browse_dir /Aerosmith
+04-05-2013, 13:14 - browse_dir(): /home/jez/fiji zik//Aerosmith
+04-05-2013, 13:15 - Lib called: browse_dir 
+04-05-2013, 13:15 - browse_dir(): /home/jez/fiji zik/
+04-05-2013, 13:15 - Lib called: browse_dir /AAA_tests
+04-05-2013, 13:15 - browse_dir(): /home/jez/fiji zik//AAA_tests
+04-05-2013, 13:15 - Lib called: browse_dir 
+04-05-2013, 13:15 - browse_dir(): /home/jez/fiji zik/
+04-05-2013, 13:15 - Lib called: browse_dir AAA_tests/
+04-05-2013, 13:15 - browse_dir(): /home/jez/fiji zik/AAA_tests/
+04-05-2013, 13:15 - Lib called: browse_dir AAA_tests/tutututtu/
+04-05-2013, 13:15 - browse_dir(): /home/jez/fiji zik/AAA_tests/tutututtu/
+04-05-2013, 13:16 - Lib called: browse_dir AAA_tests/tutututtu
+04-05-2013, 13:16 - browse_dir(): /home/jez/fiji zik/AAA_tests/tutututtu
+04-05-2013, 13:16 - Lib called: browse_dir AAA_tests
+04-05-2013, 13:16 - browse_dir(): /home/jez/fiji zik/AAA_tests
+04-05-2013, 13:16 - Lib called: browse_dir 
+04-05-2013, 13:16 - browse_dir(): /home/jez/fiji zik/
+04-05-2013, 13:16 - Lib called: browse_dir Antydot - Zèbre/
+04-05-2013, 13:16 - browse_dir(): /home/jez/fiji zik/Antydot - Zèbre/
+04-05-2013, 13:16 - Lib called: browse_dir Antydot - Zèbre
+04-05-2013, 13:16 - browse_dir(): /home/jez/fiji zik/Antydot - Zèbre
+04-05-2013, 13:16 - Lib called: browse_dir 
+04-05-2013, 13:16 - browse_dir(): /home/jez/fiji zik/
+04-05-2013, 13:16 - Lib called: browse_dir Black Eyed Peas - Elephunk/
+04-05-2013, 13:16 - browse_dir(): /home/jez/fiji zik/Black Eyed Peas - Elephunk/
+04-05-2013, 13:16 - Lib called: browse_dir Black Eyed Peas - Elephunk/07 - Latin Girls.mp3/
+04-05-2013, 13:16 - browse_dir(): /home/jez/fiji zik/Black Eyed Peas - Elephunk/07 - Latin Girls.mp3/
+04-05-2013, 13:16 - Lib called: browse_dir 
+04-05-2013, 13:16 - browse_dir(): /home/jez/fiji zik/
+04-05-2013, 13:16 - Lib called: browse_dir 
+04-05-2013, 13:16 - browse_dir(): /home/jez/fiji zik/
+04-05-2013, 13:16 - Lib called: browse_dir 
+04-05-2013, 13:16 - browse_dir(): /home/jez/fiji zik/
+04-05-2013, 13:16 - Lib called: browse_dir Boozoo Bajou/
+04-05-2013, 13:16 - browse_dir(): /home/jez/fiji zik/Boozoo Bajou/
+04-05-2013, 13:16 - Lib called: browse_dir Boozoo Bajou/Satta/
+04-05-2013, 13:16 - browse_dir(): /home/jez/fiji zik/Boozoo Bajou/Satta/
+04-05-2013, 13:17 - Lib called: browse_dir Boozoo Bajou/Satta
+04-05-2013, 13:17 - browse_dir(): /home/jez/fiji zik/Boozoo Bajou/Satta
+04-05-2013, 13:17 - Lib called: browse_dir Boozoo Bajou
+04-05-2013, 13:17 - browse_dir(): /home/jez/fiji zik/Boozoo Bajou
+04-05-2013, 13:17 - Lib called: browse_dir 
+04-05-2013, 13:17 - browse_dir(): /home/jez/fiji zik/
