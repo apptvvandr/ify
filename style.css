@@ -4,14 +4,16 @@ border-radius: 2px 2px 2px 2px;
 text-align: center;
 }
 
-
+body {
+	width: 100%;
+}
 
 .row-fluid {
   width: 100%;
 }
 
 .container-fluid {
-	width: 90%;
+	width: 100%;
 }
 
 

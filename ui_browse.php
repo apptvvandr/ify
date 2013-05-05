@@ -55,7 +55,7 @@
 
 <!-- START: Right pane -->
 <div class="span8">
-	<ul class="breadcrumb pull-left">
+	<ul class="breadcrumb pull-left" id="ui_breadcrumbs">
 				<li><a href="#">Home</a> <span class="divider">/</span></li>
 				<li><a href="#">Library</a> <span class="divider">/</span></li>
 				<li class="active">Data</li>
@@ -71,7 +71,7 @@
     </tr>
   </thead>
 
-  <tbody>
+  <tbody id="ui_browser_files">
     <tr>
       <td>col1</td>
       <td>col1</td>

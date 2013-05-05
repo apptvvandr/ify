@@ -78,42 +78,78 @@ function Path( path ) {
 // Update browser list
 function ui_browser_refresh(list) {
 	$('#ui_browser_list').html(list);
-
-	// Set events hook on list elements
-	$('#ui_browser_list > tr').on("click", function(e) {
-		e.preventDefault(); // Empêche le navigateur de suivre le lien.
-		glob_rel_path.append($(this).text());
-		
-		var req = {action:"browse_dir", args:glob_rel_path.path};
-	
-		$.post( "tests/browser.php", req, function(data){
-			data = jQuery.parseJSON(data);
-			console.log(data);
-			glob_rel_path.path = data.path;
-			ui_browser_refresh(data.html);}
-		)
-		.fail(function() { console.log("Maj de la list failed, going backward"); })
-	});
 }
 
+// Update music list
+function ui_music_refresh(files) {
+	$('#ui_browser_files').html(files);
+}
 
+function ui_refresh_breadcrumbs(path) {
+	console.log(path)
+	array = path.split("/");
+	console.log(array)
+	path = "";
+	jQuery.each(array, function(key, value) {
+		//console.log('key: '+ key + "value: "+value)
+		path = path + '<li><a href="#">' + value + '</a> <span class="divider">/</span></li>' ;
+	})
+	
+	$('#ui_breadcrumbs').html(path);
+	
+}
 
 // UI Requests (Static)
 //////////////
 
+// Set events hook on list elements
+$('#ui_browser_list').on("click", "tr", function(e) {
+	e.preventDefault(); // Empêche le navigateur de suivre le lien.
+	glob_rel_path.append($(this).text());
 
-// Browser: refresh folder list
-$('#ui_browser_refresh').bind('click', function () {
-	console.log('refresh')
+	// Refresh browser list	
 	var req = {action:"browse_dir", args:glob_rel_path.path};
+	$.post( "tests/browser.php", req, function(data){
+		data = jQuery.parseJSON(data);
+		//console.log(data);
+		glob_rel_path.path = data.path;
+		ui_browser_refresh(data.html);}
+	)
+	.fail(function() { console.log("Maj de la list failed, going backward"); })
+
+
+	// Refresh music list
+	//console.log('refresh music list')
+	var req = {action:"browse_files", args:glob_rel_path.path};
 	$.post( "tests/browser.php", req, function(data){
 		console.log(data);
 		data = jQuery.parseJSON(data);
 		glob_rel_path.path = data.path;
-		console.log(data);
+
+		ui_music_refresh(data.html);
+		ui_refresh_breadcrumbs(data.apath);}
+	)
+	.fail(function() { console.log("Maj de la liste failed"); })
+
+});
+
+
+
+// Browser: refresh folder list
+$('#ui_browser_refresh').on('click', function () {
+
+
+	// Refresh browser
+	console.log('refresh browser list')
+	var req = {action:"browse_dir", args:glob_rel_path.path};
+	$.post( "tests/browser.php", req, function(data){
+		//console.log(data);
+		data = jQuery.parseJSON(data);
+		glob_rel_path.path = data.path;
 		ui_browser_refresh(data.html);}
 	)
-	.fail(function() { console.log("Maj de la list failed"); })
+	.fail(function() { console.log("Maj du browser failed"); })
+
 })
 
 
