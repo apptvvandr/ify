@@ -6,8 +6,11 @@
 	<link href="bootstrap/css/bootstrap.css" rel="stylesheet" >
 	<link href="style.css" rel="stylesheet" type="text/css">
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 
+	<!-- script src="jquery.js"></script -->
+	<script src="mediaelement-and-player.min.js"></script>
+	<link rel="stylesheet" href="mediaelementplayer.css" />
 
   </head>
 

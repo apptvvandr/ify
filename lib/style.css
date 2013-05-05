@@ -1,0 +1,28 @@
+[class*="span"] {
+background-color: lightgreen;
+border-radius: 2px 2px 2px 2px;
+text-align: center;
+}
+
+body {
+	width: 100%;
+}
+
+.row-fluid {
+  width: 100%;
+}
+
+.container-fluid {
+	width: 100%;
+}
+
+
+#ui_main {
+	height: 100%;
+}
+
+#ui_footer {
+	height:50px;
+	background:red;
+	bottom:0;
+}
