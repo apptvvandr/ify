@@ -66,44 +66,48 @@ switch ($action) {
         return implode(DIRECTORY_SEPARATOR, $absolutes);
     }
 
+// Check_jail: check if a path is not outside a jail
+// Path must be absolutes !
+function check_jail($root, $path) {
+
+	if(substr($path, 0, strlen($root) ) != $root or !is_dir($path) ) {
+		// Path out of jail
+		return false;
+	} else {
+		// Path in jail
+		return true;
+	}
+}
+
+
+
+// Ify functions
+////////////////
+
 // Give a list of directory
 function browse_dir($vpath)
 {
 	global $music_path;
-	//vpath => Relative path
-	//vroot => Music Root
-	//path => Absolute path
-	
-
 	$html = "";
-	doLog('browse_dir():1 vpath = '.$vpath);
+	//doLog('browse_dir() vpath = '.$vpath);
 
 
 	// Security: Avoid browsing outside root directory, but allow to follow symlinks
-	$path = $music_path.get_absolute_path($vpath);
-	//doLog('path IS: ' . $path);
-	//doLog('vpath IS: ' . $vpath);
-	//doLog('root IS: ' . $music_path);
-	//doLog('Operation' . substr($path, 0, strlen($music_path) ));
-	
-	
-	//if(substr($path, 0, strlen($music_path) ) != $music_path or !is_dir($vroot)) {
-	if(substr($path, 0, strlen($music_path) ) != $music_path or !is_dir($path) ) {
-		doLog('Invalid Path ! =>' . $path);
-      		$path = $music_path . $vpath; 
+	$path = $music_path . get_absolute_path($vpath);
+	if( !check_jail($music_path, $path) ) {
+		// If path outside jail, redifine default pass
+		$path = $music_path;
 		$vpath = "";
-	} else {
-		$path = $path  ;
-	}	
-	//doLog('browse_dir() path  : '.$path);
-	//doLog('browse_dir() vpath : '.$vpath);
+	}
+
+	// DEBUG
+	doLog('browse_dir() path  : '.$path);
+	doLog('browse_dir() vpath : '.$vpath);
 
 
 	// Parsing directories
 	$array_dir = new ArrayObject( scandir( $path));
 	$iterator = $array_dir->getIterator();
-
-	// Delete '..' if in root directory
 
 	while($iterator->valid()) {
 		$dir = $iterator->current();
@@ -128,7 +132,6 @@ function browse_dir($vpath)
 	// Debug
 	//doLog('full response :' . implode(", ", $answer));
 	//doLog('vpath de retour: ' . $vpath );
-	
 
 }
 
