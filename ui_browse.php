@@ -9,8 +9,8 @@
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 
 	<!-- script src="jquery.js"></script -->
-	<script src="mediaelement-and-player.min.js"></script>
-	<link rel="stylesheet" href="mediaelementplayer.css" />
+	<script src="lib/melement/mediaelement-and-player.min.js"></script>
+	<link rel="lib/melement/stylesheet" href="mediaelementplayer.css" />
 
   </head>
 
@@ -18,6 +18,25 @@
 
 
 <div id="ui_main"  class="container-fluid">
+
+
+<!-- video src="zik2.mp3" width="320" height="240"></video -->
+
+
+<div class="audio-player">
+    <h1>Demo - Preview Song</h1>
+    <img id="cover" src="img/cover.png" alt="">
+    <audio id="me_player" src="zik.mp3" type="audio/mp3" controls="controls"></audio>
+</div>
+
+
+<div class="btn-group">
+  <button id="ui_play" class="btn">Play</button>
+  <button id="ui_pause" class="btn">Pause</button>
+  <button class="btn">Right</button>
+</div>
+
+
 
 
 <!-- START: Left pane -->
@@ -113,7 +132,7 @@
 
 
 <script type="text/javascript">
-	
+//	$('video,audio').mediaelementplayer(/* Options */);	
 </script>
 
 

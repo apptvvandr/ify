@@ -1,7 +1,6 @@
 <?php
 header("Content-Type: text/plain"); 
 
-//require_once('/vlib/getid3/getid3.php');
 include('../getid3/getid3.php');
 
 define( 'ROOT_DIR', dirname(__FILE__) );
