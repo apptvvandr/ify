@@ -1,7 +1,8 @@
 <?php
 header("Content-Type: text/plain"); 
 
-require_once('/var/www/ify/tests/lib/getid3/getid3.php');
+//require_once('/vlib/getid3/getid3.php');
+include('../getid3/getid3.php');
 
 define( 'ROOT_DIR', dirname(__FILE__) );
 

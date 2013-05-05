@@ -3,8 +3,8 @@
   <head>
     <title>Ify</title>
     <!-- Bootstrap -->
-	<link href="bootstrap/css/bootstrap.css" rel="stylesheet" >
-	<link href="style.css" rel="stylesheet" type="text/css">
+	<link href="lib/bootstrap/css/bootstrap.css" rel="stylesheet" >
+	<link href="lib/ify/style.css" rel="stylesheet" type="text/css">
 
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 
@@ -108,8 +108,8 @@
 
 
 <!-- Javascript -->
-<script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
-<script type="text/javascript" src="scripts.js"></script>
+<script type="text/javascript" src="lib/bootstrap/js/bootstrap.js"></script>
+<script type="text/javascript" src="lib/ify/scripts.js"></script>
 
 
 <script type="text/javascript">

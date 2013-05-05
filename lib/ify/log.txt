@@ -1,0 +1,70 @@
+05-05-2013, 18:38 - POST -> action:browse_dir
+05-05-2013, 18:38 - POST -> args:
+05-05-2013, 18:38 - Lib called: browse_dir 
+05-05-2013, 18:38 - browse_dir() path  : /home/jez/fiji zik/
+05-05-2013, 18:38 - browse_dir() vpath : 
+05-05-2013, 18:38 - POST -> action:browse_dir
+05-05-2013, 18:38 - POST -> args:/3 Doors Down
+05-05-2013, 18:38 - Lib called: browse_dir /3 Doors Down
+05-05-2013, 18:38 - browse_dir() path  : /home/jez/fiji zik/3 Doors Down
+05-05-2013, 18:38 - browse_dir() vpath : /3 Doors Down
+05-05-2013, 18:38 - POST -> action:browse_files
+05-05-2013, 18:38 - POST -> args:/3 Doors Down
+05-05-2013, 18:38 - Lib called: browse_files /3 Doors Down
+05-05-2013, 18:38 - browse_dir() path  : /home/jez/fiji zik/3 Doors Down
+05-05-2013, 18:38 - browse_dir() vpath : /3 Doors Down
+05-05-2013, 18:38 - POST -> action:browse_dir
+05-05-2013, 18:38 - POST -> args:/3 Doors Down/The Better Life
+05-05-2013, 18:38 - Lib called: browse_dir /3 Doors Down/The Better Life
+05-05-2013, 18:38 - browse_dir() path  : /home/jez/fiji zik/3 Doors Down/The Better Life
+05-05-2013, 18:38 - browse_dir() vpath : /3 Doors Down/The Better Life
+05-05-2013, 18:38 - POST -> action:browse_files
+05-05-2013, 18:38 - POST -> args:/3 Doors Down/The Better Life
+05-05-2013, 18:38 - Lib called: browse_files /3 Doors Down/The Better Life
+05-05-2013, 18:38 - browse_dir() path  : /home/jez/fiji zik/3 Doors Down/The Better Life
+05-05-2013, 18:38 - browse_dir() vpath : /3 Doors Down/The Better Life
+05-05-2013, 18:39 - POST -> action:browse_dir
+05-05-2013, 18:39 - POST -> args:
+05-05-2013, 18:39 - Lib called: browse_dir 
+05-05-2013, 18:39 - browse_dir() path  : /home/jez/fiji zik/
+05-05-2013, 18:39 - browse_dir() vpath : 
+05-05-2013, 18:39 - POST -> action:browse_dir
+05-05-2013, 18:39 - POST -> args:/Alpha Blondie
+05-05-2013, 18:39 - Lib called: browse_dir /Alpha Blondie
+05-05-2013, 18:39 - browse_dir() path  : /home/jez/fiji zik/Alpha Blondie
+05-05-2013, 18:39 - browse_dir() vpath : /Alpha Blondie
+05-05-2013, 18:39 - POST -> action:browse_files
+05-05-2013, 18:39 - POST -> args:/Alpha Blondie
+05-05-2013, 18:39 - Lib called: browse_files /Alpha Blondie
+05-05-2013, 18:39 - browse_dir() path  : /home/jez/fiji zik/Alpha Blondie
+05-05-2013, 18:39 - browse_dir() vpath : /Alpha Blondie
+05-05-2013, 18:39 - POST -> action:browse_dir
+05-05-2013, 18:39 - POST -> action:browse_files
+05-05-2013, 18:39 - POST -> args:/Alpha Blondie/Elohim
+05-05-2013, 18:39 - POST -> args:/Alpha Blondie/Elohim
+05-05-2013, 18:39 - Lib called: browse_dir /Alpha Blondie/Elohim
+05-05-2013, 18:39 - Lib called: browse_files /Alpha Blondie/Elohim
+05-05-2013, 18:39 - browse_dir() path  : /home/jez/fiji zik/Alpha Blondie/Elohim
+05-05-2013, 18:39 - browse_dir() path  : /home/jez/fiji zik/Alpha Blondie/Elohim
+05-05-2013, 18:39 - browse_dir() vpath : /Alpha Blondie/Elohim
+05-05-2013, 18:39 - browse_dir() vpath : /Alpha Blondie/Elohim
+05-05-2013, 18:39 - POST -> action:browse_dir
+05-05-2013, 18:39 - POST -> args:/Alpha Blondie/Elohim/..
+05-05-2013, 18:39 - Lib called: browse_dir /Alpha Blondie/Elohim/..
+05-05-2013, 18:39 - browse_dir() path  : /home/jez/fiji zik/Alpha Blondie
+05-05-2013, 18:39 - browse_dir() vpath : /Alpha Blondie/Elohim/..
+05-05-2013, 18:39 - POST -> action:browse_files
+05-05-2013, 18:39 - POST -> args:/Alpha Blondie/Elohim/..
+05-05-2013, 18:39 - Lib called: browse_files /Alpha Blondie/Elohim/..
+05-05-2013, 18:39 - browse_dir() path  : /home/jez/fiji zik/Alpha Blondie
+05-05-2013, 18:39 - browse_dir() vpath : /Alpha Blondie/Elohim/..
+05-05-2013, 18:39 - POST -> action:browse_dir
+05-05-2013, 18:39 - POST -> args:/Alpha Blondie/Elohim/../MASADA
+05-05-2013, 18:39 - Lib called: browse_dir /Alpha Blondie/Elohim/../MASADA
+05-05-2013, 18:39 - browse_dir() path  : /home/jez/fiji zik/Alpha Blondie/MASADA
+05-05-2013, 18:39 - browse_dir() vpath : /Alpha Blondie/Elohim/../MASADA
+05-05-2013, 18:39 - POST -> action:browse_files
+05-05-2013, 18:39 - POST -> args:/Alpha Blondie/Elohim/../MASADA
+05-05-2013, 18:39 - Lib called: browse_files /Alpha Blondie/Elohim/../MASADA
+05-05-2013, 18:39 - browse_dir() path  : /home/jez/fiji zik/Alpha Blondie/MASADA
+05-05-2013, 18:39 - browse_dir() vpath : /Alpha Blondie/Elohim/../MASADA
