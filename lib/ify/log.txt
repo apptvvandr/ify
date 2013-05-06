@@ -1039,3 +1039,938 @@
 05-05-2013, 21:21 - browse_dir() path  : /home/jez/fiji zik/Ben Harper/Both Sides Of The Gun
 05-05-2013, 21:21 - browse_dir() vpath : /Aerosmith/Pump/../../Amadou & Mariam/../Amadou & Mariam/../Ben Harper/Both Sides Of The Gun
 05-05-2013, 21:21 - browse_dir() vpath : /Aerosmith/Pump/../../Amadou & Mariam/../Amadou & Mariam/../Ben Harper/Both Sides Of The Gun
+05-05-2013, 21:26 - POST -> action:browse_dir
+05-05-2013, 21:26 - POST -> args:
+05-05-2013, 21:26 - Lib called: browse_dir 
+05-05-2013, 21:26 - browse_dir() path  : /home/jez/fiji zik/
+05-05-2013, 21:26 - browse_dir() vpath : 
+05-05-2013, 21:26 - POST -> action:browse_dir
+05-05-2013, 21:26 - POST -> action:browse_files
+05-05-2013, 21:26 - POST -> args:/Alpha Blondie
+05-05-2013, 21:26 - POST -> args:/Alpha Blondie
+05-05-2013, 21:26 - Lib called: browse_files /Alpha Blondie
+05-05-2013, 21:26 - Lib called: browse_dir /Alpha Blondie
+05-05-2013, 21:26 - browse_dir() path  : /home/jez/fiji zik/Alpha Blondie
+05-05-2013, 21:26 - browse_dir() path  : /home/jez/fiji zik/Alpha Blondie
+05-05-2013, 21:26 - browse_dir() vpath : /Alpha Blondie
+05-05-2013, 21:26 - browse_dir() vpath : /Alpha Blondie
+05-05-2013, 21:26 - POST -> action:browse_dir
+05-05-2013, 21:26 - POST -> action:browse_files
+05-05-2013, 21:26 - POST -> args:/Alpha Blondie/Cocody Rock
+05-05-2013, 21:26 - POST -> args:/Alpha Blondie/Cocody Rock
+05-05-2013, 21:26 - Lib called: browse_dir /Alpha Blondie/Cocody Rock
+05-05-2013, 21:26 - Lib called: browse_files /Alpha Blondie/Cocody Rock
+05-05-2013, 21:26 - browse_dir() path  : /home/jez/fiji zik/Alpha Blondie/Cocody Rock
+05-05-2013, 21:26 - browse_dir() path  : /home/jez/fiji zik/Alpha Blondie/Cocody Rock
+05-05-2013, 21:26 - browse_dir() vpath : /Alpha Blondie/Cocody Rock
+05-05-2013, 21:26 - browse_dir() vpath : /Alpha Blondie/Cocody Rock
+05-05-2013, 21:26 - POST -> action:browse_dir
+05-05-2013, 21:26 - POST -> action:browse_files
+05-05-2013, 21:26 - POST -> args:/Alpha Blondie/Cocody Rock/..
+05-05-2013, 21:26 - POST -> args:/Alpha Blondie/Cocody Rock/..
+05-05-2013, 21:26 - Lib called: browse_files /Alpha Blondie/Cocody Rock/..
+05-05-2013, 21:26 - Lib called: browse_dir /Alpha Blondie/Cocody Rock/..
+05-05-2013, 21:26 - browse_dir() path  : /home/jez/fiji zik/Alpha Blondie
+05-05-2013, 21:26 - browse_dir() path  : /home/jez/fiji zik/Alpha Blondie
+05-05-2013, 21:26 - browse_dir() vpath : /Alpha Blondie/Cocody Rock/..
+05-05-2013, 21:26 - browse_dir() vpath : /Alpha Blondie/Cocody Rock/..
+05-05-2013, 21:26 - POST -> action:browse_files
+05-05-2013, 21:26 - POST -> action:browse_dir
+05-05-2013, 21:26 - POST -> args:/Alpha Blondie/Cocody Rock/../Cocody Rock
+05-05-2013, 21:26 - POST -> args:/Alpha Blondie/Cocody Rock/../Cocody Rock
+05-05-2013, 21:26 - Lib called: browse_files /Alpha Blondie/Cocody Rock/../Cocody Rock
+05-05-2013, 21:26 - Lib called: browse_dir /Alpha Blondie/Cocody Rock/../Cocody Rock
+05-05-2013, 21:26 - browse_dir() path  : /home/jez/fiji zik/Alpha Blondie/Cocody Rock
+05-05-2013, 21:26 - browse_dir() path  : /home/jez/fiji zik/Alpha Blondie/Cocody Rock
+05-05-2013, 21:26 - browse_dir() vpath : /Alpha Blondie/Cocody Rock/../Cocody Rock
+05-05-2013, 21:26 - browse_dir() vpath : /Alpha Blondie/Cocody Rock/../Cocody Rock
+05-05-2013, 21:26 - POST -> action:browse_files
+05-05-2013, 21:26 - POST -> action:browse_dir
+05-05-2013, 21:26 - POST -> args:/Alpha Blondie/Cocody Rock/../Cocody Rock/..
+05-05-2013, 21:26 - POST -> args:/Alpha Blondie/Cocody Rock/../Cocody Rock/..
+05-05-2013, 21:26 - Lib called: browse_files /Alpha Blondie/Cocody Rock/../Cocody Rock/..
+05-05-2013, 21:26 - Lib called: browse_dir /Alpha Blondie/Cocody Rock/../Cocody Rock/..
+05-05-2013, 21:26 - browse_dir() path  : /home/jez/fiji zik/Alpha Blondie
+05-05-2013, 21:26 - browse_dir() path  : /home/jez/fiji zik/Alpha Blondie
+05-05-2013, 21:26 - browse_dir() vpath : /Alpha Blondie/Cocody Rock/../Cocody Rock/..
+05-05-2013, 21:26 - browse_dir() vpath : /Alpha Blondie/Cocody Rock/../Cocody Rock/..
+05-05-2013, 21:26 - POST -> action:browse_dir
+05-05-2013, 21:26 - POST -> args:/Alpha Blondie/Cocody Rock/../Cocody Rock/../Merci
+05-05-2013, 21:26 - Lib called: browse_dir /Alpha Blondie/Cocody Rock/../Cocody Rock/../Merci
+05-05-2013, 21:26 - browse_dir() path  : /home/jez/fiji zik/Alpha Blondie/Merci
+05-05-2013, 21:26 - browse_dir() vpath : /Alpha Blondie/Cocody Rock/../Cocody Rock/../Merci
+05-05-2013, 21:26 - POST -> action:browse_files
+05-05-2013, 21:26 - POST -> args:/Alpha Blondie/Cocody Rock/../Cocody Rock/../Merci
+05-05-2013, 21:26 - Lib called: browse_files /Alpha Blondie/Cocody Rock/../Cocody Rock/../Merci
+05-05-2013, 21:26 - browse_dir() path  : /home/jez/fiji zik/Alpha Blondie/Merci
+05-05-2013, 21:26 - browse_dir() vpath : /Alpha Blondie/Cocody Rock/../Cocody Rock/../Merci
+05-05-2013, 21:26 - POST -> action:browse_dir
+05-05-2013, 21:26 - POST -> args:
+05-05-2013, 21:26 - Lib called: browse_dir 
+05-05-2013, 21:26 - browse_dir() path  : /home/jez/fiji zik/
+05-05-2013, 21:26 - browse_dir() vpath : 
+05-05-2013, 21:32 - POST -> action:browse_files
+05-05-2013, 21:32 - POST -> action:browse_dir
+05-05-2013, 21:32 - POST -> args:/Alpha Blondie
+05-05-2013, 21:32 - POST -> args:/Alpha Blondie
+05-05-2013, 21:32 - Lib called: browse_dir /Alpha Blondie
+05-05-2013, 21:32 - Lib called: browse_files /Alpha Blondie
+05-05-2013, 21:32 - browse_dir() path  : /home/jez/fiji zik/Alpha Blondie
+05-05-2013, 21:32 - browse_dir() path  : /home/jez/fiji zik/Alpha Blondie
+05-05-2013, 21:32 - browse_dir() vpath : /Alpha Blondie
+05-05-2013, 21:32 - browse_dir() vpath : /Alpha Blondie
+05-05-2013, 21:32 - POST -> action:browse_dir
+05-05-2013, 21:32 - POST -> action:browse_files
+05-05-2013, 21:32 - POST -> args:/Alpha Blondie/Elohim
+05-05-2013, 21:32 - POST -> args:/Alpha Blondie/Elohim
+05-05-2013, 21:32 - Lib called: browse_files /Alpha Blondie/Elohim
+05-05-2013, 21:32 - Lib called: browse_dir /Alpha Blondie/Elohim
+05-05-2013, 21:32 - browse_dir() path  : /home/jez/fiji zik/Alpha Blondie/Elohim
+05-05-2013, 21:32 - browse_dir() path  : /home/jez/fiji zik/Alpha Blondie/Elohim
+05-05-2013, 21:32 - browse_dir() vpath : /Alpha Blondie/Elohim
+05-05-2013, 21:32 - browse_dir() vpath : /Alpha Blondie/Elohim
+05-05-2013, 21:34 - POST -> action:browse_dir
+05-05-2013, 21:34 - POST -> action:browse_files
+05-05-2013, 21:34 - POST -> args:/Aerosmith/Pump/../../Amadou & Mariam/../Amadou & Mariam/../Ben Harper/Both Sides Of The Gun/..
+05-05-2013, 21:34 - POST -> args:/Aerosmith/Pump/../../Amadou & Mariam/../Amadou & Mariam/../Ben Harper/Both Sides Of The Gun/..
+05-05-2013, 21:34 - Lib called: browse_dir /Aerosmith/Pump/../../Amadou & Mariam/../Amadou & Mariam/../Ben Harper/Both Sides Of The Gun/..
+05-05-2013, 21:34 - Lib called: browse_files /Aerosmith/Pump/../../Amadou & Mariam/../Amadou & Mariam/../Ben Harper/Both Sides Of The Gun/..
+05-05-2013, 21:34 - browse_dir() path  : /home/jez/fiji zik/Ben Harper
+05-05-2013, 21:34 - browse_dir() path  : /home/jez/fiji zik/Ben Harper
+05-05-2013, 21:34 - browse_dir() vpath : /Aerosmith/Pump/../../Amadou & Mariam/../Amadou & Mariam/../Ben Harper/Both Sides Of The Gun/..
+05-05-2013, 21:34 - browse_dir() vpath : /Aerosmith/Pump/../../Amadou & Mariam/../Amadou & Mariam/../Ben Harper/Both Sides Of The Gun/..
+05-05-2013, 21:34 - POST -> action:browse_files
+05-05-2013, 21:34 - POST -> action:browse_dir
+05-05-2013, 21:34 - POST -> args:/Aerosmith/Pump/../../Amadou & Mariam/../Amadou & Mariam/../Ben Harper/Both Sides Of The Gun/../..
+05-05-2013, 21:34 - POST -> args:/Aerosmith/Pump/../../Amadou & Mariam/../Amadou & Mariam/../Ben Harper/Both Sides Of The Gun/../..
+05-05-2013, 21:34 - Lib called: browse_dir /Aerosmith/Pump/../../Amadou & Mariam/../Amadou & Mariam/../Ben Harper/Both Sides Of The Gun/../..
+05-05-2013, 21:34 - Lib called: browse_files /Aerosmith/Pump/../../Amadou & Mariam/../Amadou & Mariam/../Ben Harper/Both Sides Of The Gun/../..
+05-05-2013, 21:34 - browse_dir() path  : /home/jez/fiji zik/
+05-05-2013, 21:34 - browse_dir() path  : /home/jez/fiji zik/
+05-05-2013, 21:34 - browse_dir() vpath : /Aerosmith/Pump/../../Amadou & Mariam/../Amadou & Mariam/../Ben Harper/Both Sides Of The Gun/../..
+05-05-2013, 21:34 - browse_dir() vpath : /Aerosmith/Pump/../../Amadou & Mariam/../Amadou & Mariam/../Ben Harper/Both Sides Of The Gun/../..
+05-05-2013, 21:34 - POST -> action:browse_files
+05-05-2013, 21:34 - POST -> action:browse_dir
+05-05-2013, 21:34 - POST -> args:/Aerosmith/Pump/../../Amadou & Mariam/../Amadou & Mariam/../Ben Harper/Both Sides Of The Gun/../../3 Doors Down
+05-05-2013, 21:34 - POST -> args:/Aerosmith/Pump/../../Amadou & Mariam/../Amadou & Mariam/../Ben Harper/Both Sides Of The Gun/../../3 Doors Down
+05-05-2013, 21:34 - Lib called: browse_files /Aerosmith/Pump/../../Amadou & Mariam/../Amadou & Mariam/../Ben Harper/Both Sides Of The Gun/../../3 Doors Down
+05-05-2013, 21:34 - Lib called: browse_dir /Aerosmith/Pump/../../Amadou & Mariam/../Amadou & Mariam/../Ben Harper/Both Sides Of The Gun/../../3 Doors Down
+05-05-2013, 21:34 - browse_dir() path  : /home/jez/fiji zik/3 Doors Down
+05-05-2013, 21:34 - browse_dir() path  : /home/jez/fiji zik/3 Doors Down
+05-05-2013, 21:34 - browse_dir() vpath : /Aerosmith/Pump/../../Amadou & Mariam/../Amadou & Mariam/../Ben Harper/Both Sides Of The Gun/../../3 Doors Down
+05-05-2013, 21:34 - browse_dir() vpath : /Aerosmith/Pump/../../Amadou & Mariam/../Amadou & Mariam/../Ben Harper/Both Sides Of The Gun/../../3 Doors Down
+05-05-2013, 21:34 - POST -> action:browse_dir
+05-05-2013, 21:34 - POST -> args:
+05-05-2013, 21:34 - Lib called: browse_dir 
+05-05-2013, 21:34 - browse_dir() path  : /home/jez/fiji zik/
+05-05-2013, 21:34 - browse_dir() vpath : 
+05-05-2013, 21:35 - POST -> action:browse_dir
+05-05-2013, 21:35 - POST -> args:/Air
+05-05-2013, 21:35 - Lib called: browse_dir /Air
+05-05-2013, 21:35 - browse_dir() path  : /home/jez/fiji zik/Air
+05-05-2013, 21:35 - browse_dir() vpath : /Air
+05-05-2013, 21:35 - POST -> action:browse_files
+05-05-2013, 21:35 - POST -> args:/Air
+05-05-2013, 21:35 - Lib called: browse_files /Air
+05-05-2013, 21:35 - browse_dir() path  : /home/jez/fiji zik/Air
+05-05-2013, 21:35 - browse_dir() vpath : /Air
+05-05-2013, 21:35 - POST -> action:browse_dir
+05-05-2013, 21:35 - POST -> action:browse_files
+05-05-2013, 21:35 - POST -> args:/Air/Air - Pocket Symphony (2007)
+05-05-2013, 21:35 - POST -> args:/Air/Air - Pocket Symphony (2007)
+05-05-2013, 21:35 - Lib called: browse_files /Air/Air - Pocket Symphony (2007)
+05-05-2013, 21:35 - Lib called: browse_dir /Air/Air - Pocket Symphony (2007)
+05-05-2013, 21:35 - browse_dir() path  : /home/jez/fiji zik/Air/Air - Pocket Symphony (2007)
+05-05-2013, 21:35 - browse_dir() path  : /home/jez/fiji zik/Air/Air - Pocket Symphony (2007)
+05-05-2013, 21:35 - browse_dir() vpath : /Air/Air - Pocket Symphony (2007)
+05-05-2013, 21:35 - browse_dir() vpath : /Air/Air - Pocket Symphony (2007)
+05-05-2013, 21:35 - POST -> action:browse_files
+05-05-2013, 21:35 - POST -> action:browse_dir
+05-05-2013, 21:35 - POST -> args:/Air/Air - Pocket Symphony (2007)/..
+05-05-2013, 21:35 - POST -> args:/Air/Air - Pocket Symphony (2007)/..
+05-05-2013, 21:35 - Lib called: browse_files /Air/Air - Pocket Symphony (2007)/..
+05-05-2013, 21:35 - Lib called: browse_dir /Air/Air - Pocket Symphony (2007)/..
+05-05-2013, 21:35 - browse_dir() path  : /home/jez/fiji zik/Air
+05-05-2013, 21:35 - browse_dir() path  : /home/jez/fiji zik/Air
+05-05-2013, 21:35 - browse_dir() vpath : /Air/Air - Pocket Symphony (2007)/..
+05-05-2013, 21:35 - browse_dir() vpath : /Air/Air - Pocket Symphony (2007)/..
+05-05-2013, 21:35 - POST -> action:browse_files
+05-05-2013, 21:35 - POST -> action:browse_dir
+05-05-2013, 21:35 - POST -> args:/Air/Air - Pocket Symphony (2007)/../Air - Pocket Symphony (2007)
+05-05-2013, 21:35 - POST -> args:/Air/Air - Pocket Symphony (2007)/../Air - Pocket Symphony (2007)
+05-05-2013, 21:35 - Lib called: browse_dir /Air/Air - Pocket Symphony (2007)/../Air - Pocket Symphony (2007)
+05-05-2013, 21:35 - Lib called: browse_files /Air/Air - Pocket Symphony (2007)/../Air - Pocket Symphony (2007)
+05-05-2013, 21:35 - browse_dir() path  : /home/jez/fiji zik/Air/Air - Pocket Symphony (2007)
+05-05-2013, 21:35 - browse_dir() path  : /home/jez/fiji zik/Air/Air - Pocket Symphony (2007)
+05-05-2013, 21:35 - browse_dir() vpath : /Air/Air - Pocket Symphony (2007)/../Air - Pocket Symphony (2007)
+05-05-2013, 21:35 - browse_dir() vpath : /Air/Air - Pocket Symphony (2007)/../Air - Pocket Symphony (2007)
+06-05-2013, 01:14 - POST -> action:browse_dir
+06-05-2013, 01:14 - POST -> args:
+06-05-2013, 01:14 - Lib called: browse_dir 
+06-05-2013, 01:14 - browse_dir() path  : /home/jez/fiji zik/
+06-05-2013, 01:14 - browse_dir() vpath : 
+06-05-2013, 01:14 - POST -> action:browse_dir
+06-05-2013, 01:14 - POST -> args:/Air
+06-05-2013, 01:14 - Lib called: browse_dir /Air
+06-05-2013, 01:14 - browse_dir() path  : /home/jez/fiji zik/Air
+06-05-2013, 01:14 - browse_dir() vpath : /Air
+06-05-2013, 01:14 - POST -> action:browse_files
+06-05-2013, 01:14 - POST -> args:/Air
+06-05-2013, 01:14 - Lib called: browse_files /Air
+06-05-2013, 01:14 - browse_dir() path  : /home/jez/fiji zik/Air
+06-05-2013, 01:14 - browse_dir() vpath : /Air
+06-05-2013, 01:14 - POST -> action:browse_dir
+06-05-2013, 01:14 - POST -> args:/Air/Moon Safari
+06-05-2013, 01:14 - Lib called: browse_dir /Air/Moon Safari
+06-05-2013, 01:14 - browse_dir() path  : /home/jez/fiji zik/Air/Moon Safari
+06-05-2013, 01:14 - browse_dir() vpath : /Air/Moon Safari
+06-05-2013, 01:14 - POST -> action:browse_files
+06-05-2013, 01:14 - POST -> args:/Air/Moon Safari
+06-05-2013, 01:14 - Lib called: browse_files /Air/Moon Safari
+06-05-2013, 01:14 - browse_dir() path  : /home/jez/fiji zik/Air/Moon Safari
+06-05-2013, 01:14 - browse_dir() vpath : /Air/Moon Safari
+06-05-2013, 08:58 - POST -> action:browse_dir
+06-05-2013, 08:58 - POST -> args:
+06-05-2013, 08:58 - Lib called: browse_dir 
+06-05-2013, 08:58 - browse_dir() path  : /home/jez/fiji zik/
+06-05-2013, 08:58 - browse_dir() vpath : 
+06-05-2013, 10:33 - POST -> action:browse_dir
+06-05-2013, 10:33 - POST -> args:/Air
+06-05-2013, 10:33 - Lib called: browse_dir /Air
+06-05-2013, 10:33 - browse_dir() path  : /home/jez/fiji zik/Air
+06-05-2013, 10:33 - browse_dir() vpath : /Air
+06-05-2013, 10:33 - POST -> action:browse_files
+06-05-2013, 10:33 - POST -> args:/Air
+06-05-2013, 10:33 - Lib called: browse_files /Air
+06-05-2013, 10:33 - browse_dir() path  : /home/jez/fiji zik/Air
+06-05-2013, 10:33 - browse_dir() vpath : /Air
+06-05-2013, 10:33 - POST -> action:browse_dir
+06-05-2013, 10:33 - POST -> args:/Air/10000 Hz Legend
+06-05-2013, 10:33 - Lib called: browse_dir /Air/10000 Hz Legend
+06-05-2013, 10:33 - browse_dir() path  : /home/jez/fiji zik/Air/10000 Hz Legend
+06-05-2013, 10:33 - browse_dir() vpath : /Air/10000 Hz Legend
+06-05-2013, 10:33 - POST -> action:browse_files
+06-05-2013, 10:33 - POST -> args:/Air/10000 Hz Legend
+06-05-2013, 10:33 - Lib called: browse_files /Air/10000 Hz Legend
+06-05-2013, 10:33 - browse_dir() path  : /home/jez/fiji zik/Air/10000 Hz Legend
+06-05-2013, 10:33 - browse_dir() vpath : /Air/10000 Hz Legend
+06-05-2013, 10:33 - POST -> action:browse_dir
+06-05-2013, 10:33 - POST -> args:
+06-05-2013, 10:33 - Lib called: browse_dir 
+06-05-2013, 10:33 - browse_dir() path  : /home/jez/fiji zik/
+06-05-2013, 10:33 - browse_dir() vpath : 
+06-05-2013, 10:33 - POST -> action:browse_dir
+06-05-2013, 10:33 - POST -> args:/Aerosmith
+06-05-2013, 10:33 - Lib called: browse_dir /Aerosmith
+06-05-2013, 10:33 - browse_dir() path  : /home/jez/fiji zik/Aerosmith
+06-05-2013, 10:33 - browse_dir() vpath : /Aerosmith
+06-05-2013, 10:33 - POST -> action:browse_files
+06-05-2013, 10:33 - POST -> args:/Aerosmith
+06-05-2013, 10:33 - Lib called: browse_files /Aerosmith
+06-05-2013, 10:33 - browse_dir() path  : /home/jez/fiji zik/Aerosmith
+06-05-2013, 10:33 - browse_dir() vpath : /Aerosmith
+06-05-2013, 10:33 - POST -> action:browse_dir
+06-05-2013, 10:33 - POST -> args:/Aerosmith/Live and Unreleased
+06-05-2013, 10:33 - Lib called: browse_dir /Aerosmith/Live and Unreleased
+06-05-2013, 10:33 - browse_dir() path  : /home/jez/fiji zik/Aerosmith/Live and Unreleased
+06-05-2013, 10:33 - browse_dir() vpath : /Aerosmith/Live and Unreleased
+06-05-2013, 10:33 - POST -> action:browse_files
+06-05-2013, 10:33 - POST -> args:/Aerosmith/Live and Unreleased
+06-05-2013, 10:33 - Lib called: browse_files /Aerosmith/Live and Unreleased
+06-05-2013, 10:33 - browse_dir() path  : /home/jez/fiji zik/Aerosmith/Live and Unreleased
+06-05-2013, 10:33 - browse_dir() vpath : /Aerosmith/Live and Unreleased
+06-05-2013, 22:41 - POST -> action:browse_dir
+06-05-2013, 22:41 - POST -> args:
+06-05-2013, 22:41 - Lib called: browse_dir 
+06-05-2013, 22:41 - browse_dir() path  : /home/jez/fiji zik/
+06-05-2013, 22:41 - browse_dir() vpath : 
+06-05-2013, 22:41 - POST -> action:browse_files
+06-05-2013, 22:41 - POST -> args:/Aerosmith
+06-05-2013, 22:41 - Lib called: browse_files /Aerosmith
+06-05-2013, 22:41 - browse_dir() path  : /home/jez/fiji zik/Aerosmith
+06-05-2013, 22:41 - browse_dir() vpath : /Aerosmith
+06-05-2013, 22:41 - POST -> action:browse_dir
+06-05-2013, 22:41 - POST -> args:/Aerosmith
+06-05-2013, 22:41 - Lib called: browse_dir /Aerosmith
+06-05-2013, 22:41 - browse_dir() path  : /home/jez/fiji zik/Aerosmith
+06-05-2013, 22:41 - browse_dir() vpath : /Aerosmith
+06-05-2013, 22:41 - POST -> action:browse_files
+06-05-2013, 22:41 - POST -> action:browse_dir
+06-05-2013, 22:41 - POST -> args:/Aerosmith/Pump
+06-05-2013, 22:41 - POST -> args:/Aerosmith/Pump
+06-05-2013, 22:41 - Lib called: browse_dir /Aerosmith/Pump
+06-05-2013, 22:41 - Lib called: browse_files /Aerosmith/Pump
+06-05-2013, 22:41 - browse_dir() path  : /home/jez/fiji zik/Aerosmith/Pump
+06-05-2013, 22:41 - browse_dir() path  : /home/jez/fiji zik/Aerosmith/Pump
+06-05-2013, 22:41 - browse_dir() vpath : /Aerosmith/Pump
+06-05-2013, 22:41 - browse_dir() vpath : /Aerosmith/Pump
+06-05-2013, 22:42 - POST -> action:browse_dir
+06-05-2013, 22:42 - POST -> args:
+06-05-2013, 22:42 - Lib called: browse_dir 
+06-05-2013, 22:42 - browse_dir() path  : /home/jez/fiji zik/
+06-05-2013, 22:42 - browse_dir() vpath : 
+06-05-2013, 22:42 - POST -> action:browse_dir
+06-05-2013, 22:42 - POST -> action:browse_files
+06-05-2013, 22:42 - POST -> args:/As de Trêfle
+06-05-2013, 22:42 - POST -> args:/As de Trêfle
+06-05-2013, 22:42 - Lib called: browse_files /As de Trêfle
+06-05-2013, 22:42 - Lib called: browse_dir /As de Trêfle
+06-05-2013, 22:42 - browse_dir() path  : /home/jez/fiji zik/As de Trêfle
+06-05-2013, 22:42 - browse_dir() path  : /home/jez/fiji zik/As de Trêfle
+06-05-2013, 22:42 - browse_dir() vpath : /As de Trêfle
+06-05-2013, 22:42 - browse_dir() vpath : /As de Trêfle
+06-05-2013, 22:43 - POST -> action:browse_dir
+06-05-2013, 22:43 - POST -> args:/As de Trêfle/Merci, Bonsoir
+06-05-2013, 22:43 - Lib called: browse_dir /As de Trêfle/Merci, Bonsoir
+06-05-2013, 22:43 - POST -> action:browse_files
+06-05-2013, 22:43 - POST -> args:/As de Trêfle/Merci, Bonsoir
+06-05-2013, 22:43 - browse_dir() path  : /home/jez/fiji zik/As de Trêfle/Merci, Bonsoir
+06-05-2013, 22:43 - Lib called: browse_files /As de Trêfle/Merci, Bonsoir
+06-05-2013, 22:43 - browse_dir() vpath : /As de Trêfle/Merci, Bonsoir
+06-05-2013, 22:43 - browse_dir() path  : /home/jez/fiji zik/As de Trêfle/Merci, Bonsoir
+06-05-2013, 22:43 - browse_dir() vpath : /As de Trêfle/Merci, Bonsoir
+06-05-2013, 23:06 - POST -> action:browse_dir
+06-05-2013, 23:06 - POST -> args:/As de Trêfle/Merci, Bonsoir
+06-05-2013, 23:06 - Lib called: browse_dir /As de Trêfle/Merci, Bonsoir
+06-05-2013, 23:06 - browse_dir() path  : /home/jez/fiji zik/As de Trêfle/Merci, Bonsoir
+06-05-2013, 23:06 - browse_dir() vpath : /As de Trêfle/Merci, Bonsoir
+06-05-2013, 23:09 - POST -> action:browse_dir
+06-05-2013, 23:09 - POST -> args:
+06-05-2013, 23:09 - Lib called: browse_dir 
+06-05-2013, 23:09 - browse_dir() path  : /home/jez/fiji zik/
+06-05-2013, 23:09 - browse_dir() vpath : 
+06-05-2013, 23:13 - POST -> action:browse_dir
+06-05-2013, 23:13 - POST -> args:
+06-05-2013, 23:13 - Lib called: browse_dir 
+06-05-2013, 23:13 - browse_dir() path  : /home/jez/fiji zik/
+06-05-2013, 23:13 - browse_dir() vpath : 
+06-05-2013, 23:13 - POST -> action:browse_dir
+06-05-2013, 23:13 - POST -> args:
+06-05-2013, 23:13 - Lib called: browse_dir 
+06-05-2013, 23:13 - browse_dir() path  : /home/jez/fiji zik/
+06-05-2013, 23:13 - browse_dir() vpath : 
+06-05-2013, 23:13 - POST -> action:browse_dir
+06-05-2013, 23:13 - POST -> args:
+06-05-2013, 23:13 - Lib called: browse_dir 
+06-05-2013, 23:13 - browse_dir() path  : /home/jez/fiji zik/
+06-05-2013, 23:13 - browse_dir() vpath : 
+06-05-2013, 23:13 - POST -> action:browse_dir
+06-05-2013, 23:13 - POST -> args:
+06-05-2013, 23:13 - Lib called: browse_dir 
+06-05-2013, 23:13 - browse_dir() path  : /home/jez/fiji zik/
+06-05-2013, 23:13 - browse_dir() vpath : 
+06-05-2013, 23:13 - POST -> action:browse_dir
+06-05-2013, 23:13 - POST -> args:
+06-05-2013, 23:13 - Lib called: browse_dir 
+06-05-2013, 23:13 - browse_dir() path  : /home/jez/fiji zik/
+06-05-2013, 23:13 - browse_dir() vpath : 
+06-05-2013, 23:13 - POST -> action:browse_dir
+06-05-2013, 23:13 - POST -> args:
+06-05-2013, 23:13 - Lib called: browse_dir 
+06-05-2013, 23:13 - browse_dir() path  : /home/jez/fiji zik/
+06-05-2013, 23:13 - browse_dir() vpath : 
+06-05-2013, 23:13 - POST -> action:browse_dir
+06-05-2013, 23:13 - POST -> args:
+06-05-2013, 23:13 - Lib called: browse_dir 
+06-05-2013, 23:13 - browse_dir() path  : /home/jez/fiji zik/
+06-05-2013, 23:13 - browse_dir() vpath : 
+06-05-2013, 23:13 - POST -> action:browse_dir
+06-05-2013, 23:13 - POST -> args:
+06-05-2013, 23:13 - Lib called: browse_dir 
+06-05-2013, 23:13 - browse_dir() path  : /home/jez/fiji zik/
+06-05-2013, 23:13 - browse_dir() vpath : 
+06-05-2013, 23:14 - POST -> action:browse_dir
+06-05-2013, 23:14 - POST -> args:
+06-05-2013, 23:14 - Lib called: browse_dir 
+06-05-2013, 23:14 - browse_dir() path  : /home/jez/fiji zik/
+06-05-2013, 23:14 - browse_dir() vpath : 
+06-05-2013, 23:14 - POST -> action:browse_dir
+06-05-2013, 23:14 - POST -> args:
+06-05-2013, 23:14 - Lib called: browse_dir 
+06-05-2013, 23:14 - browse_dir() path  : /home/jez/fiji zik/
+06-05-2013, 23:14 - browse_dir() vpath : 
+06-05-2013, 23:14 - POST -> action:browse_dir
+06-05-2013, 23:14 - POST -> args:
+06-05-2013, 23:14 - Lib called: browse_dir 
+06-05-2013, 23:14 - browse_dir() path  : /home/jez/fiji zik/
+06-05-2013, 23:14 - browse_dir() vpath : 
+06-05-2013, 23:14 - POST -> action:browse_dir
+06-05-2013, 23:14 - POST -> args:
+06-05-2013, 23:14 - Lib called: browse_dir 
+06-05-2013, 23:14 - browse_dir() path  : /home/jez/fiji zik/
+06-05-2013, 23:14 - browse_dir() vpath : 
+06-05-2013, 23:14 - POST -> action:browse_dir
+06-05-2013, 23:14 - POST -> args:
+06-05-2013, 23:14 - Lib called: browse_dir 
+06-05-2013, 23:14 - browse_dir() path  : /home/jez/fiji zik/
+06-05-2013, 23:14 - browse_dir() vpath : 
+06-05-2013, 23:14 - POST -> action:browse_dir
+06-05-2013, 23:14 - POST -> args:
+06-05-2013, 23:14 - Lib called: browse_dir 
+06-05-2013, 23:14 - browse_dir() path  : /home/jez/fiji zik/
+06-05-2013, 23:14 - browse_dir() vpath : 
+06-05-2013, 23:14 - POST -> action:browse_dir
+06-05-2013, 23:14 - POST -> args:
+06-05-2013, 23:14 - Lib called: browse_dir 
+06-05-2013, 23:14 - browse_dir() path  : /home/jez/fiji zik/
+06-05-2013, 23:14 - browse_dir() vpath : 
+06-05-2013, 23:14 - POST -> action:browse_dir
+06-05-2013, 23:14 - POST -> args:
+06-05-2013, 23:14 - Lib called: browse_dir 
+06-05-2013, 23:14 - browse_dir() path  : /home/jez/fiji zik/
+06-05-2013, 23:14 - browse_dir() vpath : 
+06-05-2013, 23:14 - POST -> action:browse_dir
+06-05-2013, 23:14 - POST -> args:
+06-05-2013, 23:14 - Lib called: browse_dir 
+06-05-2013, 23:14 - browse_dir() path  : /home/jez/fiji zik/
+06-05-2013, 23:14 - browse_dir() vpath : 
+06-05-2013, 23:14 - POST -> action:browse_dir
+06-05-2013, 23:14 - POST -> args:
+06-05-2013, 23:14 - Lib called: browse_dir 
+06-05-2013, 23:14 - browse_dir() path  : /home/jez/fiji zik/
+06-05-2013, 23:14 - browse_dir() vpath : 
+06-05-2013, 23:14 - POST -> action:browse_dir
+06-05-2013, 23:14 - POST -> args:
+06-05-2013, 23:14 - Lib called: browse_dir 
+06-05-2013, 23:14 - browse_dir() path  : /home/jez/fiji zik/
+06-05-2013, 23:14 - browse_dir() vpath : 
+06-05-2013, 23:14 - POST -> action:browse_dir
+06-05-2013, 23:14 - POST -> args:
+06-05-2013, 23:14 - Lib called: browse_dir 
+06-05-2013, 23:14 - browse_dir() path  : /home/jez/fiji zik/
+06-05-2013, 23:14 - browse_dir() vpath : 
+06-05-2013, 23:14 - POST -> action:browse_dir
+06-05-2013, 23:14 - POST -> args:
+06-05-2013, 23:14 - Lib called: browse_dir 
+06-05-2013, 23:14 - browse_dir() path  : /home/jez/fiji zik/
+06-05-2013, 23:14 - browse_dir() vpath : 
+06-05-2013, 23:14 - POST -> action:browse_dir
+06-05-2013, 23:14 - POST -> args:
+06-05-2013, 23:14 - Lib called: browse_dir 
+06-05-2013, 23:14 - browse_dir() path  : /home/jez/fiji zik/
+06-05-2013, 23:14 - browse_dir() vpath : 
+06-05-2013, 23:14 - POST -> action:browse_dir
+06-05-2013, 23:14 - POST -> args:
+06-05-2013, 23:14 - Lib called: browse_dir 
+06-05-2013, 23:14 - browse_dir() path  : /home/jez/fiji zik/
+06-05-2013, 23:14 - browse_dir() vpath : 
+06-05-2013, 23:14 - POST -> action:browse_dir
+06-05-2013, 23:14 - POST -> args:
+06-05-2013, 23:14 - Lib called: browse_dir 
+06-05-2013, 23:14 - browse_dir() path  : /home/jez/fiji zik/
+06-05-2013, 23:14 - browse_dir() vpath : 
+06-05-2013, 23:14 - POST -> action:browse_dir
+06-05-2013, 23:14 - POST -> args:
+06-05-2013, 23:14 - Lib called: browse_dir 
+06-05-2013, 23:14 - browse_dir() path  : /home/jez/fiji zik/
+06-05-2013, 23:14 - browse_dir() vpath : 
+06-05-2013, 23:14 - POST -> action:browse_dir
+06-05-2013, 23:14 - POST -> args:
+06-05-2013, 23:14 - Lib called: browse_dir 
+06-05-2013, 23:14 - browse_dir() path  : /home/jez/fiji zik/
+06-05-2013, 23:14 - browse_dir() vpath : 
+06-05-2013, 23:15 - POST -> action:browse_dir
+06-05-2013, 23:15 - POST -> args:
+06-05-2013, 23:15 - Lib called: browse_dir 
+06-05-2013, 23:15 - browse_dir() path  : /home/jez/fiji zik/
+06-05-2013, 23:15 - browse_dir() vpath : 
+06-05-2013, 23:15 - POST -> action:browse_dir
+06-05-2013, 23:15 - POST -> args:
+06-05-2013, 23:15 - Lib called: browse_dir 
+06-05-2013, 23:15 - browse_dir() path  : /home/jez/fiji zik/
+06-05-2013, 23:15 - browse_dir() vpath : 
+06-05-2013, 23:15 - POST -> action:browse_dir
+06-05-2013, 23:15 - POST -> args:
+06-05-2013, 23:15 - Lib called: browse_dir 
+06-05-2013, 23:15 - browse_dir() path  : /home/jez/fiji zik/
+06-05-2013, 23:15 - browse_dir() vpath : 
+06-05-2013, 23:15 - POST -> action:browse_dir
+06-05-2013, 23:15 - POST -> args:
+06-05-2013, 23:15 - Lib called: browse_dir 
+06-05-2013, 23:15 - browse_dir() path  : /home/jez/fiji zik/
+06-05-2013, 23:15 - browse_dir() vpath : 
+06-05-2013, 23:15 - POST -> action:browse_dir
+06-05-2013, 23:15 - POST -> args:
+06-05-2013, 23:15 - Lib called: browse_dir 
+06-05-2013, 23:15 - browse_dir() path  : /home/jez/fiji zik/
+06-05-2013, 23:15 - browse_dir() vpath : 
+06-05-2013, 23:15 - POST -> action:browse_dir
+06-05-2013, 23:15 - POST -> args:
+06-05-2013, 23:15 - Lib called: browse_dir 
+06-05-2013, 23:15 - browse_dir() path  : /home/jez/fiji zik/
+06-05-2013, 23:15 - browse_dir() vpath : 
+06-05-2013, 23:16 - POST -> action:browse_dir
+06-05-2013, 23:16 - POST -> args:
+06-05-2013, 23:16 - Lib called: browse_dir 
+06-05-2013, 23:16 - browse_dir() path  : /home/jez/fiji zik/
+06-05-2013, 23:16 - browse_dir() vpath : 
+06-05-2013, 23:17 - POST -> action:browse_dir
+06-05-2013, 23:17 - POST -> args:
+06-05-2013, 23:17 - Lib called: browse_dir 
+06-05-2013, 23:17 - browse_dir() path  : /home/jez/fiji zik/
+06-05-2013, 23:17 - browse_dir() vpath : 
+06-05-2013, 23:17 - POST -> action:browse_dir
+06-05-2013, 23:17 - POST -> args:
+06-05-2013, 23:17 - Lib called: browse_dir 
+06-05-2013, 23:17 - browse_dir() path  : /home/jez/fiji zik/
+06-05-2013, 23:17 - browse_dir() vpath : 
+06-05-2013, 23:18 - POST -> action:browse_dir
+06-05-2013, 23:18 - POST -> args:
+06-05-2013, 23:18 - Lib called: browse_dir 
+06-05-2013, 23:18 - browse_dir() path  : /home/jez/fiji zik/
+06-05-2013, 23:18 - browse_dir() vpath : 
+06-05-2013, 23:19 - POST -> action:browse_dir
+06-05-2013, 23:19 - POST -> args:/3 Doors Down
+06-05-2013, 23:19 - Lib called: browse_dir /3 Doors Down
+06-05-2013, 23:19 - browse_dir() path  : /home/jez/fiji zik/3 Doors Down
+06-05-2013, 23:19 - browse_dir() vpath : /3 Doors Down
+06-05-2013, 23:19 - POST -> action:browse_files
+06-05-2013, 23:19 - POST -> args:/3 Doors Down
+06-05-2013, 23:19 - Lib called: browse_files /3 Doors Down
+06-05-2013, 23:19 - browse_dir() path  : /home/jez/fiji zik/3 Doors Down
+06-05-2013, 23:19 - browse_dir() vpath : /3 Doors Down
+06-05-2013, 23:19 - POST -> action:browse_dir
+06-05-2013, 23:19 - POST -> action:browse_files
+06-05-2013, 23:19 - POST -> args:/3 Doors Down/Away From The Sun
+06-05-2013, 23:19 - POST -> args:/3 Doors Down/Away From The Sun
+06-05-2013, 23:19 - Lib called: browse_dir /3 Doors Down/Away From The Sun
+06-05-2013, 23:19 - Lib called: browse_files /3 Doors Down/Away From The Sun
+06-05-2013, 23:19 - browse_dir() path  : /home/jez/fiji zik/3 Doors Down/Away From The Sun
+06-05-2013, 23:19 - browse_dir() path  : /home/jez/fiji zik/3 Doors Down/Away From The Sun
+06-05-2013, 23:19 - browse_dir() vpath : /3 Doors Down/Away From The Sun
+06-05-2013, 23:19 - browse_dir() vpath : /3 Doors Down/Away From The Sun
+06-05-2013, 23:19 - POST -> action:browse_dir
+06-05-2013, 23:19 - POST -> action:browse_files
+06-05-2013, 23:19 - POST -> args:/3 Doors Down/Away From The Sun/..
+06-05-2013, 23:19 - POST -> args:/3 Doors Down/Away From The Sun/..
+06-05-2013, 23:19 - Lib called: browse_files /3 Doors Down/Away From The Sun/..
+06-05-2013, 23:19 - Lib called: browse_dir /3 Doors Down/Away From The Sun/..
+06-05-2013, 23:19 - browse_dir() path  : /home/jez/fiji zik/3 Doors Down
+06-05-2013, 23:19 - browse_dir() path  : /home/jez/fiji zik/3 Doors Down
+06-05-2013, 23:19 - browse_dir() vpath : /3 Doors Down/Away From The Sun/..
+06-05-2013, 23:19 - browse_dir() vpath : /3 Doors Down/Away From The Sun/..
+06-05-2013, 23:19 - POST -> action:browse_dir
+06-05-2013, 23:19 - POST -> action:browse_files
+06-05-2013, 23:19 - POST -> args:/3 Doors Down/Away From The Sun/../The Better Life
+06-05-2013, 23:19 - POST -> args:/3 Doors Down/Away From The Sun/../The Better Life
+06-05-2013, 23:19 - Lib called: browse_files /3 Doors Down/Away From The Sun/../The Better Life
+06-05-2013, 23:19 - Lib called: browse_dir /3 Doors Down/Away From The Sun/../The Better Life
+06-05-2013, 23:19 - browse_dir() path  : /home/jez/fiji zik/3 Doors Down/The Better Life
+06-05-2013, 23:19 - browse_dir() path  : /home/jez/fiji zik/3 Doors Down/The Better Life
+06-05-2013, 23:19 - browse_dir() vpath : /3 Doors Down/Away From The Sun/../The Better Life
+06-05-2013, 23:19 - browse_dir() vpath : /3 Doors Down/Away From The Sun/../The Better Life
+06-05-2013, 23:19 - POST -> action:browse_dir
+06-05-2013, 23:19 - POST -> args:/3 Doors Down/Away From The Sun/../The Better Life/..
+06-05-2013, 23:19 - POST -> action:browse_files
+06-05-2013, 23:19 - Lib called: browse_dir /3 Doors Down/Away From The Sun/../The Better Life/..
+06-05-2013, 23:19 - POST -> args:/3 Doors Down/Away From The Sun/../The Better Life/..
+06-05-2013, 23:19 - Lib called: browse_files /3 Doors Down/Away From The Sun/../The Better Life/..
+06-05-2013, 23:19 - browse_dir() path  : /home/jez/fiji zik/3 Doors Down
+06-05-2013, 23:19 - browse_dir() path  : /home/jez/fiji zik/3 Doors Down
+06-05-2013, 23:19 - browse_dir() vpath : /3 Doors Down/Away From The Sun/../The Better Life/..
+06-05-2013, 23:19 - browse_dir() vpath : /3 Doors Down/Away From The Sun/../The Better Life/..
+06-05-2013, 23:19 - POST -> action:browse_dir
+06-05-2013, 23:19 - POST -> args:/3 Doors Down/Away From The Sun/../The Better Life/../..
+06-05-2013, 23:19 - Lib called: browse_dir /3 Doors Down/Away From The Sun/../The Better Life/../..
+06-05-2013, 23:19 - POST -> action:browse_files
+06-05-2013, 23:19 - POST -> args:/3 Doors Down/Away From The Sun/../The Better Life/../..
+06-05-2013, 23:19 - browse_dir() path  : /home/jez/fiji zik/
+06-05-2013, 23:19 - Lib called: browse_files /3 Doors Down/Away From The Sun/../The Better Life/../..
+06-05-2013, 23:19 - browse_dir() vpath : /3 Doors Down/Away From The Sun/../The Better Life/../..
+06-05-2013, 23:19 - browse_dir() path  : /home/jez/fiji zik/
+06-05-2013, 23:19 - browse_dir() vpath : /3 Doors Down/Away From The Sun/../The Better Life/../..
+06-05-2013, 23:23 - POST -> action:browse_dir
+06-05-2013, 23:23 - POST -> args:
+06-05-2013, 23:23 - Lib called: browse_dir 
+06-05-2013, 23:23 - browse_dir() path  : /home/jez/fiji zik/
+06-05-2013, 23:23 - browse_dir() vpath : 
+06-05-2013, 23:23 - POST -> action:browse_dir
+06-05-2013, 23:23 - POST -> args:/3 Doors Down
+06-05-2013, 23:23 - Lib called: browse_dir /3 Doors Down
+06-05-2013, 23:23 - browse_dir() path  : /home/jez/fiji zik/3 Doors Down
+06-05-2013, 23:23 - browse_dir() vpath : /3 Doors Down
+06-05-2013, 23:23 - POST -> action:browse_files
+06-05-2013, 23:23 - POST -> args:/3 Doors Down
+06-05-2013, 23:23 - Lib called: browse_files /3 Doors Down
+06-05-2013, 23:23 - browse_dir() path  : /home/jez/fiji zik/3 Doors Down
+06-05-2013, 23:23 - browse_dir() vpath : /3 Doors Down
+06-05-2013, 23:24 - POST -> action:browse_files
+06-05-2013, 23:24 - POST -> action:browse_dir
+06-05-2013, 23:24 - POST -> args:/3 Doors Down/Away From The Sun
+06-05-2013, 23:24 - POST -> args:/3 Doors Down/Away From The Sun
+06-05-2013, 23:24 - Lib called: browse_files /3 Doors Down/Away From The Sun
+06-05-2013, 23:24 - Lib called: browse_dir /3 Doors Down/Away From The Sun
+06-05-2013, 23:24 - browse_dir() path  : /home/jez/fiji zik/3 Doors Down/Away From The Sun
+06-05-2013, 23:24 - browse_dir() path  : /home/jez/fiji zik/3 Doors Down/Away From The Sun
+06-05-2013, 23:24 - browse_dir() vpath : /3 Doors Down/Away From The Sun
+06-05-2013, 23:24 - browse_dir() vpath : /3 Doors Down/Away From The Sun
+06-05-2013, 23:24 - POST -> action:browse_files
+06-05-2013, 23:24 - POST -> action:browse_dir
+06-05-2013, 23:24 - POST -> args:/3 Doors Down/Away From The Sun/..
+06-05-2013, 23:24 - POST -> args:/3 Doors Down/Away From The Sun/..
+06-05-2013, 23:24 - Lib called: browse_dir /3 Doors Down/Away From The Sun/..
+06-05-2013, 23:24 - Lib called: browse_files /3 Doors Down/Away From The Sun/..
+06-05-2013, 23:24 - browse_dir() path  : /home/jez/fiji zik/3 Doors Down
+06-05-2013, 23:24 - browse_dir() path  : /home/jez/fiji zik/3 Doors Down
+06-05-2013, 23:24 - browse_dir() vpath : /3 Doors Down/Away From The Sun/..
+06-05-2013, 23:24 - browse_dir() vpath : /3 Doors Down/Away From The Sun/..
+06-05-2013, 23:24 - POST -> action:browse_dir
+06-05-2013, 23:24 - POST -> action:browse_files
+06-05-2013, 23:24 - POST -> args:/3 Doors Down/Away From The Sun/../..
+06-05-2013, 23:24 - POST -> args:/3 Doors Down/Away From The Sun/../..
+06-05-2013, 23:24 - Lib called: browse_files /3 Doors Down/Away From The Sun/../..
+06-05-2013, 23:24 - Lib called: browse_dir /3 Doors Down/Away From The Sun/../..
+06-05-2013, 23:24 - browse_dir() path  : /home/jez/fiji zik/
+06-05-2013, 23:24 - browse_dir() path  : /home/jez/fiji zik/
+06-05-2013, 23:24 - browse_dir() vpath : /3 Doors Down/Away From The Sun/../..
+06-05-2013, 23:24 - browse_dir() vpath : /3 Doors Down/Away From The Sun/../..
+06-05-2013, 23:24 - POST -> action:browse_dir
+06-05-2013, 23:24 - POST -> args:
+06-05-2013, 23:24 - Lib called: browse_dir 
+06-05-2013, 23:24 - browse_dir() path  : /home/jez/fiji zik/
+06-05-2013, 23:24 - browse_dir() vpath : 
+06-05-2013, 23:24 - POST -> action:browse_dir
+06-05-2013, 23:24 - POST -> args:/AAA_tests
+06-05-2013, 23:24 - Lib called: browse_dir /AAA_tests
+06-05-2013, 23:24 - browse_dir() path  : /home/jez/fiji zik/AAA_tests
+06-05-2013, 23:24 - POST -> action:browse_files
+06-05-2013, 23:24 - browse_dir() vpath : /AAA_tests
+06-05-2013, 23:24 - POST -> args:/AAA_tests
+06-05-2013, 23:24 - Lib called: browse_files /AAA_tests
+06-05-2013, 23:24 - browse_dir() path  : /home/jez/fiji zik/AAA_tests
+06-05-2013, 23:24 - browse_dir() vpath : /AAA_tests
+06-05-2013, 23:25 - POST -> action:browse_dir
+06-05-2013, 23:25 - POST -> args:/AAA_tests/..
+06-05-2013, 23:25 - POST -> action:browse_files
+06-05-2013, 23:25 - Lib called: browse_dir /AAA_tests/..
+06-05-2013, 23:25 - POST -> args:/AAA_tests/..
+06-05-2013, 23:25 - Lib called: browse_files /AAA_tests/..
+06-05-2013, 23:25 - browse_dir() path  : /home/jez/fiji zik/
+06-05-2013, 23:25 - browse_dir() vpath : /AAA_tests/..
+06-05-2013, 23:25 - browse_dir() path  : /home/jez/fiji zik/
+06-05-2013, 23:25 - browse_dir() vpath : /AAA_tests/..
+06-05-2013, 23:25 - POST -> action:browse_dir
+06-05-2013, 23:25 - POST -> args:/AAA_tests/../3 Doors Down
+06-05-2013, 23:25 - POST -> action:browse_files
+06-05-2013, 23:25 - Lib called: browse_dir /AAA_tests/../3 Doors Down
+06-05-2013, 23:25 - POST -> args:/AAA_tests/../3 Doors Down
+06-05-2013, 23:25 - Lib called: browse_files /AAA_tests/../3 Doors Down
+06-05-2013, 23:25 - browse_dir() path  : /home/jez/fiji zik/3 Doors Down
+06-05-2013, 23:25 - browse_dir() vpath : /AAA_tests/../3 Doors Down
+06-05-2013, 23:25 - browse_dir() path  : /home/jez/fiji zik/3 Doors Down
+06-05-2013, 23:25 - browse_dir() vpath : /AAA_tests/../3 Doors Down
+06-05-2013, 23:25 - POST -> action:browse_dir
+06-05-2013, 23:25 - POST -> action:browse_files
+06-05-2013, 23:25 - POST -> args:/AAA_tests/../3 Doors Down/Away From The Sun
+06-05-2013, 23:25 - POST -> args:/AAA_tests/../3 Doors Down/Away From The Sun
+06-05-2013, 23:25 - Lib called: browse_dir /AAA_tests/../3 Doors Down/Away From The Sun
+06-05-2013, 23:25 - Lib called: browse_files /AAA_tests/../3 Doors Down/Away From The Sun
+06-05-2013, 23:25 - browse_dir() path  : /home/jez/fiji zik/3 Doors Down/Away From The Sun
+06-05-2013, 23:25 - browse_dir() path  : /home/jez/fiji zik/3 Doors Down/Away From The Sun
+06-05-2013, 23:25 - browse_dir() vpath : /AAA_tests/../3 Doors Down/Away From The Sun
+06-05-2013, 23:25 - browse_dir() vpath : /AAA_tests/../3 Doors Down/Away From The Sun
+06-05-2013, 23:26 - POST -> action:browse_dir
+06-05-2013, 23:26 - POST -> args:
+06-05-2013, 23:26 - Lib called: browse_dir 
+06-05-2013, 23:26 - browse_dir() path  : /home/jez/fiji zik/
+06-05-2013, 23:26 - browse_dir() vpath : 
+06-05-2013, 23:26 - POST -> action:browse_files
+06-05-2013, 23:26 - POST -> action:browse_dir
+06-05-2013, 23:26 - POST -> args:/Air
+06-05-2013, 23:26 - POST -> args:/Air
+06-05-2013, 23:26 - Lib called: browse_files /Air
+06-05-2013, 23:26 - Lib called: browse_dir /Air
+06-05-2013, 23:26 - browse_dir() path  : /home/jez/fiji zik/Air
+06-05-2013, 23:26 - browse_dir() path  : /home/jez/fiji zik/Air
+06-05-2013, 23:26 - browse_dir() vpath : /Air
+06-05-2013, 23:26 - browse_dir() vpath : /Air
+06-05-2013, 23:26 - POST -> action:browse_dir
+06-05-2013, 23:26 - POST -> args:/Air/10000 Hz Legend
+06-05-2013, 23:26 - Lib called: browse_dir /Air/10000 Hz Legend
+06-05-2013, 23:26 - POST -> action:browse_files
+06-05-2013, 23:26 - POST -> args:/Air/10000 Hz Legend
+06-05-2013, 23:26 - browse_dir() path  : /home/jez/fiji zik/Air/10000 Hz Legend
+06-05-2013, 23:26 - Lib called: browse_files /Air/10000 Hz Legend
+06-05-2013, 23:26 - browse_dir() vpath : /Air/10000 Hz Legend
+06-05-2013, 23:26 - browse_dir() path  : /home/jez/fiji zik/Air/10000 Hz Legend
+06-05-2013, 23:26 - browse_dir() vpath : /Air/10000 Hz Legend
+06-05-2013, 23:37 - POST -> action:browse_dir
+06-05-2013, 23:37 - POST -> args:
+06-05-2013, 23:37 - Lib called: browse_dir 
+06-05-2013, 23:37 - browse_dir() path  : /home/jez/fiji zik/
+06-05-2013, 23:37 - browse_dir() vpath : 
+06-05-2013, 23:38 - POST -> action:browse_files
+06-05-2013, 23:38 - POST -> args:/Aerosmith
+06-05-2013, 23:38 - Lib called: browse_files /Aerosmith
+06-05-2013, 23:38 - browse_dir() path  : /home/jez/fiji zik/Aerosmith
+06-05-2013, 23:38 - browse_dir() vpath : /Aerosmith
+06-05-2013, 23:38 - POST -> action:browse_dir
+06-05-2013, 23:38 - POST -> args:/Aerosmith
+06-05-2013, 23:38 - Lib called: browse_dir /Aerosmith
+06-05-2013, 23:38 - browse_dir() path  : /home/jez/fiji zik/Aerosmith
+06-05-2013, 23:38 - browse_dir() vpath : /Aerosmith
+06-05-2013, 23:38 - POST -> action:browse_dir
+06-05-2013, 23:38 - POST -> action:browse_files
+06-05-2013, 23:38 - POST -> args:/Aerosmith/Live and Unreleased
+06-05-2013, 23:38 - POST -> args:/Aerosmith/Live and Unreleased
+06-05-2013, 23:38 - Lib called: browse_dir /Aerosmith/Live and Unreleased
+06-05-2013, 23:38 - Lib called: browse_files /Aerosmith/Live and Unreleased
+06-05-2013, 23:38 - browse_dir() path  : /home/jez/fiji zik/Aerosmith/Live and Unreleased
+06-05-2013, 23:38 - browse_dir() path  : /home/jez/fiji zik/Aerosmith/Live and Unreleased
+06-05-2013, 23:38 - browse_dir() vpath : /Aerosmith/Live and Unreleased
+06-05-2013, 23:38 - browse_dir() vpath : /Aerosmith/Live and Unreleased
+06-05-2013, 23:38 - POST -> action:browse_files
+06-05-2013, 23:38 - POST -> args:/Aerosmith/Live and Unreleased/..
+06-05-2013, 23:38 - Lib called: browse_files /Aerosmith/Live and Unreleased/..
+06-05-2013, 23:38 - browse_dir() path  : /home/jez/fiji zik/Aerosmith
+06-05-2013, 23:38 - POST -> action:browse_dir
+06-05-2013, 23:38 - POST -> args:/Aerosmith/Live and Unreleased/..
+06-05-2013, 23:38 - Lib called: browse_dir /Aerosmith/Live and Unreleased/..
+06-05-2013, 23:38 - browse_dir() path  : /home/jez/fiji zik/Aerosmith
+06-05-2013, 23:38 - browse_dir() vpath : /Aerosmith/Live and Unreleased/..
+06-05-2013, 23:38 - browse_dir() vpath : /Aerosmith/Live and Unreleased/..
+06-05-2013, 23:38 - POST -> action:browse_dir
+06-05-2013, 23:38 - POST -> action:browse_files
+06-05-2013, 23:38 - POST -> args:/Aerosmith/Live and Unreleased/Live and Unreleased
+06-05-2013, 23:38 - Lib called: browse_dir /Aerosmith/Live and Unreleased/Live and Unreleased
+06-05-2013, 23:38 - POST -> args:/Aerosmith/Live and Unreleased/Live and Unreleased
+06-05-2013, 23:38 - Lib called: browse_files /Aerosmith/Live and Unreleased/Live and Unreleased
+06-05-2013, 23:38 - browse_dir() path  : /home/jez/fiji zik/
+06-05-2013, 23:38 - browse_dir() vpath : 
+06-05-2013, 23:38 - browse_dir() path  : /home/jez/fiji zik/
+06-05-2013, 23:38 - browse_dir() vpath : 
+06-05-2013, 23:38 - POST -> action:browse_dir
+06-05-2013, 23:38 - POST -> args:/Air
+06-05-2013, 23:38 - Lib called: browse_dir /Air
+06-05-2013, 23:38 - POST -> action:browse_files
+06-05-2013, 23:38 - POST -> args:/Air
+06-05-2013, 23:38 - browse_dir() path  : /home/jez/fiji zik/Air
+06-05-2013, 23:38 - Lib called: browse_files /Air
+06-05-2013, 23:38 - browse_dir() vpath : /Air
+06-05-2013, 23:38 - browse_dir() path  : /home/jez/fiji zik/Air
+06-05-2013, 23:38 - browse_dir() vpath : /Air
+06-05-2013, 23:38 - POST -> action:browse_dir
+06-05-2013, 23:38 - POST -> action:browse_files
+06-05-2013, 23:38 - POST -> args:/Air/Everybody Hertz
+06-05-2013, 23:38 - POST -> args:/Air/Everybody Hertz
+06-05-2013, 23:38 - Lib called: browse_dir /Air/Everybody Hertz
+06-05-2013, 23:38 - Lib called: browse_files /Air/Everybody Hertz
+06-05-2013, 23:38 - browse_dir() path  : /home/jez/fiji zik/Air/Everybody Hertz
+06-05-2013, 23:38 - browse_dir() path  : /home/jez/fiji zik/Air/Everybody Hertz
+06-05-2013, 23:38 - browse_dir() vpath : /Air/Everybody Hertz
+06-05-2013, 23:38 - browse_dir() vpath : /Air/Everybody Hertz
+06-05-2013, 23:38 - POST -> action:browse_dir
+06-05-2013, 23:38 - POST -> args:/Air/Everybody Hertz/..
+06-05-2013, 23:38 - Lib called: browse_dir /Air/Everybody Hertz/..
+06-05-2013, 23:38 - browse_dir() path  : /home/jez/fiji zik/Air
+06-05-2013, 23:38 - browse_dir() vpath : /Air/Everybody Hertz/..
+06-05-2013, 23:38 - POST -> action:browse_files
+06-05-2013, 23:38 - POST -> args:/Air/Everybody Hertz/..
+06-05-2013, 23:38 - Lib called: browse_files /Air/Everybody Hertz/..
+06-05-2013, 23:38 - browse_dir() path  : /home/jez/fiji zik/Air
+06-05-2013, 23:38 - browse_dir() vpath : /Air/Everybody Hertz/..
+06-05-2013, 23:38 - POST -> action:browse_dir
+06-05-2013, 23:38 - POST -> action:browse_files
+06-05-2013, 23:38 - POST -> args:/Air/Everybody Hertz/../Air - Pocket Symphony (2007)
+06-05-2013, 23:38 - POST -> args:/Air/Everybody Hertz/../Air - Pocket Symphony (2007)
+06-05-2013, 23:38 - Lib called: browse_dir /Air/Everybody Hertz/../Air - Pocket Symphony (2007)
+06-05-2013, 23:38 - Lib called: browse_files /Air/Everybody Hertz/../Air - Pocket Symphony (2007)
+06-05-2013, 23:38 - browse_dir() path  : /home/jez/fiji zik/Air/Air - Pocket Symphony (2007)
+06-05-2013, 23:38 - browse_dir() path  : /home/jez/fiji zik/Air/Air - Pocket Symphony (2007)
+06-05-2013, 23:38 - browse_dir() vpath : /Air/Everybody Hertz/../Air - Pocket Symphony (2007)
+06-05-2013, 23:38 - browse_dir() vpath : /Air/Everybody Hertz/../Air - Pocket Symphony (2007)
+06-05-2013, 23:38 - POST -> action:browse_dir
+06-05-2013, 23:38 - POST -> action:browse_files
+06-05-2013, 23:38 - POST -> args:/Air/Everybody Hertz/../Air - Pocket Symphony (2007)/..
+06-05-2013, 23:38 - POST -> args:/Air/Everybody Hertz/../Air - Pocket Symphony (2007)/..
+06-05-2013, 23:38 - Lib called: browse_files /Air/Everybody Hertz/../Air - Pocket Symphony (2007)/..
+06-05-2013, 23:38 - Lib called: browse_dir /Air/Everybody Hertz/../Air - Pocket Symphony (2007)/..
+06-05-2013, 23:38 - browse_dir() path  : /home/jez/fiji zik/Air
+06-05-2013, 23:38 - browse_dir() path  : /home/jez/fiji zik/Air
+06-05-2013, 23:38 - browse_dir() vpath : /Air/Everybody Hertz/../Air - Pocket Symphony (2007)/..
+06-05-2013, 23:38 - browse_dir() vpath : /Air/Everybody Hertz/../Air - Pocket Symphony (2007)/..
+06-05-2013, 23:38 - POST -> action:browse_dir
+06-05-2013, 23:38 - POST -> args:/Air/Everybody Hertz/../Air - Pocket Symphony (2007)/../..
+06-05-2013, 23:38 - Lib called: browse_dir /Air/Everybody Hertz/../Air - Pocket Symphony (2007)/../..
+06-05-2013, 23:38 - POST -> action:browse_files
+06-05-2013, 23:38 - POST -> args:/Air/Everybody Hertz/../Air - Pocket Symphony (2007)/../..
+06-05-2013, 23:38 - browse_dir() path  : /home/jez/fiji zik/
+06-05-2013, 23:38 - Lib called: browse_files /Air/Everybody Hertz/../Air - Pocket Symphony (2007)/../..
+06-05-2013, 23:38 - browse_dir() vpath : /Air/Everybody Hertz/../Air - Pocket Symphony (2007)/../..
+06-05-2013, 23:38 - browse_dir() path  : /home/jez/fiji zik/
+06-05-2013, 23:38 - browse_dir() vpath : /Air/Everybody Hertz/../Air - Pocket Symphony (2007)/../..
+06-05-2013, 23:38 - POST -> action:browse_dir
+06-05-2013, 23:38 - POST -> args:/Air/Everybody Hertz/../Air - Pocket Symphony (2007)/../../3 Doors Down
+06-05-2013, 23:38 - Lib called: browse_dir /Air/Everybody Hertz/../Air - Pocket Symphony (2007)/../../3 Doors Down
+06-05-2013, 23:38 - POST -> action:browse_files
+06-05-2013, 23:38 - browse_dir() path  : /home/jez/fiji zik/3 Doors Down
+06-05-2013, 23:38 - POST -> args:/Air/Everybody Hertz/../Air - Pocket Symphony (2007)/../../3 Doors Down
+06-05-2013, 23:38 - browse_dir() vpath : /Air/Everybody Hertz/../Air - Pocket Symphony (2007)/../../3 Doors Down
+06-05-2013, 23:38 - Lib called: browse_files /Air/Everybody Hertz/../Air - Pocket Symphony (2007)/../../3 Doors Down
+06-05-2013, 23:38 - browse_dir() path  : /home/jez/fiji zik/3 Doors Down
+06-05-2013, 23:38 - browse_dir() vpath : /Air/Everybody Hertz/../Air - Pocket Symphony (2007)/../../3 Doors Down
+06-05-2013, 23:38 - POST -> action:browse_dir
+06-05-2013, 23:38 - POST -> action:browse_files
+06-05-2013, 23:38 - POST -> args:/Air/Everybody Hertz/../Air - Pocket Symphony (2007)/../../3 Doors Down/..
+06-05-2013, 23:38 - POST -> args:/Air/Everybody Hertz/../Air - Pocket Symphony (2007)/../../3 Doors Down/..
+06-05-2013, 23:38 - Lib called: browse_files /Air/Everybody Hertz/../Air - Pocket Symphony (2007)/../../3 Doors Down/..
+06-05-2013, 23:38 - Lib called: browse_dir /Air/Everybody Hertz/../Air - Pocket Symphony (2007)/../../3 Doors Down/..
+06-05-2013, 23:38 - browse_dir() path  : /home/jez/fiji zik/
+06-05-2013, 23:38 - browse_dir() path  : /home/jez/fiji zik/
+06-05-2013, 23:38 - browse_dir() vpath : /Air/Everybody Hertz/../Air - Pocket Symphony (2007)/../../3 Doors Down/..
+06-05-2013, 23:38 - browse_dir() vpath : /Air/Everybody Hertz/../Air - Pocket Symphony (2007)/../../3 Doors Down/..
+06-05-2013, 23:49 - POST -> action:browse_dir
+06-05-2013, 23:49 - POST -> args:
+06-05-2013, 23:49 - Lib called: browse_dir 
+06-05-2013, 23:49 - browse_dir() path  : /home/jez/fiji zik/
+06-05-2013, 23:49 - browse_dir() vpath : 
+06-05-2013, 23:51 - POST -> action:browse_dir
+06-05-2013, 23:51 - POST -> args:
+06-05-2013, 23:51 - Lib called: browse_dir 
+06-05-2013, 23:51 - browse_dir() path  : /home/jez/fiji zik/
+06-05-2013, 23:51 - browse_dir() vpath : 
+06-05-2013, 23:52 - POST -> action:browse_dir
+06-05-2013, 23:52 - POST -> args:
+06-05-2013, 23:52 - Lib called: browse_dir 
+06-05-2013, 23:52 - browse_dir() path  : /home/jez/fiji zik/
+06-05-2013, 23:52 - browse_dir() vpath : 
+06-05-2013, 23:52 - POST -> action:browse_dir
+06-05-2013, 23:52 - POST -> args:
+06-05-2013, 23:52 - Lib called: browse_dir 
+06-05-2013, 23:52 - browse_dir() path  : /home/jez/fiji zik/
+06-05-2013, 23:52 - browse_dir() vpath : 
+06-05-2013, 23:52 - POST -> action:browse_dir
+06-05-2013, 23:52 - POST -> args:
+06-05-2013, 23:52 - Lib called: browse_dir 
+06-05-2013, 23:52 - browse_dir() path  : /home/jez/fiji zik/
+06-05-2013, 23:52 - browse_dir() vpath : 
+06-05-2013, 23:54 - POST -> action:browse_dir
+06-05-2013, 23:54 - POST -> args:
+06-05-2013, 23:54 - Lib called: browse_dir 
+06-05-2013, 23:54 - browse_dir() path  : /home/jez/fiji zik/
+06-05-2013, 23:54 - browse_dir() vpath : 
+06-05-2013, 23:57 - POST -> action:browse_dir
+06-05-2013, 23:57 - POST -> args:/Coldplay
+06-05-2013, 23:57 - Lib called: browse_dir /Coldplay
+06-05-2013, 23:57 - browse_dir() path  : /home/jez/fiji zik/Coldplay
+06-05-2013, 23:57 - browse_dir() vpath : /Coldplay
+06-05-2013, 23:57 - POST -> action:browse_files
+06-05-2013, 23:57 - POST -> args:/Coldplay
+06-05-2013, 23:57 - Lib called: browse_files /Coldplay
+06-05-2013, 23:57 - browse_dir() path  : /home/jez/fiji zik/Coldplay
+06-05-2013, 23:57 - browse_dir() vpath : /Coldplay
+06-05-2013, 23:58 - POST -> action:browse_dir
+06-05-2013, 23:58 - POST -> args:/Coldplay/..
+06-05-2013, 23:58 - Lib called: browse_dir /Coldplay/..
+06-05-2013, 23:58 - browse_dir() path  : /home/jez/fiji zik/
+06-05-2013, 23:58 - browse_dir() vpath : /Coldplay/..
+06-05-2013, 23:58 - POST -> action:browse_files
+06-05-2013, 23:58 - POST -> args:/Coldplay/..
+06-05-2013, 23:58 - Lib called: browse_files /Coldplay/..
+06-05-2013, 23:58 - browse_dir() path  : /home/jez/fiji zik/
+06-05-2013, 23:58 - browse_dir() vpath : /Coldplay/..
+06-05-2013, 23:58 - POST -> action:browse_dir
+06-05-2013, 23:58 - POST -> action:browse_files
+06-05-2013, 23:58 - POST -> args:/Coldplay/../Darkel
+06-05-2013, 23:58 - POST -> args:/Coldplay/../Darkel
+06-05-2013, 23:58 - Lib called: browse_dir /Coldplay/../Darkel
+06-05-2013, 23:58 - Lib called: browse_files /Coldplay/../Darkel
+06-05-2013, 23:58 - browse_dir() path  : /home/jez/fiji zik/Darkel
+06-05-2013, 23:58 - browse_dir() path  : /home/jez/fiji zik/Darkel
+06-05-2013, 23:58 - browse_dir() vpath : /Coldplay/../Darkel
+06-05-2013, 23:58 - browse_dir() vpath : /Coldplay/../Darkel
+06-05-2013, 23:58 - POST -> action:browse_dir
+06-05-2013, 23:58 - POST -> action:browse_files
+06-05-2013, 23:58 - POST -> args:/Coldplay/../Darkel/Darkel
+06-05-2013, 23:58 - POST -> args:/Coldplay/../Darkel/Darkel
+06-05-2013, 23:58 - Lib called: browse_files /Coldplay/../Darkel/Darkel
+06-05-2013, 23:58 - Lib called: browse_dir /Coldplay/../Darkel/Darkel
+06-05-2013, 23:58 - browse_dir() path  : /home/jez/fiji zik/Darkel/Darkel
+06-05-2013, 23:58 - browse_dir() path  : /home/jez/fiji zik/Darkel/Darkel
+06-05-2013, 23:58 - browse_dir() vpath : /Coldplay/../Darkel/Darkel
+06-05-2013, 23:58 - browse_dir() vpath : /Coldplay/../Darkel/Darkel
+07-05-2013, 00:00 - POST -> action:browse_dir
+07-05-2013, 00:00 - POST -> args:
+07-05-2013, 00:00 - Lib called: browse_dir 
+07-05-2013, 00:00 - browse_dir() path  : /home/jez/fiji zik/
+07-05-2013, 00:00 - browse_dir() vpath : 
+07-05-2013, 00:02 - POST -> action:browse_dir
+07-05-2013, 00:02 - POST -> args:
+07-05-2013, 00:02 - Lib called: browse_dir 
+07-05-2013, 00:02 - browse_dir() path  : /home/jez/fiji zik/
+07-05-2013, 00:02 - browse_dir() vpath : 
+07-05-2013, 00:03 - POST -> action:browse_dir
+07-05-2013, 00:03 - POST -> args:
+07-05-2013, 00:03 - Lib called: browse_dir 
+07-05-2013, 00:03 - browse_dir() path  : /home/jez/fiji zik/
+07-05-2013, 00:03 - browse_dir() vpath : 
+07-05-2013, 00:03 - POST -> action:browse_dir
+07-05-2013, 00:03 - POST -> args:/Herbie Hancock
+07-05-2013, 00:03 - Lib called: browse_dir /Herbie Hancock
+07-05-2013, 00:03 - browse_dir() path  : /home/jez/fiji zik/Herbie Hancock
+07-05-2013, 00:03 - browse_dir() vpath : /Herbie Hancock
+07-05-2013, 00:03 - POST -> action:browse_files
+07-05-2013, 00:03 - POST -> args:/Herbie Hancock
+07-05-2013, 00:03 - Lib called: browse_files /Herbie Hancock
+07-05-2013, 00:03 - browse_dir() path  : /home/jez/fiji zik/Herbie Hancock
+07-05-2013, 00:03 - browse_dir() vpath : /Herbie Hancock
+07-05-2013, 00:03 - POST -> action:browse_dir
+07-05-2013, 00:03 - POST -> args:/Herbie Hancock/1965 - Herbie Hancock - Maiden Voyage
+07-05-2013, 00:03 - POST -> action:browse_files
+07-05-2013, 00:03 - POST -> args:/Herbie Hancock/1965 - Herbie Hancock - Maiden Voyage
+07-05-2013, 00:03 - Lib called: browse_dir /Herbie Hancock/1965 - Herbie Hancock - Maiden Voyage
+07-05-2013, 00:03 - Lib called: browse_files /Herbie Hancock/1965 - Herbie Hancock - Maiden Voyage
+07-05-2013, 00:03 - browse_dir() path  : /home/jez/fiji zik/Herbie Hancock/1965 - Herbie Hancock - Maiden Voyage
+07-05-2013, 00:03 - browse_dir() path  : /home/jez/fiji zik/Herbie Hancock/1965 - Herbie Hancock - Maiden Voyage
+07-05-2013, 00:03 - browse_dir() vpath : /Herbie Hancock/1965 - Herbie Hancock - Maiden Voyage
+07-05-2013, 00:03 - browse_dir() vpath : /Herbie Hancock/1965 - Herbie Hancock - Maiden Voyage
+07-05-2013, 00:03 - POST -> action:browse_dir
+07-05-2013, 00:03 - POST -> args:
+07-05-2013, 00:03 - Lib called: browse_dir 
+07-05-2013, 00:03 - browse_dir() path  : /home/jez/fiji zik/
+07-05-2013, 00:03 - browse_dir() vpath : 
+07-05-2013, 00:04 - POST -> action:browse_dir
+07-05-2013, 00:04 - POST -> args:
+07-05-2013, 00:04 - Lib called: browse_dir 
+07-05-2013, 00:04 - browse_dir() path  : /home/jez/fiji zik/
+07-05-2013, 00:04 - browse_dir() vpath : 
+07-05-2013, 00:04 - POST -> action:browse_dir
+07-05-2013, 00:04 - POST -> args:/Aerosmith
+07-05-2013, 00:04 - Lib called: browse_dir /Aerosmith
+07-05-2013, 00:04 - browse_dir() path  : /home/jez/fiji zik/Aerosmith
+07-05-2013, 00:04 - browse_dir() vpath : /Aerosmith
+07-05-2013, 00:04 - POST -> action:browse_files
+07-05-2013, 00:04 - POST -> args:/Aerosmith
+07-05-2013, 00:04 - Lib called: browse_files /Aerosmith
+07-05-2013, 00:04 - browse_dir() path  : /home/jez/fiji zik/Aerosmith
+07-05-2013, 00:04 - browse_dir() vpath : /Aerosmith
+07-05-2013, 00:04 - POST -> action:browse_files
+07-05-2013, 00:04 - POST -> action:browse_dir
+07-05-2013, 00:04 - POST -> args:/Aerosmith/..
+07-05-2013, 00:04 - POST -> args:/Aerosmith/..
+07-05-2013, 00:04 - Lib called: browse_files /Aerosmith/..
+07-05-2013, 00:04 - Lib called: browse_dir /Aerosmith/..
+07-05-2013, 00:04 - browse_dir() path  : /home/jez/fiji zik/
+07-05-2013, 00:04 - browse_dir() path  : /home/jez/fiji zik/
+07-05-2013, 00:04 - browse_dir() vpath : /Aerosmith/..
+07-05-2013, 00:04 - browse_dir() vpath : /Aerosmith/..
+07-05-2013, 00:04 - POST -> action:browse_dir
+07-05-2013, 00:04 - POST -> action:browse_files
+07-05-2013, 00:04 - POST -> args:/Aerosmith/../Jeff Beck
+07-05-2013, 00:04 - POST -> args:/Aerosmith/../Jeff Beck
+07-05-2013, 00:04 - Lib called: browse_dir /Aerosmith/../Jeff Beck
+07-05-2013, 00:04 - Lib called: browse_files /Aerosmith/../Jeff Beck
+07-05-2013, 00:04 - browse_dir() path  : /home/jez/fiji zik/Jeff Beck
+07-05-2013, 00:04 - browse_dir() path  : /home/jez/fiji zik/Jeff Beck
+07-05-2013, 00:04 - browse_dir() vpath : /Aerosmith/../Jeff Beck
+07-05-2013, 00:04 - browse_dir() vpath : /Aerosmith/../Jeff Beck
+07-05-2013, 00:04 - POST -> action:browse_dir
+07-05-2013, 00:04 - POST -> args:/Aerosmith/../Jeff Beck/Beck-Ola
+07-05-2013, 00:04 - Lib called: browse_dir /Aerosmith/../Jeff Beck/Beck-Ola
+07-05-2013, 00:04 - browse_dir() path  : /home/jez/fiji zik/Jeff Beck/Beck-Ola
+07-05-2013, 00:04 - POST -> action:browse_files
+07-05-2013, 00:04 - browse_dir() vpath : /Aerosmith/../Jeff Beck/Beck-Ola
+07-05-2013, 00:04 - POST -> args:/Aerosmith/../Jeff Beck/Beck-Ola
+07-05-2013, 00:04 - Lib called: browse_files /Aerosmith/../Jeff Beck/Beck-Ola
+07-05-2013, 00:04 - browse_dir() path  : /home/jez/fiji zik/Jeff Beck/Beck-Ola
+07-05-2013, 00:04 - browse_dir() vpath : /Aerosmith/../Jeff Beck/Beck-Ola

@@ -37,3 +37,7 @@ body {
 #cover {
 	display: none;
 }*/
+
+#ui_Header {
+	background-image: url(lib/pics/header.jpg);
+}
