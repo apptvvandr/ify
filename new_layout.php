@@ -63,6 +63,8 @@
     				</div>
     				<div class="span4">
     					<p>User actions</p>
+    					<audio id="me_player" src="zik.mp3" type="audio/mp3" controls="controls"></audio>
+    					<!--audio id="me_player" src="zik.mp3" type="audio/mp3" controls="controls"></audio -->
     				</div>
     			</div>
     		</div>
@@ -230,6 +232,9 @@
     			</p>
     		</div>
     	</footer>
+
+
+
     </div>
 
 		<!-- Scripts -->
