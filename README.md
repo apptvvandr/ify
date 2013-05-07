@@ -6,6 +6,5 @@ As I'm learning PHP/JavaScript/JQuery/CSS/Bootstrap... It may not be a very beau
 
 
 REQUIREMENTS
-php id3: http://www.php.net/manual/fr/id3.installation.php
-
+No dependences yet, all included :-)
 

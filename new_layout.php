@@ -29,7 +29,7 @@
 
 
 
-  <body>
+  <body><div id="ify">
 
 <!-- Header: Begin  -->
   <header class="row-fluid navbar-fixed-top" id="ui_Player">
@@ -67,98 +67,81 @@
     			</div>
     		</div>
   </header>
-<!-- Header: End  -->
 
 <!-- Main: Begin  -->
     	<div class="row-fluid" id="ui_Main">
-    		<div class="span4" id="ui_Browser">
-    			<div class="row-fluid">
-    			</div>
-    			<table class="table">
-    				<tbody>
-    					<tr>
-    					</tr>
-    				</tbody>
-    			</table>
 
 	<!-- ui_Browser: BEGIN -->
-    			<div class="row-fluid" id="ui_Left_pane">
-    				<div class="span6">
-    					<div class="control-group">
-    						<div class="controls">
-    						</div>
-    					</div>
-    					<select class="pull-left">
-    						<option value="pizza">
-    							Pizza
-    						</option>
-    						<option value="salad">
-    							Salad
-    						</option>
-    						<option value="pizzasalad">
-    							Pizza and Salad
-    						</option>
-    					</select>
-    				</div>
-    				<div class="span6" style="display: block;">
-    					<div class="btn-group pull-right">
-    						<a href="#" class="btn" id="ui_Browser_back"><i class="icon-arrow-left"></i></a>
-    						<a href="#" class="btn" id="ui_Browser_refresh"><i class="icon-refresh"></i></a>
-    					</div>
-    				</div>
-    			</div>
+    			<div class="span4" id="ui_Browser">
+
+	<!-- ui_Browser_button: BEGIN -->
+    				<div class="row-fluid">
+					<div class="span6">
+						<select class="pull-left">
+							<option value="pizza">
+								Pizza
+							</option>
+							<option value="salad">
+								Salad
+							</option>
+							<option value="pizzasalad">
+								Pizza and Salad
+							</option>
+						</select>
+					</div>
+
+					<div class="span6" style="display: block;">
+						<div class="btn-group pull-right">
+							<a href="#" class="btn" id="ui_Browser_back"><i class="icon-arrow-left"></i></a>
+							<a href="#" class="btn" id="ui_Browser_refresh"><i class="icon-refresh"></i></a>
+						</div>
+					</div>
+				</div>
+
 
 	<!-- ui_Browser_list: BEGIN -->
-    			<div class="row-fluid" id="ui_Browser_content">
-    				<div class="span12">
-    					<table class="table">
-    						<tbody id="ui_Browser_list">
-    							<tr>
-    								<td>
-    									List
-    								</td>
-    								<td >
-    									Action
-    								</td>
-    								
-    								
-    							</tr>
-    						</tbody>
-    					</table>
-    				</div>
-    			</div>
+				<div class="row-fluid" id="ui_Browser_content">
+					<div class="span12">
+						<table class="table">
+							<tbody id="ui_Browser_list">
+								<tr>
+									<td>
+										List
+									</td>
+									<td >
+										Action
+									</td>
+									
+									
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+
 	<!-- ui_Browser_bottom: BEGIN -->
-    			<div class="row-fluid">
-    				<div class="span6">
-    					<p class="pull-left">
+    				<div class="row-fluid">
+    					<div class="span6">
+    						<p class="pull-left">
     						Left buttons
-    					</p>
+    						</p>
+    					</div>
+    					<div class="span6" style="display: block;">
+    						<p class="pull-right">
+    							Right buttons
+    						</p>
+    					</div>
     				</div>
-    				<div class="span6" style="display: block;">
-    					<p class="pull-right">
-    						Right buttons
-    					</p>
-    				</div>
-    			</div>
-                <div class="row-fluid" style="display: block;">
-                    
-    					<p class="pull-left inline">
-    						Left buttons
-    					</p>
-    					<p class="pull-right inline">
-    						Right buttons
-    					</p>
-    				
-                </div>
-    		</div>
+
+			</div>
 
 <!-- ui_Playlist: BEGIN -->
-    		<div class="span8" style="display: block;" id="ui_Music">
+    		<div class="span8" id="ui_Music">
     			<div class="row-fluid">
     				<div class="span8" style="display: block;">
     					<ul class="breadcrumb" id="ui_breadcrumbs">
     						<li>
-    							<a href="#">/</a>
     							<span class="divider">/</span>
     						</li>
     					</ul>
@@ -237,87 +220,17 @@
     				</div>
     			</div>
     		</div>
-    	</div>
 
+    	</div>
 <!-- ui_Footer: BEGIN -->
-    	<footer class="row-fluid" id="ui_Browser">
-    		<div class="span12" id="ui_Footer">
+    	<footer class="row-fluid">
+    		<div class="span12">
     			<p class="">
     				Footer :-)
     			</p>
     		</div>
     	</footer>
     </div>
-
-<ul> 
-<li> article 1 </li> 
-<li> article 2 </li> 
-<li> article 2 </li> 
-<li> article 2 </li> 
-<li> article 2 </li> 
-<li> article 2 </li> 
-<li> article 2 </li> 
-<li> article 2 </li> 
-<li> article 2 </li> 
-<li> article 2 </li> 
-<li> article 2 </li> 
-<li> article 2 </li> 
-<li> article 2 </li> 
-<li> article 2 </li> 
-<li> article 2 </li> 
-<li> article 2 </li> 
-<li> article 2 </li> 
-<li> article 2 </li> 
-<li> article 2 </li> 
-<li> article 2 </li> 
-<li> article 2 </li> 
-<li> article 2 </li> 
-<li> article 2 </li> 
-<li> article 2 </li> 
-<li> article 2 </li> 
-<li> article 2 </li> 
-<li> article 2 </li> 
-<li> article 2 </li> 
-<li> article 2 </li> 
-<li> article 2 </li> 
-<li> article 2 </li> 
-<li> article 2 </li> 
-<li> article 2 </li> 
-<li> article 2 </li> 
-<li> article 2 </li> 
-<li> article 2 </li> 
-<li> article 2 </li> 
-<li> article 2 </li> 
-<li> article 2 </li> 
-<li> article 2 </li> 
-<li> article 2 </li> 
-<li> article 2 </li> 
-<li> article 2 </li> 
-<li> article 2 </li> 
-<li> article 2 </li> 
-<li> article 2 </li> 
-<li> article 2 </li> 
-<li> article 2 </li> 
-<li> article 2 </li> 
-<li> article 2 </li> 
-<li> article 2 </li> 
-<li> article 2 </li> 
-<li> article 2 </li> 
-<li> article 2 </li> 
-<li> article 2 </li> 
-<li> article 2 </li> 
-<li> article 2 </li> 
-<li> article 2 </li> 
-<li> article 2 </li> 
-<li> article 2 </li> 
-<li> article 2 </li> 
-<li> article 2 </li> 
-<li> article 2 </li> 
-<li> article 2 </li> 
-<li> article 2 </li> 
-</ul> 
-
-
 
 		<!-- Scripts -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
@@ -327,6 +240,6 @@
 		<script type="text/javascript" src="lib/ify/scripts2.js"></script>
 
 
-  </body>
+  </div></body>
 </html>
 
