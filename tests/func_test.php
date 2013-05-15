@@ -1,6 +1,6 @@
  <html>
  <body>
- <form action="tests/browser.php" method="post" >
+ <form action="../lib/ify/browser.php" method="post" >
  <table width="300" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#CCCCCC">
    <tr>
       <td>

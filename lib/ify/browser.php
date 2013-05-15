@@ -30,6 +30,7 @@ $supported_format = array(".mp3",".ogg",".wav",".wma",".aac");
 // Main tests
 //browse_dir($music_path);
 $action = (isset($_POST["action"])) ? $_POST["action"] : "null";
+$action = (isset($_GET["action"])) ? $_GET["action"] : "null";
 $args = (isset($_POST["args"])) ? $_POST["args"] : "null";
 
 doLog('Lib called: '.$action . ' ' . $args);
@@ -40,8 +41,8 @@ switch ($action) {
     case "browse_files":
 	browse_files( $args);
         break;
-    case 2:
-        echo "i égal 2";
+    case "download":
+	download ( $args);
         break;
     default:
 	echo "Error! Mauvais arguemnt pour appeller le script.php!";
@@ -226,6 +227,42 @@ function browse_files($vpath)
 	//doLog('vpath de retour: ' . $vpath );
 
 }
+
+function download($fileName, $streaming = true) {
+
+	$fileName = "/var/www/ify/tests/zik/Air/Moon Safari/03 - All I Need.mp3";	
+
+//        //header("Pragma: public");
+//        //header("Expires: -1");
+//        //header("Cache-Control: public, must-revalidate, post-check=0, pre-check=0");
+//        if ($streaming) {
+//                // Streamed file
+//                //header('Content-Disposition: inline; filename="'.$fileName.'"');
+//        } else {
+//                // Attachement
+//                header('Content-Disposition: attachment; filename="'.$fileName.'"');
+//        }
+//	header("Content-Type: " . mime_content_type($fileName));
+//	header("Content-Location:zik.mp3");
+//	header("Accept-Ranges: bytes");
+//	//header('Content-Length: ' . filesize($fileName));
+//	header('Content-Length: 1');
+//	header("HTTP/1.0 206 Partial Content");
+//	header("Connection: Keep-Alive");
+//	header("Vary: negociate");
+//	header("TCN: choice");
+//	header("Keep-Alive:timeout=15, max=100");
+//	//header("Content-Transfer-Encoding: chunked");
+//	header("Content-Range:bytes 522885-522885/3761134");
+//
+//	//ob_clean();	
+//
+//	set_time_limit(0);
+//	readfile($fileName);
+
+//	serveFilePartial($fileName, 'Pomle - Sing the Blues.oga', 'audio/mpeg');
+}
+
 
 
 
