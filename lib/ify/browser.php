@@ -1,18 +1,30 @@
 <?php
 header("Content-Type: text/plain"); 
 
-include('../getid3/getid3.php');
-
 define( 'ROOT_DIR', dirname(__FILE__) );
 
 // DEBUUUUG
-function doLog($text)
-{
-  // open log file
-  $filename = "log.txt";
-  $fh = fopen($filename, "a") or die("Could not open log file.");
-  fwrite($fh, date("d-m-Y, H:i")." - $text\n") or die("Could not write file!");
-  fclose($fh);
+function doLog($message) {
+	$log=false;
+	$print=false;
+	$trace=false;
+
+	if ($log) {
+		$filename = "log.txt";
+		$fh = fopen($filename, "a") or die("Could not open log file.");
+		fwrite($fh, date("d-m-Y, H:i")."\t: $text\n") or die("Could not write file!");
+		fclose($fh);
+	}
+	if ($print) {
+		echo "<pre>";
+		echo "$message";
+		echo "</pre>";
+	}
+	if ($trace) {
+		echo "<pre>";
+		debug_print_backtrace();
+		echo "</pre>";
+	}
 }
 
 
@@ -20,6 +32,10 @@ foreach ( $_POST as $key => $value) {
 	doLog("POST -> ".$key.":".$value);
 } 
 
+
+include('../getid3/getid3.php');
+include('MysqliDb.php');
+include('iniConfig.php');
 
 
 // Config
@@ -228,40 +244,6 @@ function browse_files($vpath)
 
 }
 
-function download($fileName, $streaming = true) {
-
-	$fileName = "/var/www/ify/tests/zik/Air/Moon Safari/03 - All I Need.mp3";	
-
-//        //header("Pragma: public");
-//        //header("Expires: -1");
-//        //header("Cache-Control: public, must-revalidate, post-check=0, pre-check=0");
-//        if ($streaming) {
-//                // Streamed file
-//                //header('Content-Disposition: inline; filename="'.$fileName.'"');
-//        } else {
-//                // Attachement
-//                header('Content-Disposition: attachment; filename="'.$fileName.'"');
-//        }
-//	header("Content-Type: " . mime_content_type($fileName));
-//	header("Content-Location:zik.mp3");
-//	header("Accept-Ranges: bytes");
-//	//header('Content-Length: ' . filesize($fileName));
-//	header('Content-Length: 1');
-//	header("HTTP/1.0 206 Partial Content");
-//	header("Connection: Keep-Alive");
-//	header("Vary: negociate");
-//	header("TCN: choice");
-//	header("Keep-Alive:timeout=15, max=100");
-//	//header("Content-Transfer-Encoding: chunked");
-//	header("Content-Range:bytes 522885-522885/3761134");
-//
-//	//ob_clean();	
-//
-//	set_time_limit(0);
-//	readfile($fileName);
-
-//	serveFilePartial($fileName, 'Pomle - Sing the Blues.oga', 'audio/mpeg');
-}
 
 
 

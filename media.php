@@ -13,14 +13,14 @@ $args = (isset($_GET["a"])) ? $_GET["a"] : "null";
 
 
 // Action to do
-switch ($function) {
+switch ( $function) {
 	case "as":
 	case "audio_stream":
-		browse_dir( $args);
+		audio_stream( $args);
 		break;
 	case "ad":
 	case "audio_download":
-		browse_files( $args);
+		audio_download( $args);
 		break;
 	case "at":
 	case "audio_test":
@@ -32,6 +32,15 @@ switch ($function) {
 
 function audio_test () {
 	serveFile('/var/www/ify/tests/zik/Air/Moon Safari/03 - All I Need.mp3','muziq.mp3', 'audio/mpeg');
+}
+
+function audio_stream ( $args) {
+
+	// Check input
+
+	// Convert ID to File
+
+	serveFile( $file, $name, true);
 }
 
 ?>

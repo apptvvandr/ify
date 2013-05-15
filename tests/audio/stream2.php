@@ -29,8 +29,8 @@ function serveFilePartial($fileName, $fileTitle = null, $contentType = 'applicat
 
 	if( $fileTitle )
 		//header(sprintf('Content-Disposition: attachment; filename="%s"', $fileTitle));
-		//header(sprintf('Content-Disposition: inline; filename="%s"', $fileTitle));
-		header('Content-Disposition: inline');
+		header(sprintf('Content-Disposition: inline; filename="%s"', $fileTitle));
+		//header('Content-Disposition: inline');
 
 	### Parse Content-Range header for byte offsets, looks like "bytes=11525-" OR "bytes=11525-12451"
 	if( isset($_SERVER['HTTP_RANGE']) && preg_match('%bytes=(\d+)-(\d+)?%i', $_SERVER['HTTP_RANGE'], $match) )
