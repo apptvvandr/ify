@@ -49,6 +49,9 @@ class ifyDebug {
 
 	// Log file path
 	private $file;
+	
+	// Timer
+	private $timer;
 
 
 	function __construct($logFile = null)
@@ -76,13 +79,11 @@ class ifyDebug {
 		$args = func_get_args();
 		
 
-		echo "<br>get all elements <br>";
-		var_dump( $args);
-		echo "<br>";
-
-
 		// Get the first arg
-		$arg = array_shift($args);
+		if (count($args) > 1)
+			$arg = array_shift($args);
+		else
+			$arg = $args;
 
 
 		// Try to get level
@@ -99,46 +100,74 @@ class ifyDebug {
 		}
 		
 
-
 		// Get the message
-		var_dump($args);
 		$message = $arg;
 		$last = "";
 
 
-		//echo "<br>get last <br>";
-		//var_dump($args);
+		//echo "<br>get all elements <br>";
+		//var_dump( $args);
 		//echo "<br>";
 
-
-		// Debug all remaining elements
-		//$last = array_map( "grab_dump" ,$args);
-		$last = grab_dump($args);
 
 		// Display message in HTML
 		if ($this->print)
 		{
-			echo '<pre class="log log_".$level.">';
+			echo '<div class="log log_'.$level.'">';
 			echo "$level: $message \n";
-			var_dump($args);
-			echo '</pre>';
+			if (count($args) == 1 )
+			{
+				echo '<pre>';
+				var_dump( $args[0]);
+				echo '</pre>';
+			}
+			elseif (count($args) > 1 )
+			{
+				echo "<pre>";
+				var_dump( $args);
+				echo '</pre>';
+			}
+			echo '</div>';
 		}
 	}
 
+	public function timerStart() {
+		$time = microtime();
+		$time = explode(' ', $time);
+		$time = $time[1] + $time[0];
 
-}
+		$this->timer = $time;
+	}
 
+	public function timerGet() {
+		$start = $this->timer;
 
-
-// Exports to shortcuts
-
-if ( ! function_exists( 'l' ) ) {
-	function l () 
-	{
-		$args = func_get_args();
-		call_user_func_array( 'ifyDebug::log', $args);
+		$time = microtime();
+		$time = explode(' ', $time);
+		$time = $time[1] + $time[0];
+		$finish = $time;
+		$total_time = round(($finish - $start), 4);
+		echo '<br><br><br><hr>Page generated in '.$total_time.' seconds.</br>';
 	}
 }
 
+
+
+// Declare debug variable
+global $d;
+$d = new ifyDebug;
+
+// Exports to shortcuts
+if ( ! function_exists( 'l' ) ) {
+	function l () 
+	{
+		global $d;
+		$args = func_get_args();
+		call_user_func_array( array($d, "log"), $args);
+	}
+}
+
+
+//$d->print = false;
 
 ?>

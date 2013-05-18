@@ -6,6 +6,19 @@ body {
 }
 */
 
+.log_ERROR{
+	background:OrangeRed;
+}
+.log_WARNING{
+	background:orange;
+}
+.log_INFO{
+	background:DodgerBlue;
+}
+.log_DEBUG{
+	background:Gainsboro;
+}
+
 #ify{
 	display: block;
 	position:absolute;

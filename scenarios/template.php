@@ -24,7 +24,9 @@ $conf->setUser("jez");
 // Initialise DB backend
 $db = new ifyDB;
 
-
+// Initialise timer
+$d->timerStart();
+#$d->log(1, "Mon message", $tutu, $titi);
 
 //
 // CODE EXPERIMENTATIONS
@@ -33,32 +35,6 @@ $db = new ifyDB;
 
 $path = $conf->getUser("path");
 echo "$path[0]";
-
-$d = new ifyDebug();
-
-$tutu = "my debug value";
-$titi = array(
-"yesty" => "ho ouii",
-"yesty" => "ho ouii",
-"yesty" => "ho ouii");
-
-
-//$d->log("Meggdsffsdf");
-
-echo "teeeest <br>";
-$d->log(1, "Mon message", $tutu, $titi);
-echo "teeeest <br>";
-//$d->log(2, "Meggdsffsdf");
-//$d->log(0, "Meggdsffsdf");
-//$d->log(3, "Meggdsffsdf");
-//$d->log("ERROR", "Meggdsffsdf");
-//$d->log("DEBUG", "Meggdsffsdf");
-//$d->log("WARNING", "Meggdsffsdf");
-
-//$db->scanDir( $path[0] );
-
-
-
 
 
 
@@ -70,4 +46,5 @@ echo "teeeest <br>";
 
 // Remind closing the MySQL connection at the end
 unset($db);
+$d->timerGet();
 ?>

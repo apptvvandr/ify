@@ -14,14 +14,18 @@ class ifyConfig {
 	// Save backend context
 	protected $_backend;
 
+	// Store application settings
+	protected $_app;
 
 	// This function read the ini file
 	function __construct($iniFile = null) {
 
+		//
+		// User settings
+		////////////////
 
 		// Define hardcoded default config file if not set
 		if (!$iniFile) $iniFile = "/var/www/ify/config.ini";
-
 
 		// Tests if the file exists and is readable
 		if( !file_exists($iniFile) )
@@ -33,6 +37,14 @@ class ifyConfig {
 
 		// Parse the ini file
 		$this->_raw = parse_ini_file($iniFile, true);
+
+
+		//
+		// Application settings
+		///////////////////////
+		$this->_app = array();
+
+		$this->_app["root"] = "/var/www/ify/";
 	}
 
 	// Display raw config data (debug purpose only)
@@ -45,29 +57,24 @@ class ifyConfig {
 		return $this->_raw;
 	}
 
+	// Display the whole config
+	function dump() {
+		
+		echo '<pre>';
+		print_r($this->_app);
+		print_r($this->_raw);
+		echo '</pre>';
+  
+		return $this->_raw;
+	}
+
 	// Get global setting
 	function get($setting, $section = "global") {
 		if (!empty($this->_raw[$section][$setting]) ) {
 			return $this->_raw[$section][$setting];
 		} else {
-			doLog("DEBUG: $setting is not set in $section section in ".$this->iniFile);
+			l("DEBUG", "$setting is not set in $section section in ".$this->_iniFile);
 			return null;
-		}
-	}
-
-	// Test user exists and if it's corectly set
-	function testUser($user) {
-
-		if (!empty($this->_raw["user.".$user])) {
-
-			if (!empty($this->_raw["user.".$user]["password"]))
-				return 0;
-			else
-				doLog("INFO: Missing 'password' setting for ".$user." in ".$this->_iniFile);
-				return 1;
-		} else {
-			doLog("INFO: User $user not set in $this->_iniFile (auth= ".$this->get('auth').")");
-			return 1;
 		}
 	}
 
@@ -94,7 +101,6 @@ class ifyConfig {
 		}
 	}
 
-
 	// Get user setting
 	function getUser($setting) {
 
@@ -107,6 +113,41 @@ class ifyConfig {
 			return $this->_user;
 
 		return $this->get($setting, "user.".$this->_user);
+	}
+
+	// Set application config setting
+	function setApp($setting, $value) {
+		$this->_app[$setting] = $value;
+		return 1;
+	}
+
+	// Get application config settings
+	function getApp($setting) {
+		if (empty($setting))
+			return $this->app;
+		else
+			return $this->_app[$setting];
+	}
+
+
+	//
+	// Private functions
+	////////////////////
+
+	// Test user exists and if it's corectly set
+	protected function testUser($user) {
+
+		if (!empty($this->_raw["user.".$user])) {
+
+			if (!empty($this->_raw["user.".$user]["password"]))
+				return 0;
+			else
+				doLog("INFO: Missing 'password' setting for ".$user." in ".$this->_iniFile);
+				return 1;
+		} else {
+			doLog("INFO: User $user not set in $this->_iniFile (auth= ".$this->get('auth').")");
+			return 1;
+		}
 	}
 
 }
