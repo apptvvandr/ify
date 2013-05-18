@@ -1,9 +1,43 @@
 <?php
 
+//include('../getid3/getid3.php');
+include('lib/getid3/getid3.php');
+
+// Include classes
+include('lib/ify/debug.class.php');
+include('lib/ify/ini.class.php');
+include('lib/ify/mysql.class.php');
+include('lib/ify/db.class.php');
 
 
 
+// Get ID3 informations
+function music_info($file) {
 
+	// Create object
+	$getID3 = new getID3;
+
+	// Create an array with all extract infos
+	$id3 = $getID3->analyze($file);
+
+	// Create an array with best id3 meta available
+	getid3_lib::CopyTagsToComments($id3);
+
+	// Extract needed infos for Ify
+	$tags = array (
+		"filename"	=> (isset($id3['filename']) ? $id3['filename'] : "-"),
+		"title"		=> (isset($id3['comments_html']['title'][0]) ? $id3['comments_html']['title'][0] : "-"),
+		"artist"	=> (isset($id3['comments_html']['artist'][0]) ? $id3['comments_html']['artist'][0] : "-"),
+		"album"		=> (isset($id3['comments_html']['album'][0]) ? $id3['comments_html']['album'][0] : "-"),
+		"year"		=> (isset($id3['comments_html']['year'][0]) ? $id3['comments_html']['year'][0] : "-"),
+		"track"		=> (isset($id3['comments_html']['track'][0]) ? $id3['comments_html']['track'][0] : "-"),
+		"genre"		=> (isset($id3['comments_html']['genre'][0]) ? $id3['comments_html']['genre'][0] : "-"),
+		"length"	=> (isset($id3['playtime_string']) ? $id3['playtime_string'] : "-"),
+		"bitrate"	=> (isset($id3['audio']['bitrate']) ? $id3['audio']['bitrate'] : "-"),
+		"format"	=> (isset($id3['audio']['dataformat']) ? $id3['audio']['dataformat'] : "-")
+	);
+	return $tags;
+}
 
 
 // This function help to download or stream a file without
