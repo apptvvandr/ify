@@ -57,7 +57,7 @@ class ifyDB {
 			// Check file extension is accepted
 			//echo strrchr($file,'.') . " VS " . trim(strrchr($file,'.'), ".") . "</br>";
 			if (in_array(strtolower(trim(strrchr($file,'.'), ".")), $conf->get('audio'), ".")) {
-				$this->add($file);
+				$this->addFileToDb($file);
 			}
 
 			if ($i > $max) 
@@ -66,7 +66,7 @@ class ifyDB {
 
 	}
 
-	public function add($file) {
+	public function addFileToDB($file) {
 		
 		global $conf;
 		$db = $this->_db;
@@ -129,7 +129,6 @@ class ifyDB {
 
 	}
 
-
 	public function query($columns = "*", $where = "", $order = "tagTitle", $limit = "0, 50", $group = "") {
 		
 		$db = $this->_db;
@@ -190,9 +189,65 @@ class ifyDB {
 
 	}
 
-
-
 	public function smartQuery($string) {
+		
+		// Initialisation
+		$msg = "";
+		$params = array ();
+
+		// Start analyse the first statement
+		$result = $this->smartStatement($string);
+
+		if ($result['status'] == 0) {
+			// This is a smart query
+			$msg = $result['msg'];
+			$params = $result['params'];
+		} elseif ($result['status'] == 1) {
+			// This is a smart query but not properly formatted
+			$return = array(
+				'status' => 1,
+				'msg' => $result['msg']
+				);
+			return $return['msg'];
+		} elseif ($result['status'] == 2 ){
+			// This is not a smart query
+			$result = $this->metaStatement($string);
+			$msg = $result['msg'];
+			$params = $result['params'];
+		}
+
+	//	echo $string;
+
+		$return = array (
+			"status" => $result['status'],
+			"msg" => $msg,
+			"params" => $params
+		);
+
+		return $return;
+	}
+
+	private function metaStatement($string) {
+		// Analyse user search query
+		
+		$result = array();
+		$db = $this->_db;
+		$where = "tagArtist LIKE ? OR tagTitle LIKE ? OR tagAlbum LIKE ?";
+		//$string = "%".$string."%";
+
+		// Execute the request
+		$params = array($string, $string, $string);
+
+		$result = array(
+			'status'	=> 0,			// OK, everything's good
+			'msg'		=> $where,		// WHERE query to inject
+			'params'	=> $params		// Parameters in array
+			);
+
+		return $result;
+	}
+
+	private function smartStatement($string) {
 
 		//Simplified regex
 		// ([patgyln]) ([=:><!]) (("[^"]*")|('[^']*')|([^/s]*))
@@ -223,7 +278,7 @@ class ifyDB {
 			//l("INFO","Smart statement detecte: $key $op $value OU ".implode($match));
 		} else {
 			//l("DEBUG","Not a smart statement: ".$string);
-			$result = array(2, "IQL: Not a smart query: ".$string);
+			$result = array('status' => 2, 'msg' => "IQL: Not a smart query: ".$string);
 			return $result;
 		}
 
@@ -252,7 +307,7 @@ class ifyDB {
 				$query .= "tagTrack";
 				break;
 			default:
-				$result = array(1, "IQL: key '".$key."' is not recognised!");
+				$result = array("status" =>1, 'msg' => "IQL: key '".$key."' is not recognised!");
 				return $result;
 		}
 
@@ -272,7 +327,10 @@ class ifyDB {
 					$query .= ' NOT LIKE';
 					break;
 				default:
-					$result = array(1,"IQL: Operator '".$op."' is not available for '".$key."' string type");
+					$result = array(
+						'status' => 1, 
+						'msg' => "IQL: Operator '".$op."' is not available for '".$key."' string type"
+					);
 					return $result;
 			}
 		} elseif (is_int(strpos("yln",$key))) {
@@ -302,36 +360,50 @@ class ifyDB {
 					$query .= ' NOT BETWEEN';
 					break;
 				default:
-					$result = array(1, "IQL: Operator '".$op."' is not available for '".$key."' number type");
+					$result = array(
+						'status' => 1, 
+						'msg' =>  "IQL: Operator '".$op."' is not available for '".$key."' number type"
+					);
 					return $result;
 			}
 		} else {
-			$result = array(1, "IQL: Operator '".$op."' is not recognised");
+			$result = array(
+				'status' => 1, 
+				'msg' => "IQL: Operator '".$op."' is not recognised"
+			);
+			return $result;
 		}
 
 		//var_dump($key);
 		//echo "<br>";
 
+
 		// Checking values
 		
 		// Looking for a number, or a string or a <num>:<num>
+		$params = array();
 
 		if (is_int(strpos("patg",$key))) {
 			// Looking for a string, and clean it
 			$regex='/^(\'|")|(\'|")$/';
 			$value = preg_replace($regex, "", $value);
-			$query .= " '".$value."'";
+			$query .= ' ?';
+			$params[0] = $value;
 
 		} elseif (!is_int(strpos("[]",$op))) {
 			// Looking for a number
-			$regex = "/^[:digit:]+$/";
+			$regex = "/^(\d)+$/";
 			$match = preg_match($regex, $value);
 
 			if (!$match) {
-				$result = array(1, "IQL: '".$value."' is not a number");
+				$result = array(
+					'status' =>1,
+					'msg' => "IQL: '".$value."' is not a number"
+				);
 				return $result;
 			} else {
-				$query .= ' '.$value;
+				$query .= ' ?';
+				$params[0] = $value;
 			}
 
 		} elseif (is_int(strpos("[]",$op))) {
@@ -343,77 +415,98 @@ class ifyDB {
 			$count = preg_match($regex, $value, $match);
 
 			if (count($match) != 3 ) {
-				$result = array(1, "IQL: '".$value."' is not an interval");
+				$result = array(
+					'status' => 1,
+					'msg' => "IQL: '".$value."' is not an interval"
+				);
 				return $result;
 			} elseif ( $match[1] >= $match[2]) {
-				$result = array(1, "IQL: First number cannot be bigger than second number");
+				$result = array(
+					'status' => 1, 
+					'msg' => "IQL: First number cannot be bigger than second number"
+				);
+				return $result;
 			} else {
-				$query .= ' '.$match[1].' AND '.$match[2];
+				//$query .= ' '.$match[1].' AND '.$match[2];
+				$query .= ' ? AND ?';
+				$params[0] = $match[1];
+				$params[1] = $match[2];
 			}
 		} else {
 			// Not possible body
-			$result = array(1, "IQL: '".$value."' is not acceptable value");
+			$result = array(
+				'status' => 1,
+				'msg' => "IQL: '".$value."' is not acceptable value"
+			);
 			return $result;
 		}
 
 		// We finaly succeed all tests, we built the statement
-		$result = array(0, $query);
+		$result = array(
+			'status' => 0,
+			'msg' => $query,
+			'params' => $params
+		);
 		return $result;
 	}
 }
 
 
-
-
 /*
 
-Main query tool model:
-========================
+	#
+	# Ify Query Language Documentation
+	##################################
+	
+	1) General syntax
+	=================
+	
+	Regex: '/([patgyln])((<=)|(>=)|(!=)|[=:><!\]\[])(("[^"]*")|(\'[^\']*\')|([^\s]*))/';
+	Match: 1,2 and 6 for <field>, <operator> and <value>
+	
 
-SELECT: what kind of output do we need
+	2) Statements
+	=============
+	<field><operator><value>
 
-> All Album list
+	Where <field> can be:
+		p: Artist (string)
+		a: Album (string)
+		t: Title (string)
+		g: Genre (string)
+		y: Year (number)
+		l: Lenght (number)
+		t: Track number (number)
 
-> All Artist list
+	Where <operator> can be:
+		valid for strings:
+			:		: Like
+			=		: Strictly equal
+			!		: Not like
+			!=		: Strictly not equal
+		valid for numbers:
+			=		: Strictly equal
+			!=		: Strictly not equal
+			>, >=	: Lesser or strictly lesser than
+			<, <=	: Bigger or strictly bigger than
+			]		: Included between, <value> must be an interval
+			[		: Excluded outside, <value> must be an interval
 
-> All Song list
+	Where <value> can be:
+		valid for (string):
+			<str>	: Any string
+			'<str>'	: Any string
+			"<str>"	: Any string
+		valid for (number)
+			<num>	: Any positive number
+		valid for (interval):
+			<num>:<num>	: Two positive number separated by a semicolon (:)
 
-> Count of then
-
-
-FILTER: which elements do we need to get
-
-> Search Album, Artist, title
-
-> Search Artist
-
-> Search Album
-
-> Search Song
-
-
-Examples:
-======================
-> p:Nirvana [OR] a:Nevermind
-
-> p:Niravana [OR] p:Johnson [OR] l>3m
-
-> (p:Niravana l>10m) [OR] p:Johnson l>7m
-
-
->>>> Rules
-###########
--> Comparing two elements of same type must be interpreted like OR
-
-
-
-( stmt [AND] stmt [AND] stmt) 
+	3) Parsing methods:
+	===================
 
 
 */
-
-
-
 
 ?>
 

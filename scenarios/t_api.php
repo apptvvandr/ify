@@ -51,13 +51,13 @@ $d->timerStart();
 #$db->scanDir($path[2]);
 
 
-$search = "blin";
+$search = "a";
 
 // Query test
-//$result = $db->userSearch($search, "count");
-//l("INFO", "On a trouvé ". $result." résultats!");
-//$result = $db->userSearch($search, "all");
-//l("INFO", "Result id:", $result);
+#$result = $db->userSearch($search, "count");
+#l("INFO", "On a trouvé ". $result." résultats!");
+#$result = $db->userSearch($search, "all");
+#l("INFO", "Result id:", $result);
 
 
 
@@ -65,18 +65,18 @@ $search = "blin";
 
 $search="tututu toto";
 $result = $db->smartQuery($search);
-l("INFO", "Resultat de la reuqete $search est:", $result);
+l("INFO", "Resultat de la requete ".$search." est:", $result);
 
-$search="p!tututu toto";
+$search="y>tututu toto";
 $result = $db->smartQuery($search);
-l("INFO", "Resultat de la reuqete $search est:", $result);
+l("INFO", "Resultat de la requete ".$search." est:", $result);
 
 $search="t!'tututu toto'";
 $result = $db->smartQuery($search);
-l("INFO", "Resultat de la reuqete $search est:", $result);
+l("INFO", "Resultat de la requete ".$search." est:", $result);
 
 
-$search='y[10:45';
+$search='y[20:45';
 $result = $db->smartQuery($search);
 l("INFO", "Resultat de la reuqete $search est:", $result);
 

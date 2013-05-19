@@ -23,18 +23,25 @@ function music_info($file) {
 	// Create an array with best id3 meta available
 	getid3_lib::CopyTagsToComments($id3);
 
+	// Debug
+	echo "<pre>";
+	var_dump($id3);
+	echo "</pre>";
+
+
 	// Extract needed infos for Ify
 	$tags = array (
 		"filename"	=> (isset($id3['filename']) ? $id3['filename'] : "-"),
-		"title"		=> (isset($id3['comments_html']['title'][0]) ? $id3['comments_html']['title'][0] : "-"),
-		"artist"	=> (isset($id3['comments_html']['artist'][0]) ? $id3['comments_html']['artist'][0] : "-"),
-		"album"		=> (isset($id3['comments_html']['album'][0]) ? $id3['comments_html']['album'][0] : "-"),
-		"year"		=> (isset($id3['comments_html']['year'][0]) ? $id3['comments_html']['year'][0] : "-"),
-		"track"		=> (isset($id3['comments_html']['track'][0]) ? $id3['comments_html']['track'][0] : "-"),
-		"genre"		=> (isset($id3['comments_html']['genre'][0]) ? $id3['comments_html']['genre'][0] : "-"),
-		"length"	=> (isset($id3['playtime_string']) ? $id3['playtime_string'] : "-"),
-		"bitrate"	=> (isset($id3['audio']['bitrate']) ? $id3['audio']['bitrate'] : "-"),
-		"format"	=> (isset($id3['audio']['dataformat']) ? $id3['audio']['dataformat'] : "-")
+		"title"		=> (isset($id3['comments_html']['title'][0]) ? $id3['comments_html']['title'][0] : ""),
+		"artist"	=> (isset($id3['comments_html']['artist'][0]) ? $id3['comments_html']['artist'][0] : ""),
+		"album"		=> (isset($id3['comments_html']['album'][0]) ? $id3['comments_html']['album'][0] : ""),
+		"year"		=> (isset($id3['comments_html']['year'][0]) ? $id3['comments_html']['year'][0] : ""),
+		"track"		=> (isset($id3['comments_html']['track'][0]) ? $id3['comments_html']['track'][0] : ""),
+		"genre"		=> (isset($id3['comments_html']['genre'][0]) ? $id3['comments_html']['genre'][0] : ""),
+		"length"	=> (isset($id3['playtime_string']) ? $id3['playtime_string'] : ""),
+		"bitrate"	=> (isset($id3['audio']['bitrate']) ? $id3['audio']['bitrate'] : ""),
+		"format"	=> (isset($id3['audio']['dataformat']) ? $id3['audio']['dataformat'] : ""),
+		"lenght"	=> (isset($id3['audio']['lenght']) ? $id3['audio']['lenght'] : "")
 	);
 	return $tags;
 }
