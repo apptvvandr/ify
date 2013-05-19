@@ -157,13 +157,19 @@ class ifyDB {
 
 	}
 
-	public function userSearch($string) {
+	public function userSearch($string, $output="all") {
 		// Analyse user search query
 		
 		$db = $this->_db;
+		$string = "%".$string."%";
+
 
 		// Build the request
-		$start = "SELECT tagArtist, tagTitle, tagAlbum, tagGenre FROM `files` WHERE ";
+		if ($output == "count") {
+			$start = "SELECT COUNT(id) FROM `files` WHERE ";
+		} else {
+			$start = "SELECT id, tagArtist, tagTitle, tagAlbum, tagGenre FROM `files` WHERE ";
+		}
 		$where = "tagArtist LIKE ? OR tagTitle LIKE ? OR tagAlbum LIKE ?";
 		$limit = " LIMIT 20";
 
@@ -174,14 +180,237 @@ class ifyDB {
 		$params = array($string, $string, $string);
 		$result = $db->rawQuery($start.$where.' LIMIT 50', $params);
 
-		return $result;
+		//print_r($result);
 
+		if ($output == "count") {
+			return $result[0]["COUNT(id)"];
+		} else {
+			return $result;
+		}
+
+	}
+
+
+
+	public function smartQuery($string) {
+
+		//Simplified regex
+		// ([patgyln]) ([=:><!]) (("[^"]*")|('[^']*')|([^/s]*))
+        // ^key        ^op       ^value
+
+		// Define variables
+		$query = "";
+		$result = array (0, "");
+		$match = array();
+		$regex = '/([patgyln])((<=)|(>=)|(!=)|[=:><!\]\[])(("[^"]*")|(\'[^\']*\')|([^\s]*))/';
+
+		preg_match($regex, $string, $match);
+		
+		#echo "Raw match: <pre>";
+		#var_dump($match);
+		#echo "</pre>";
+
+		/*
+		Be aware that all indexes directly depends of the regex.
+		If you want to implement new fields, you may have to change
+		them in way get the correct fields. The var dump over may help
+		you to identify witch index is corresponding to you match ;-)
+		*/
+		if (count($match) > 6) {
+			$key = $match[1];
+			$op = $match[2];
+			$value = $match[6];
+			//l("INFO","Smart statement detecte: $key $op $value OU ".implode($match));
+		} else {
+			//l("DEBUG","Not a smart statement: ".$string);
+			$result = array(2, "IQL: Not a smart query: ".$string);
+			return $result;
+		}
+
+
+		// Query builder
+		switch ($key) {
+			case "p":
+				$query .= "tagArtist";
+				break;
+			case "a":
+				$query .= "tagAlbum";
+				break;
+			case "t":
+				$query .= "tagTitle";
+				break;
+			case "g":
+				$query .= "tagGenre";
+				break;
+			case "y":
+				$query .= "tagYear";
+				break;
+			case "l":
+				$query .= "tagLenght";
+				break;
+			case "n":
+				$query .= "tagTrack";
+				break;
+			default:
+				$result = array(1, "IQL: key '".$key."' is not recognised!");
+				return $result;
+		}
+
+		if (is_int(strpos("patg",$key))) {
+			// this is a string
+			switch ($op) {
+				case '!=':
+					$query .= ' !=';
+					break;
+				case '=':
+					$query .= ' =';
+					break;
+				case ':':
+					$query .= ' LIKE';
+					break;
+				case '!':
+					$query .= ' NOT LIKE';
+					break;
+				default:
+					$result = array(1,"IQL: Operator '".$op."' is not available for '".$key."' string type");
+					return $result;
+			}
+		} elseif (is_int(strpos("yln",$key))) {
+			switch ($op) {
+				case '!=':
+					$query .= ' !=';
+					break;
+				case '=':
+					$query .= ' =';
+					break;
+				case '<':
+					$query .= ' <';
+					break;
+				case '>':
+					$query .= ' >';
+					break;
+				case '<=':
+					$query .= ' <=';
+					break;
+				case '>=':
+					$query .= ' >=';
+					break;
+				case '[':
+					$query .= ' BETWEEN';
+					break;
+				case ']':
+					$query .= ' NOT BETWEEN';
+					break;
+				default:
+					$result = array(1, "IQL: Operator '".$op."' is not available for '".$key."' number type");
+					return $result;
+			}
+		} else {
+			$result = array(1, "IQL: Operator '".$op."' is not recognised");
+		}
+
+		//var_dump($key);
+		//echo "<br>";
+
+		// Checking values
+		
+		// Looking for a number, or a string or a <num>:<num>
+
+		if (is_int(strpos("patg",$key))) {
+			// Looking for a string, and clean it
+			$regex='/^(\'|")|(\'|")$/';
+			$value = preg_replace($regex, "", $value);
+			$query .= " '".$value."'";
+
+		} elseif (!is_int(strpos("[]",$op))) {
+			// Looking for a number
+			$regex = "/^[:digit:]+$/";
+			$match = preg_match($regex, $value);
+
+			if (!$match) {
+				$result = array(1, "IQL: '".$value."' is not a number");
+				return $result;
+			} else {
+				$query .= ' '.$value;
+			}
+
+		} elseif (is_int(strpos("[]",$op))) {
+			// Looking for interval
+			// <num>:<num>
+
+			$regex = "/^(\d+):(\d+)$/";
+			$match = array ();
+			$count = preg_match($regex, $value, $match);
+
+			if (count($match) != 3 ) {
+				$result = array(1, "IQL: '".$value."' is not an interval");
+				return $result;
+			} elseif ( $match[1] >= $match[2]) {
+				$result = array(1, "IQL: First number cannot be bigger than second number");
+			} else {
+				$query .= ' '.$match[1].' AND '.$match[2];
+			}
+		} else {
+			// Not possible body
+			$result = array(1, "IQL: '".$value."' is not acceptable value");
+			return $result;
+		}
+
+		// We finaly succeed all tests, we built the statement
+		$result = array(0, $query);
+		return $result;
 	}
 }
 
 
 
 
+/*
+
+Main query tool model:
+========================
+
+SELECT: what kind of output do we need
+
+> All Album list
+
+> All Artist list
+
+> All Song list
+
+> Count of then
+
+
+FILTER: which elements do we need to get
+
+> Search Album, Artist, title
+
+> Search Artist
+
+> Search Album
+
+> Search Song
+
+
+Examples:
+======================
+> p:Nirvana [OR] a:Nevermind
+
+> p:Niravana [OR] p:Johnson [OR] l>3m
+
+> (p:Niravana l>10m) [OR] p:Johnson l>7m
+
+
+>>>> Rules
+###########
+-> Comparing two elements of same type must be interpreted like OR
+
+
+
+( stmt [AND] stmt [AND] stmt) 
+
+
+*/
 
 
 
