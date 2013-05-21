@@ -21,7 +21,7 @@ set_time_limit ( 30 );
 
 // Define user context
 global $conf;
-$conf = new ifyConfig('/var/www/ify/config.ini');
+$conf = new ifyConfig();
 $conf->setUser("jez");
 
 // Initialise DB backend
@@ -63,23 +63,82 @@ $search = "a";
 
 # Smart query language test
 
-$search="tututu toto";
-$result = $db->smartQuery($search);
+#$search="";
+#$result = $db->smartQuery($search, "albums", "html-list");
+#//l("INFO", "Resultat de la requete ".$search." est:", $result);
+#echo "<ul>".$result."</ul>";
+#
+$search="p:";
+$result = $db->userSearch($search, "html-table");
+$result = $db->smartQuery($search,'all',  "html-table");
 l("INFO", "Resultat de la requete ".$search." est:", $result);
+#echo "<ul>".$result."</ul>";
+#
+#$search="nevermind";
+#$result = $db->smartQuery($search, "album");
+#//l("INFO", "Resultat de la requete ".$search." est:", $result);
+#echo "<ul>".$result."</ul>";
+#
+#
+#$search='y<2001';
+#$result = $db->smartQuery($search, "all");
+#//l("INFO", "Resultat de la reuqete $search est:", $result);
+#echo "<ul>".$result."</ul>";
 
-$search="y>tututu toto";
-$result = $db->smartQuery($search);
-l("INFO", "Resultat de la requete ".$search." est:", $result);
+//// HTMLeuh Code
+?>
+    <head>
+        <meta charset="utf-8">
+        <title>Ify music player</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
 
-$search="t!'tututu toto'";
-$result = $db->smartQuery($search);
-l("INFO", "Resultat de la requete ".$search." est:", $result);
+        <!-- Le styles -->
+        <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.css">
+        <link rel="stylesheet" href="../lib/font-awesome/css/font-awesome.min.css">
+        <link rel="lib/melement/stylesheet" href="mediaelementplayer.css" />
+
+        <link rel="stylesheet" href="../lib/ify/style2.css">
+      </head>
+<body>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="../lib/bootstrap/js/bootstrap.js"></script>
+
+	<input id="search"/>
+	<input id="search2" type="text" data-provide="typeahead" data-source="<?php echo $result; ?>">
 
 
-$search='y[20:45';
-$result = $db->smartQuery($search);
-l("INFO", "Resultat de la reuqete $search est:", $result);
+	<script type="text/javascript">
+	var colors = ["red", "blue", "green", "yellow", "brown", "black"];
+	var raw = <?php echo $result;?>;
 
+
+
+	$('#search').typeahead({source: function (query, process) {
+		var name = [];
+		var artists = {};
+		
+		var data = <?php echo $result;?>;
+	
+		$.each(data, function (i, line) {
+			        artists[line.tagArtist] = line;
+					name.push(line.tagArtist);
+		});
+
+					console.log("Artist is:" + name)
+		process(name);
+	
+	}});
+
+	$('#search2').typeahead({source: raw})
+	</script>
+
+
+
+</body>
+<?php
 
 
 // Remind closing the MySQL connection at the end

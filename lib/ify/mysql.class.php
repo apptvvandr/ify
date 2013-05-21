@@ -114,7 +114,15 @@ class MysqliDb
     public function rawQuery($query, $bindParams = null)
     {
         $this->_query = filter_var($query, FILTER_SANITIZE_STRING);
+####### BIG SECURITY ISSUE HERE WITH FILTER_SANITIZE_STRING and the lesser than char <
+        $this->_query = $query;
         $stmt = $this->_prepareQuery();
+
+		//echo "<pre>";
+		//var_dump($query);
+		//var_dump($this->_query);
+		//echo "</pre>";
+
 
         if (is_array($bindParams) === true) {
             $params = array(''); // Create the empty 0 index
@@ -440,6 +448,8 @@ class MysqliDb
      */
     protected function _prepareQuery()
     {
+		//var_dump($this->_query);
+
         if (!$stmt = $this->_mysqli->prepare($this->_query)) {
             trigger_error("Problem preparing query ($this->_query) " . $this->_mysqli->error, E_USER_ERROR);
         }

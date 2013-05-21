@@ -1,0 +1,72 @@
+
+/*
+body {
+	padding-top: 80px;
+	padding-bottom: 0px;
+}
+*/
+
+.log_ERROR{
+	background:OrangeRed;
+}
+.log_WARNING{
+	background:orange;
+}
+.log_INFO{
+	background:DodgerBlue;
+}
+.log_DEBUG{
+	background:Gainsboro;
+}
+
+#ify{
+	display: block;
+	position:absolute;
+	height:auto;
+	bottom:0;
+	top:0;
+	left:0;
+	right:0;
+	padding-top:80px;
+	padding-bottom:40px;
+	padding-right: 0px;
+	padding-left: 0px;
+	/*background-color: LightGreen ;*/
+}
+
+header {
+	background-image: url(../pics/header.jpg);
+}
+
+footer {
+   position:fixed;
+   left:0px;
+   bottom:0px;
+   height:30px;
+   width:100%;
+   background:#999;
+}
+
+#main-wrapper {
+	height: 100%;
+}
+
+nav {
+	display: inline-block;
+	width: 25%;
+	height: 100%;
+	vertical-align: top;
+	overflow-y: auto;
+	background-color: BurlyWood ;
+}
+
+content {
+	display: inline-block;
+	width: 75%;
+	height: 100%;
+	overflow-y: auto;
+	vertical-align: top;
+	background-color: AliceBlue ;
+}
+
+

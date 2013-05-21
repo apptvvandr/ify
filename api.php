@@ -3,7 +3,6 @@
 
 include ("ify.php");
 
-
 // _POST Management
 $function = (isset($_POST["f"])) ? $_POST["f"] : "null";
 $args = (isset($_POST["a"])) ? $_POST["a"] : "null";
@@ -12,16 +11,38 @@ $args = (isset($_POST["a"])) ? $_POST["a"] : "null";
 $function = (isset($_GET["f"])) ? $_GET["f"] : "null";
 $args = (isset($_GET["a"])) ? $_GET["a"] : "null";
 
+// Developement options
+///////////////////////
+
+// Define user context
+global $conf;
+$conf = new ifyConfig("config.ini");
+$conf->setUser("jez");
+
+// Initialise DB backend
 
 // Action to do
 switch ( $function) {
-	case "audio_stream":
-		audio_stream( $args);
+	case "userSearch":
+		userSearch( $args);
 		break;
+	case "uiHTMLTable":
+		uiHTMLTable( $args);
     default:
-	throw New \Exception(sprintf('Error: Wrong argument when calling media.php'));
+		echo "Wrong parameter to call this file";
 }
 
+function userSearch($string) {
+	$db = new ifyDB;
+	$result = $db->userSearch($string);
+	echo $result;
+}
+
+function uiHTMLTable($string) {
+	$db = new ifyDB;
+	$result = $db->smartQuery($string, 'all', 'html-table');
+	echo $result;
+}
 
 // Functions to implement
 /*

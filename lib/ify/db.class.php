@@ -156,75 +156,158 @@ class ifyDB {
 
 	}
 
-	public function userSearch($string, $output="all") {
+
+	public function userSearch($string) {
 		// Analyse user search query
-		
-		$db = $this->_db;
-		$string = "%".$string."%";
 
+		$result = $this->smartQuery($string, "all", "php");
 
-		// Build the request
-		if ($output == "count") {
-			$start = "SELECT COUNT(id) FROM `files` WHERE ";
-		} else {
-			$start = "SELECT id, tagArtist, tagTitle, tagAlbum, tagGenre FROM `files` WHERE ";
-		}
-		$where = "tagArtist LIKE ? OR tagTitle LIKE ? OR tagAlbum LIKE ?";
-		$limit = " LIMIT 20";
-
-		$query = $start . $where .$limit;
-		//l("INFOS", "Request is: ".$start.$where.' LIMIT 50');
-
-		// Execute the request
-		$params = array($string, $string, $string);
-		$result = $db->rawQuery($start.$where.' LIMIT 50', $params);
-
-		//print_r($result);
-
-		if ($output == "count") {
-			return $result[0]["COUNT(id)"];
-		} else {
-			return $result;
+		$return = array();
+		foreach ($result as $line) {
+			array_push($return, $line['tagArtist'], $line['tagAlbum'], $line['tagTitle']);
 		}
 
+		$return = array_unique($return, SORT_LOCALE_STRING);
+		//var_dump($return);
+
+		return json_encode(array_values($return));
 	}
 
-	public function smartQuery($string) {
+	public function smartQuery($string, $select="all", $output="php") {
 		
 		// Initialisation
-		$msg = "";
+		$where = "";
+		$group = "";
+		$limit = "";
+		$group = "";
 		$params = array ();
 
-		// Start analyse the first statement
-		$result = $this->smartStatement($string);
+		// WHERE PART
+		/////////////
+		if (empty($string) || $string == "*") {
+			// Select all elements coz no filter
+			$where = "";
+			$params = array();
+		} else {
+			// Determine statement type
+			$result = $this->smartStatement($string);
 
-		if ($result['status'] == 0) {
-			// This is a smart query
-			$msg = $result['msg'];
-			$params = $result['params'];
-		} elseif ($result['status'] == 1) {
-			// This is a smart query but not properly formatted
-			$return = array(
-				'status' => 1,
-				'msg' => $result['msg']
-				);
-			return $return['msg'];
-		} elseif ($result['status'] == 2 ){
-			// This is not a smart query
-			$result = $this->metaStatement($string);
-			$msg = $result['msg'];
-			$params = $result['params'];
+			if ($result['status'] == 0) {
+				// This is a smart query
+				$where = $result['msg'];
+				$params = $result['params'];
+			} elseif ($result['status'] == 1) {
+				// This is a smart query but not properly formatted
+				$return = array(
+					'status' => 1,
+					'msg' => $result['msg']
+					);
+				return $return['msg'];
+			} elseif ($result['status'] == 2 ){
+				// This is not a smart query
+				$result = $this->metaStatement($string);
+				$where = $result['msg'];
+				$params = $result['params'];
+			} else {
+				l("ERROR", "This search query is not possilbe: $tring");
+			}
+		}
+		if (!empty($where)) $where = "WHERE ".$where;
+
+
+		// SELECT part
+		//////////////
+		switch ($select) {
+			case "all":
+				$select = "id, tagArtist, tagTitle, tagAlbum, tagGenre, tagYear";
+				$limit = " LIMIT 30";
+				break;
+			case "search":
+				$select = "tagArtist, tagTitle, tagAlbum";
+				$limit = " LIMIT 30";
+				break;
+			case "artists":
+				$select = "tagArtist, COUNT(tagArtist)";
+				$group = "tagArtist";
+				break;
+			case "albums":
+				$select = "tagAlbum, COUNT(tagAlbum)";
+				$group = "tagAlbum";
+				break;
+			case "genre":
+				$select = "tagGenre, COUNT(tagGenre)";
+				$group = "tagGenre";
+				break;
+			case "year":
+				$select = "tagYear, COUNT(tagYear)";
+				$group = "tagYear";
+				break;
+			case "titles":
+				$select = "tagTitle";
+				$limit = "";
+				break;
+			case "count":
+				$select = "COUNT(id)";
+				$limit = "";
+				break;
+			default:
+				$select = "id, tagArtist, tagTitle, tagAlbum, tagGenre";
+				$limit = " LIMIT 30";
+		}
+		$select = "SELECT ".$select;
+		if (!empty($group)) $group = "GROUP BY ".$group;
+		$limit = "";
+
+
+		// Database Query
+		/////////////////
+		$query = $select." FROM `files` ".$where.$limit.$group;
+
+		//echo "<pre>";
+		//var_dump($query);
+		//var_dump($params);
+		//echo "</pre>";
+
+		// Execute the request
+		$db = $this->_db;
+		if (empty($params)) {
+			$result = $db->query($query);
+		} else {
+			$result = $db->rawQuery($query, $params);
 		}
 
-	//	echo $string;
+		// Make the output
+		//////////////////
+		//print_r($result);
+		if ($output == "php") {
+			return $result;
+		} elseif ($output == "json") {
+			// Return 2D array
+			return json_encode($result);
+		} elseif ($output == "json-list") {
+			// return 1D array
+			return json_encode($result);
+		} elseif ($output == "html-table") {
+			// Return 2D array
+			$result = array_values($result);
 
-		$return = array (
-			"status" => $result['status'],
-			"msg" => $msg,
-			"params" => $params
-		);
+			$html = "";
+			foreach ($result as $line) {
+				$line = implode("</td><td>",array_values($line));
+				$html .= "<tr><td>".$line."</td></tr>";
+			}
 
-		return $return;
+			return $html;
+		} elseif ($output == 'html-list') {
+			// Return 1D li
+			$return = array();
+			foreach ($result as $line){
+				array_push($return,implode(', ', $line));
+			}
+			return '<li>'.implode("</li><li>", $return).'</li>';
+		}
+
+
 	}
 
 	private function metaStatement($string) {
@@ -232,11 +315,15 @@ class ifyDB {
 		
 		$result = array();
 		$db = $this->_db;
-		$where = "tagArtist LIKE ? OR tagTitle LIKE ? OR tagAlbum LIKE ?";
-		//$string = "%".$string."%";
-
-		// Execute the request
-		$params = array($string, $string, $string);
+		if ($string == '*' || $string == '%') {
+			$where = "";
+			$string = "";
+			$params = array();
+		} else {
+			$where = "tagArtist LIKE ? OR tagTitle LIKE ? OR tagAlbum LIKE ?";
+			$string = "%".$string."%";
+			$params = array($string, $string, $string);
+		}
 
 		$result = array(
 			'status'	=> 0,			// OK, everything's good
@@ -388,14 +475,14 @@ class ifyDB {
 			$regex='/^(\'|")|(\'|")$/';
 			$value = preg_replace($regex, "", $value);
 			$query .= ' ?';
-			$params[0] = $value;
+			$params[0] = "%".$value."%";
 
 		} elseif (!is_int(strpos("[]",$op))) {
 			// Looking for a number
 			$regex = "/^(\d)+$/";
 			$match = preg_match($regex, $value);
 
-			if (!$match) {
+			if (count($match) != 1) {
 				$result = array(
 					'status' =>1,
 					'msg' => "IQL: '".$value."' is not a number"
@@ -436,7 +523,7 @@ class ifyDB {
 			// Not possible body
 			$result = array(
 				'status' => 1,
-				'msg' => "IQL: '".$value."' is not acceptable value"
+				'msg' => "IQL: '".$value."' is not an acceptable value"
 			);
 			return $result;
 		}

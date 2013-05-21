@@ -18,20 +18,24 @@ class ifyConfig {
 	protected $_app;
 
 	// This function read the ini file
-	function __construct($iniFile = null) {
+	function __construct($iniFile = "") {
 
 		//
 		// User settings
 		////////////////
 
 		// Define hardcoded default config file if not set
-		if (!$iniFile) $iniFile = "/var/www/ify/config.ini";
+		if (empty($iniFile)) {
+			$iniFile = getcwd()."/../config.ini";
+			//echo "Loaded config.ini is: ".$iniFile;
+		}
+
 
 		// Tests if the file exists and is readable
 		if( !file_exists($iniFile) )
-			throw New \Exception(sprintf('Config file not found: %s', $fileName));
+			throw New \Exception(sprintf('Config file not found: %s', $iniFile));
 		if( !is_readable($iniFile) )
-			throw New \Exception(sprintf('Config file not readable: %s', $fileName));
+			throw New \Exception(sprintf('Config file not readable: %s', $iniFile));
 		// Save file path
 		$this->_iniFile = $iniFile;
 
@@ -96,7 +100,7 @@ class ifyConfig {
 			return 1;
 		} else {
 			$this->_user = $user;
-			doLog("INFO: Context set for user $user (auth= ".$this->get('auth').")");
+			//doLog("INFO: Context set for user $user (auth= ".$this->get('auth').")");
 			return 0;
 		}
 	}
