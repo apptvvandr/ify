@@ -10,6 +10,10 @@ include('lib/ify/mysql.class.php');
 include('lib/ify/db.class.php');
 
 
+// Generate random ID
+function IfyId($length = 10) {
+	    return substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"), 0, $length);
+}
 
 // Get ID3 informations
 function music_info($file) {
@@ -24,24 +28,22 @@ function music_info($file) {
 	getid3_lib::CopyTagsToComments($id3);
 
 	// Debug
-	echo "<pre>";
-	var_dump($id3);
-	echo "</pre>";
-
+	//echo "<pre>";
+	//var_dump($id3);
+	//echo "</pre>";
 
 	// Extract needed infos for Ify
 	$tags = array (
-		"filename"	=> (isset($id3['filename']) ? $id3['filename'] : "-"),
-		"title"		=> (isset($id3['comments_html']['title'][0]) ? $id3['comments_html']['title'][0] : ""),
-		"artist"	=> (isset($id3['comments_html']['artist'][0]) ? $id3['comments_html']['artist'][0] : ""),
-		"album"		=> (isset($id3['comments_html']['album'][0]) ? $id3['comments_html']['album'][0] : ""),
-		"year"		=> (isset($id3['comments_html']['year'][0]) ? $id3['comments_html']['year'][0] : ""),
-		"track"		=> (isset($id3['comments_html']['track'][0]) ? $id3['comments_html']['track'][0] : ""),
-		"genre"		=> (isset($id3['comments_html']['genre'][0]) ? $id3['comments_html']['genre'][0] : ""),
-		"length"	=> (isset($id3['playtime_string']) ? $id3['playtime_string'] : ""),
+		"filename"	=> (isset($id3['filename']) ? $id3['filename'] : ""),
+		"filepath"	=> (isset($id3['filepath']) ? $id3['filepath'] : ""),
+		"title"		=> (isset($id3['comments']['title'][0]) ? $id3['comments']['title'][0] : ""),
+		"artist"	=> (isset($id3['comments']['artist'][0]) ? $id3['comments']['artist'][0] : ""),
+		"album"		=> (isset($id3['comments']['album'][0]) ? $id3['comments']['album'][0] : ""),
+		"year"		=> (isset($id3['comments']['year'][0]) ? $id3['comments']['year'][0] : ""),
+		"track"		=> (isset($id3['comments']['track'][0]) ? $id3['comments']['track'][0] : ""),
+		"genre"		=> (isset($id3['comments']['genre'][0]) ? $id3['comments']['genre'][0] : ""),
+		"lenght"	=> (isset($id3['playtime_seconds']) ? $id3['playtime_seconds'] : ""),
 		"bitrate"	=> (isset($id3['audio']['bitrate']) ? $id3['audio']['bitrate'] : ""),
-		"format"	=> (isset($id3['audio']['dataformat']) ? $id3['audio']['dataformat'] : ""),
-		"lenght"	=> (isset($id3['audio']['lenght']) ? $id3['audio']['lenght'] : "")
 	);
 	return $tags;
 }

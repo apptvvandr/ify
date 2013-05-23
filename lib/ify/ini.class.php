@@ -8,6 +8,7 @@ class ifyConfig {
 	// Raw data extracted from ini file
 	protected $_raw;
 
+
 	// Save user context
 	protected $_user;
 
@@ -18,18 +19,18 @@ class ifyConfig {
 	protected $_app;
 
 	// This function read the ini file
-	function __construct($iniFile = "") {
+	function __construct($iniFile = "config.ini") {
 
-		//
-		// User settings
-		////////////////
+		$this->_app = array();
 
-		// Define hardcoded default config file if not set
-		if (empty($iniFile)) {
-			$iniFile = getcwd()."/../config.ini";
-			//echo "Loaded config.ini is: ".$iniFile;
-		}
+		// Initialise application root path
+		// Note: if you move this file class, you have to define its relative path from
+		// the root application
+		$this->_app["root"] = realpath(dirname(__FILE__). DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "..");
+		$iniFile = $this->_app["root"] . DIRECTORY_SEPARATOR . $iniFile;
 
+		// Ini config file
+		//////////////////
 
 		// Tests if the file exists and is readable
 		if( !file_exists($iniFile) )
@@ -42,13 +43,9 @@ class ifyConfig {
 		// Parse the ini file
 		$this->_raw = parse_ini_file($iniFile, true);
 
+		//echo "Real path is: " . $this->_app["root"] . "<br>";
+		//echo "Real path is: " . $this->getApp("root") . "<br>" ;
 
-		//
-		// Application settings
-		///////////////////////
-		$this->_app = array();
-
-		$this->_app["root"] = "/var/www/ify/";
 	}
 
 	// Display raw config data (debug purpose only)
@@ -127,10 +124,10 @@ class ifyConfig {
 
 	// Get application config settings
 	function getApp($setting) {
-		if (empty($setting))
-			return $this->app;
-		else
+		if (!empty($setting) && !empty($this->_app[$setting]))
 			return $this->_app[$setting];
+		else
+			return null;
 	}
 
 

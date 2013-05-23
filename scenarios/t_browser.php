@@ -35,6 +35,8 @@
 						<input type="text" data-provide="typeahead">
 						<button type="submit" class="btn submit"><i class="icon-search"></i></button>
 					</div>
+					
+					<audio id="player1" src="../media/AirReview-Landmarks-02-ChasingCorporate.mp3" type="audio/mp3"></audio>
 
 			</div>
 		</div>
@@ -88,9 +90,9 @@
     </div>
 
 		<!-- Scripts -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 		<script type="text/javascript" src="../lib/bootstrap/js/bootstrap.js"></script>
-		<script type="text/javascript" src="../lib/melement/mediaelement-and-player.min.js"></script>
+		<script type="text/javascript" src="../lib/melement/mediaelement.js"></script>
 
 		<script type="text/javascript" src="../lib/ify/scripts3.js"></script>
 

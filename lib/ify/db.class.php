@@ -24,31 +24,31 @@ class ifyDB {
 	public function scanDir( $path ) {
 
 		global $conf;
+		$fullPath = $conf->getApp("root") . $path;
 		$max = 10;
 
 		// Check if it's a relative path or not
-		if ($path[0] != "/")
-		{
-			//Absolute path
-			$path = $conf->getApp('root').$path ;
-		}
+		//if ($path[0] != "/")
+		//{
+		//	//Absolute path
+		//	$path = $conf->getApp('root').$path ;
+		//}
 			
 
 		// Check if the dir exists
-		if (!is_dir($path))
-			l("WARNING", "Directory '".$path."' does not exists");
+		if (!is_dir($fullPath))
+			l("WARNING", "Directory '".$fullPath."' does not exists");
 
 		// This can be very long:
 		set_time_limit ( 0 );
 
 		// Do a recursive scan
-		$dir  = new RecursiveDirectoryIterator($path, RecursiveDirectoryIterator::SKIP_DOTS);
+		$dir  = new RecursiveDirectoryIterator($fullPath, RecursiveDirectoryIterator::SKIP_DOTS);
 		if ($conf->get("follow_sym"))
 			$dir->setflags(RecursiveDirectoryIterator::FOLLOW_SYMLINKS);
 		$files = new RecursiveIteratorIterator($dir, RecursiveIteratorIterator::LEAVES_ONLY);
 
-		$num = count($files);
-		echo "Scanning: $path ... <br>$num files found! <br>";
+		echo "Scanning: $fullPath ... <br>";
 		$i = 0;
 		foreach ($files as $file) {
 			$i++;
@@ -58,17 +58,21 @@ class ifyDB {
 			//echo strrchr($file,'.') . " VS " . trim(strrchr($file,'.'), ".") . "</br>";
 			if (in_array(strtolower(trim(strrchr($file,'.'), ".")), $conf->get('audio'), ".")) {
 				$this->addFileToDb($file);
+				echo "Adding file" . $file. "<br>";
 			}
 
-			if ($i > $max) 
+			if ($max != 0 && $i > $max) 
 				return 0;
 		}
+		echo "$i files found! <br>";
 
 	}
 
 	public function addFileToDB($file) {
 		
 		global $conf;
+		static $jail;
+		$prefix = strlen($conf->getApp('root') . DIRECTORY_SEPARATOR . $conf->get('jail_path'));
 		$db = $this->_db;
 
 	//echo "<hr>";
@@ -109,18 +113,22 @@ class ifyDB {
 	//echo "Saving into DB<br>";
 		// Generate uniq ID
 		$insertData = array(
-			'id'		=> $id,
-			'dir'		=> $infos['dirname'],
-			'name'		=> $infos['basename'],
+			'id'		=> IfyId(12),
 			'tagTitle'	=> $tags['title'],
 			'tagArtist'	=> $tags['artist'],
 			'tagAlbum'	=> $tags['album'],
 			'tagYear'	=> $tags['year'],
 			'tagTrack'	=> $tags['track'],
-			'tagGenre'	=> $tags['genre']
+			'tagGenre'	=> $tags['genre'],
+			'fileDir'		=> substr($infos['dirname'], $prefix),
+			'fileName'		=> $infos['basename'],
+			'fileBitrate'	=> $tags['bitrate'],
+			'fileLenght'	=> $tags['lenght']
 		);
+		l("INFO", "Infos pour $file", $insertData);
 
-		$db->insert('files', $insertData);
+		return 0;
+	//	$db->insert('files', $insertData);
 //		if($db->insert('files', $insertData)) {
 //			echo 'FAIL! <br>';
 //		} else {
