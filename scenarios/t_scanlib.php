@@ -39,10 +39,14 @@ $d->timerStart();
 
 
 $path = $conf->getUser('path');
-echo "Path to scan: " . $path[0] . "<br>";
-echo "Absolute path to scan: " . $conf->getApp('root') . $path[0] . "<br>";
+//echo "Path to scan: " . $path[0] . "<br>";
+//echo "Absolute path to scan: " . $conf->getApp('root') . $path[0] . "<br>";
 
-$db->scanDir($path[0]);
+//$db->scanDir($path[0]);
+
+$test = $db->getFilePath("8IPxRetHjKso");
+echo "Test = " . $test;
+doLog("DEBUG", "File path is : $test");
 
 
 

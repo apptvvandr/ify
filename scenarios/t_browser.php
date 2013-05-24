@@ -92,7 +92,8 @@
 		<!-- Scripts -->
 		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 		<script type="text/javascript" src="../lib/bootstrap/js/bootstrap.js"></script>
-		<script type="text/javascript" src="../lib/melement/mediaelement.js"></script>
+		<script type="text/javascript" src="../lib/melement/mediaelement.jsd"></script>
+		<script type="text/javascript" src="../lib/melement/mediaelement-and-player.js"></script>
 
 		<script type="text/javascript" src="../lib/ify/scripts3.js"></script>
 

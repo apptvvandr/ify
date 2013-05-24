@@ -25,7 +25,7 @@ class ifyDB {
 
 		global $conf;
 		$fullPath = $conf->getApp("root") . $path;
-		$max = 10;
+		$max = 1000;
 
 		// Check if it's a relative path or not
 		//if ($path[0] != "/")
@@ -57,8 +57,8 @@ class ifyDB {
 			// Check file extension is accepted
 			//echo strrchr($file,'.') . " VS " . trim(strrchr($file,'.'), ".") . "</br>";
 			if (in_array(strtolower(trim(strrchr($file,'.'), ".")), $conf->get('audio'), ".")) {
+				//echo "Adding file " . $file. "<br>";
 				$this->addFileToDb($file);
-				echo "Adding file" . $file. "<br>";
 			}
 
 			if ($max != 0 && $i > $max) 
@@ -68,38 +68,49 @@ class ifyDB {
 
 	}
 
-	public function addFileToDB($file) {
-		
+	public function addFileToDB($path) {
+
 		global $conf;
-		static $jail;
-		$prefix = strlen($conf->getApp('root') . DIRECTORY_SEPARATOR . $conf->get('jail_path'));
+
+		static $absJail;
+		$absJail = $conf->getApp('root') . DIRECTORY_SEPARATOR . $conf->get('jail_path');
+
+		$file = pathinfo($path);
+		$relPath = substr($file['dirname'], strlen($absJail));
+		$fileName = $file['basename'];
+
+		// Needed variables
+		// $absJail: The absolute path of root music directory of the user (the Jail), static
+		// $path: Absolute music path with filename.
+		// $relPath: The relative directory path of the song from the Jail.
+		// $fileName: Full file name of the file, with extension :)
+
 		$db = $this->_db;
-
 	//echo "<hr>";
-
-		$infos = pathinfo($file);
 		
-		if (!in_array($infos['extension'], $conf->get('audio'))) {
+		// Check this kind of file is allowed
+		if (!in_array($file['extension'], $conf->get('audio'))) {
 			l("DEBUG", "File $file is not allowed type, not adding this one to DB");
 			return 1;
 		}
 
 	//echo "Checking if file is not already added<br>";
-		$checkParams = array ($infos['dirname'], $infos['basename']);
-		$checkEntry = $db->rawQuery("SELECT * FROM `files` WHERE dir = ? and name = ?", $checkParams );
+		// Check if the file is not already in DB
+		$checkParams = array ($relPath, $file['basename']);
+		$checkEntry = $db->rawQuery("SELECT * FROM `files` WHERE fileDir = ? and fileName = ?", $checkParams );
 		if (empty($checkEntry)) {
-	//echo "Adding $file <br>";
+			//echo "Adding $file , ". var_dump($checkEntry) . " <br>";
 		} else {
-			doLog("INFO: the file $file is already in DB");
-			return 1;
+			doLog("INFO", "The file $file is already in DB");
+			return 2;
 		}
 
 
+	//doLog("DEBUG: Searching for an uniq ID. While loop running !");
 		// Generate uniq ID and check if it does not already exists
-		//doLog("DEBUG: Searching for an uniq ID. While loop running !");
 		$i = 0;
 		do {
-			$id = rand(1,99999);
+			$id = IfyId(12);
 			$db->where('id', $id);
 			$check = $db->get('files', 'id');
 		} while ( !empty($check) );
@@ -107,33 +118,62 @@ class ifyDB {
 		
 	//echo "Getting id3 tags<br>";
 		// Get id3 infos
-		$tags = music_info($file);
+		$tags = music_info($path);
 
 
 	//echo "Saving into DB<br>";
-		// Generate uniq ID
+		// Create array to save in DB
 		$insertData = array(
-			'id'		=> IfyId(12),
+			'id'		=> $id,
+			'lib'		=> $conf->getUser('login'),
 			'tagTitle'	=> $tags['title'],
 			'tagArtist'	=> $tags['artist'],
 			'tagAlbum'	=> $tags['album'],
 			'tagYear'	=> $tags['year'],
 			'tagTrack'	=> $tags['track'],
 			'tagGenre'	=> $tags['genre'],
-			'fileDir'		=> substr($infos['dirname'], $prefix),
-			'fileName'		=> $infos['basename'],
+			'fileDir'		=> $relPath,
+			'fileName'		=> $file['basename'],
 			'fileBitrate'	=> $tags['bitrate'],
 			'fileLenght'	=> $tags['lenght']
 		);
-		l("INFO", "Infos pour $file", $insertData);
+	//l("INFO", "Infos pour $file", $insertData);
 
-		return 0;
-	//	$db->insert('files', $insertData);
-//		if($db->insert('files', $insertData)) {
-//			echo 'FAIL! <br>';
-//		} else {
-//			echo 'success!<br>';
-//		}
+		// Import in DB and check if everything's OK
+		if($db->insert('files', $insertData)) {
+			echo 'FAIL! <br>';
+			doLog("WARNING", "Couldn't insert $file informations in DB");
+			return 3;
+		} else {
+			return 0;
+		}
+
+	}
+
+	//Return the full file path from DB
+	public function getFilePath($id) {
+		global $conf;
+		$db = $this->_db;
+
+		//echo "teststst";
+		//$db->where('id', $id);
+		//$result = $db->get('files', 'id');
+		$result = $db->rawQuery("SELECT fileDir, fileName FROM `files` WHERE id = ? ", array($id));
+
+		if (count($result) == 1) {
+			// Object found, make the path
+			$result = $result[0];
+			return $conf->getApp('root') . DIRECTORY_SEPARATOR . $conf->get('jail_path') . $result['fileDir'] . DIRECTORY_SEPARATOR  . $result['fileName'];
+		} elseif (count($result) > 1) {
+			// Duplicate entry, something's really wrong in DB :/
+			doLog("ERROR", "Duplicate entry in DB for id $id. Something's really wrong in your DB :/");
+			return 2;
+		} else {
+			// Nothing found
+			echo "FAILLL";
+			doLog("INFO", "No  entry in DB for id $id");
+			return 1;
+		}
 
 	}
 

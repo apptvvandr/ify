@@ -4,16 +4,18 @@ include ("ify.php");
 
 
 // _POST Management
-$function = (isset($_POST["f"])) ? $_POST["f"] : "null";
+$media = (isset($_POST["m"])) ? $_POST["m"] : "null";
 $args = (isset($_POST["a"])) ? $_POST["a"] : "null";
 
 // _GET Management
-$function = (isset($_GET["f"])) ? $_GET["f"] : "null";
+$media = (isset($_GET["m"])) ? $_GET["m"] : "null";
 $args = (isset($_GET["a"])) ? $_GET["a"] : "null";
 
 
+$conf = new ifyConfig();
+
 // Action to do
-switch ( $function) {
+switch ( $media) {
 	case "as":
 	case "audio_stream":
 		audio_stream( $args);
@@ -35,12 +37,15 @@ function audio_test () {
 }
 
 function audio_stream ( $args) {
+	$db = new ifyDB;
 
 	// Check input
 
 	// Convert ID to File
+	$file = $db->getFilePath($args);
 
-	serveFile( $file, $name, true);
+	if ($file != 1 && $file != 2)
+		serveFile( $file, pathinfo($file, PATHINFO_BASENAME), true);
 }
 
 ?>
