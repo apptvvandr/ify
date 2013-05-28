@@ -230,6 +230,9 @@ class ifyDB {
 		$group = "";
 		$params = array ();
 
+
+
+
 		// WHERE PART
 		/////////////
 		if (empty($string) || $string == "*") {
@@ -238,8 +241,7 @@ class ifyDB {
 			$params = array();
 		} else {
 			// Determine statement type
-			$result = $this->smartStatement($string);
-
+			$result = $this->buildSentence($string);
 			if ($result['status'] == 0) {
 				// This is a smart query
 				$where = $result['msg'];
@@ -251,13 +253,8 @@ class ifyDB {
 					'msg' => $result['msg']
 					);
 				return $return['msg'];
-			} elseif ($result['status'] == 2 ){
-				// This is not a smart query
-				$result = $this->metaStatement($string);
-				$where = $result['msg'];
-				$params = $result['params'];
 			} else {
-				l("ERROR", "This search query is not possilbe: $tring");
+				l("ERROR", "This search query is not possible: $string");
 			}
 		}
 		if (!empty($where)) $where = "WHERE ".$where;
@@ -358,31 +355,90 @@ class ifyDB {
 
 	}
 
-	private function metaStatement($string) {
-		// Analyse user search query
-		
-		$result = array();
-		$db = $this->_db;
-		if ($string == '*' || $string == '%') {
-			$where = "";
-			$string = "";
-			$params = array();
-		} else {
-			$where = "tagArtist LIKE ? OR tagTitle LIKE ? OR tagAlbum LIKE ?";
-			$string = "%".$string."%";
-			$params = array($string, $string, $string);
+
+	function buildSentence($string) {
+
+
+		// Counts number of parenteheses
+		$count = 0;
+		$arrayOfString = str_split($string);
+		foreach ($arrayOfString as $char) {
+			if ($char == '(')
+				$count++;
+			elseif ($char == ')')
+				$count--;
+			if ($count < 0)
+				break;
 		}
 
-		$result = array(
-			'status'	=> 0,			// OK, everything's good
-			'msg'		=> $where,		// WHERE query to inject
-			'params'	=> $params		// Parameters in array
+		// Exits if parentheses are wrong
+		if ($count < 0 ) {
+			$result = array(
+				'status' => 1, 
+				'msg' =>  "IQL: Missing ".-$count." opening parenthese(s)"
 			);
+			return $result;
+		}
+		elseif ($count > 0) {
+			$result = array(
+				'status' => 1, 
+				'msg' =>  "IQL: Missing ".$count." closing parenthese(s)"
+			);
+			return $result;
+		}
 
+
+		// Delete spaces in parentheses
+		$string = preg_replace('!\s*\(\s*!', ' ( ', $string);
+		$string = preg_replace('!\s*\)\s*!', ' ) ', $string);
+		// Delete duplicate spaces
+		$string = preg_replace('!\s+!', ' ', $string);
+		// Delete spaces at the beginning and the end of the string
+		$string = preg_replace('!(^\s+)|(\s+$)!', '', $string);
+
+		// Parsing sentence
+
+		/*
+		This regex matches these strings: AND, OR, (, ), <smartStmt>, <generalStmt>
+		*/
+		$regex = '!(AND|OR|\(|\)|([^\s\(\)]{1,3}\"[^\"]*\")|([^\s\(\)]{1,3}\'[^\']*\')|[^\s]*)*!';
+		$match = array();
+
+	
+		preg_match_all ( $regex, $string, $match );
+		$match = $match[0];
+
+		$result = array() ;
+		$params = array() ;
+		foreach ($match as $word) {
+
+			if (in_array($word, array('', ' ', 'AND', 'OR', '(', ')')) == false) {
+				$stmt = $this->buildStatement($word);
+
+				if ($stmt['status'] == 0 ) {
+					array_push($result, $stmt['msg']);
+					$params = array_merge($params, $stmt['params']);
+				}
+			} elseif (empty($word)) {
+				// Empty lines not pushed
+			} elseif (in_array($word, array('AND', 'OR', '(', ')')) != false) {
+				array_push($result, $word);
+			} else {
+				l("ERROR", "This caracter is not allowed: $word");
+			}
+
+		}	
+
+		$result = array(
+			'status' => 0, 
+			'msg' =>  implode( ' ', $result),
+			'params' => $params
+		);
 		return $result;
+
 	}
 
-	private function smartStatement($string) {
+	private function buildStatement($string) {
 
 		//Simplified regex
 		// ([patgyln]) ([=:><!]) (("[^"]*")|('[^']*')|([^/s]*))
@@ -412,8 +468,25 @@ class ifyDB {
 			$value = $match[6];
 			//l("INFO","Smart statement detecte: $key $op $value OU ".implode($match));
 		} else {
-			//l("DEBUG","Not a smart statement: ".$string);
-			$result = array('status' => 2, 'msg' => "IQL: Not a smart query: ".$string);
+			//Build a query which will search a string in any tables
+
+			$result = array();
+			if ($string == '*' || $string == '%') {
+				$where = "";
+				$string = "";
+				$params = array();
+			} else {
+				$where = "tagArtist LIKE ? OR tagTitle LIKE ? OR tagAlbum LIKE ?";
+				$string = "%".$string."%";
+				$params = array($string, $string, $string);
+			}
+
+			$result = array(
+				'status'	=> 0,			// OK, everything's good
+				'msg'		=> $where,		// WHERE query to inject
+				'params'	=> $params		// Parameters in array
+				);
+
 			return $result;
 		}
 

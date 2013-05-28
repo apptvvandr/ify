@@ -11,7 +11,6 @@
 	<!-- Le styles -->
 	<link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.css">
 	<link rel="stylesheet" href="../lib/font-awesome/css/font-awesome.min.css">
-	<link rel="../lib/melement/stylesheet" href="mediaelementplayer.css" />
 
 	<link rel="stylesheet" href="../lib/ify/style3.css">
 </head>
@@ -25,9 +24,9 @@
 			<div class="row-fluid">
 
 					<div class="btn-group">
-						<a href="#" class="btn"><i class="icon-backward"></i></a>
-						<a href="#" class="btn"><i class="icon-play"></i></a>
-						<a href="#" class="btn"><i class="icon-forward"></i></a>
+						<a href="#" id="but-prev" class="btn"><i class="icon-backward"></i></a>
+						<a href="#" id="but-play" class="btn"><i class="icon-play"></i></a>
+						<a href="#" id="but-next" class="btn"><i class="icon-forward"></i></a>
 					</div>
 
 					<div class="input-prepend form-search input-append" id="search-bar">
@@ -36,7 +35,8 @@
 						<button type="submit" class="btn submit"><i class="icon-search"></i></button>
 					</div>
 					
-					<audio id="player1" src="../media/AirReview-Landmarks-02-ChasingCorporate.mp3" type="audio/mp3"></audio>
+					<div class="audio-player">
+					</div>
 
 			</div>
 		</div>
@@ -92,11 +92,9 @@
 		<!-- Scripts -->
 		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 		<script type="text/javascript" src="../lib/bootstrap/js/bootstrap.js"></script>
-		<script type="text/javascript" src="../lib/melement/mediaelement.jsd"></script>
-		<script type="text/javascript" src="../lib/melement/mediaelement-and-player.js"></script>
+		<script type="text/javascript" src="../lib/sm2/soundmanager2.js"></script>
 
 		<script type="text/javascript" src="../lib/ify/scripts3.js"></script>
-
 		<script type="text/javascript">
 			
 		</script>

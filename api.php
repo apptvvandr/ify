@@ -21,6 +21,7 @@ $conf->setUser("jez");
 
 // Initialise DB backend
 
+
 // Action to do
 switch ( $function) {
 	case "userSearch":
@@ -28,6 +29,7 @@ switch ( $function) {
 		break;
 	case "uiHTMLTable":
 		uiHTMLTable( $args);
+		break;
     default:
 		echo "Wrong parameter to call this file";
 }
