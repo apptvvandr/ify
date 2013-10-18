@@ -21,7 +21,7 @@ set_time_limit ( 30 );
 
 // Define user context
 global $conf;
-$conf = new ifyConfig('config.php');
+$conf = new ifyConfig();
 $conf->setUser("jez");
 
 // Initialise DB backend
@@ -41,15 +41,12 @@ $d->timerStart();
 ////////////////////////
 
 
-$search='all';
-$result= $db->smartQuery($search, "count-title count-album", "", "html-table");
 
-$result1= $db->smartQuery($search, "album count-title count-album", "album", "html-table");
+$query = $db->IQLParse ('ARTIST IS "Blink 182" OR     ( ALBUM IS Nevermind  OR ARTIST HAS "red \"hot\" ) \'chili ( pepper\'" ) AND    ( YEAR > 2000 OR YEAR >   1998   )');
 
-echo "<table border='1'>";
-print('<tr> </tr>' . $result);
-print($result1);
-echo "</table>";
+echo "<pre>";
+var_dump($query);
+echo "</pre>";
 
 
 

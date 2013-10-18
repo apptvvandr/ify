@@ -115,7 +115,7 @@ class MysqliDb
     {
         $this->_query = filter_var($query, FILTER_SANITIZE_STRING);
 ####### BIG SECURITY ISSUE HERE WITH FILTER_SANITIZE_STRING and the lesser than char <
-        $this->_query = $query;
+        //$this->_query = $query;
         $stmt = $this->_prepareQuery();
 
 		//echo "<pre>";
@@ -451,7 +451,11 @@ class MysqliDb
 		//var_dump($this->_query);
 
         if (!$stmt = $this->_mysqli->prepare($this->_query)) {
+			echo "<pre>";
+			$e = new Exception;
+			print_r($e->getTraceAsString());
             trigger_error("Problem preparing query ($this->_query) " . $this->_mysqli->error, E_USER_ERROR);
+			echo "</pre>";
         }
         return $stmt;
     }

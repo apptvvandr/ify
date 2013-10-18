@@ -2,18 +2,34 @@
 
 //include('../getid3/getid3.php');
 include('lib/getid3/getid3.php');
+include('lib/loco/loco.php');
 
 // Include classes
 include('lib/ify/debug.class.php');
 include('lib/ify/ini.class.php');
 include('lib/ify/mysql.class.php');
 include('lib/ify/db.class.php');
+include('lib/ify/iql.class.php');
 
 
 // Generate random ID
 function IfyId($length = 10) {
 	    return substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"), 0, $length);
 }
+
+// Find the best autoincrement value from list
+function IfyIncrement($list) {
+	$selection = 0;
+	$list = sort($list, SORT_NUMERIC);
+	foreach ($value as $id){
+		if ( $id != $selection) {
+			return $selection;
+		} else {
+			$selection++;
+		}
+	}
+}
+
 
 // Get ID3 informations
 function music_info($file) {
@@ -48,6 +64,20 @@ function music_info($file) {
 	return $tags;
 }
 
+
+// This function get _POST or _GET value or reurn default value
+function getData ($data, $default='') {
+	
+	if (isset($_GET[$data])) {
+		$value =  $_GET[$data];
+	} elseif (isset($_POST[$data])) {
+		$value = $_POST[$data];
+	} else {
+		$value = $default;
+	}
+
+	return $value;
+}
 
 // This function help to download or stream a file without
 // showing the source file.

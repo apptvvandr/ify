@@ -21,11 +21,11 @@ set_time_limit ( 30 );
 
 // Define user context
 global $conf;
-$conf = new ifyConfig('config.php');
+$conf = new ifyConfig();
 $conf->setUser("jez");
 
 // Initialise DB backend
-$db = new ifyDB($conf);
+//$db = new ifyDB;
 
 // Initialise timer
 $d->timerStart();
@@ -39,19 +39,10 @@ $d->timerStart();
 //
 // CODE EXPERIMENTATIONS
 ////////////////////////
-
-
-$search='all';
-$result= $db->smartQuery($search, "count-title count-album", "", "html-table");
-
-$result1= $db->smartQuery($search, "album count-title count-album", "album", "html-table");
-
-echo "<table border='1'>";
-print('<tr> </tr>' . $result);
-print($result1);
-echo "</table>";
-
-
+$return = $conf->destroy("path", "user.jez");
+//$return = $conf->get("toto23", "user.jez");
+$d->log($return);
+var_dump($return);
 
 // Remind closing the MySQL connection at the end
 unset($db);

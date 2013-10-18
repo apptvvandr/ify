@@ -1,0 +1,89 @@
+
+html, body {	
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	border: 0;
+	margin: 0;
+}
+
+#ui-wrapper {
+	height: 100%;
+	width: 100%;
+	background: blue;
+	overflow: hidden;
+}
+
+header {
+	display: inline-block;
+	height: 10%;
+	background: salmon;
+}
+
+nav {
+	display: inline-block;
+	width: 30%;
+	min-width: 100px;
+	background: DarkSeaGreen ;
+}
+
+aside {
+	display: inline-block;
+	width: 30%;
+	min-width: 100px;
+	background: DarkSalmon ;
+}
+
+footer {
+	display: inline-block;
+	background: cyan;
+}
+
+/*
+ * column management
+ */
+.ui-col {
+	display: inline-block;
+	height: 100%;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	background: DarkGoldenRod;
+}
+
+.ui-col-entry {
+	background: DarkOliveGreen ;
+}
+
+.ui-col-entry:hover {
+	background: DarkOrchid  ;
+}
+
+
+
+/**
+ * These styles are to create custom resize handles.
+ */
+.ui-resizable-w {
+	background: red;
+	left: -8px;
+	width: 8px;
+}
+
+.ui-resizable-e {
+	background: red;
+	right: -8px;
+	width: 8px;
+}
+
+.ui-resizable-n {
+	background: red;
+	top: -8px;
+	height: 8px;
+}
+
+.ui-resizable-s {
+	background: red;
+	bottom: -8px;
+	height: 8px;
+}
+

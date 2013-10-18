@@ -25,7 +25,7 @@ $conf = new ifyConfig();
 $conf->setUser("jez");
 
 // Initialise DB backend
-$db = new ifyDB;
+$db = new ifyDB($conf);
 
 // Initialise timer
 $d->timerStart();

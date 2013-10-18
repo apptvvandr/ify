@@ -11,9 +11,8 @@
 	<!-- Le styles -->
 	<link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.css">
 	<link rel="stylesheet" href="../lib/font-awesome/css/font-awesome.min.css">
-	<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
 
-	<link rel="stylesheet" href="../lib/ify/style4.css">
+	<link rel="stylesheet" href="../lib/ify/style3.css">
 </head>
 
 
@@ -49,10 +48,31 @@
 			<nav>
 <!-- Pane: Left -->
 			Left Pane
-			</nav><aside>
+			</nav><content>
 <!-- Pane: Right -->
-			aside
-			</aside>
+				<table class="table" id="content-playlist-table">
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>Title</th>
+							<th>Artist</th>
+							<th>Album</th>
+							<th>Genre</th>
+							<th>Year</th>
+						</tr>
+					</thead>
+
+					<tbody>
+						<tr>
+							<td>Content</td>
+							<td>Content</td>
+							<td>Content</td>
+							<td>Content</td>
+							<td>Content</td>
+						</tr>
+					</tbody>
+				</table>
+			</content>
 
     	</div>
 
@@ -71,37 +91,12 @@
 
 		<!-- Scripts -->
 		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-		<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 		<script type="text/javascript" src="../lib/bootstrap/js/bootstrap.js"></script>
 		<script type="text/javascript" src="../lib/sm2/soundmanager2.js"></script>
 
-		<!--script type="text/javascript" src="../lib/ify/scripts4.js"></script-->
+		<script type="text/javascript" src="../lib/ify/scripts3.js"></script>
 		<script type="text/javascript">
 			
- $(document).ready(function() {
-    $( "nav" ).resizable({
-		handles: "e",
-    });
-//    $( "aside" ).resizable({
-//		handles: "w",
-//    });
-
-
-	$("nav").on('resize', function(e, ui) {
-		console.dir( "Parent " + $("#main-wrapper").width() )
-
-		$('aside').width($('#main-wrapper').width() - $("nav").width());
-	});
-
-
-//	$("aside").on('resize', function(e, ui) {
-//		console.dir( "Parent " + $("#main-wrapper").width() )
-//
-//		$('nav').width($('#main-wrapper').width() - $("aside").width());
-//	});
-
-  });
-
 		</script>
 
 </div></body>

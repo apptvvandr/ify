@@ -1,4 +1,0 @@
-rewriteengine on
-#rewritebase /
-RewriteRule ^ziq.mp3$  /var/www/ify/tests/audio/stream2.php
-#RewriteRule ^.*$  /stream2.php

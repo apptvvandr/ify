@@ -7,31 +7,26 @@ class ifyDB {
 
 	private $_prefix;
 	private $_db;
+	private $_conf;
 
-	public function __construct () {
+	public function __construct (&$conf) {
 		
 		// Get global config
-		global $conf;
-		
-		// Get table prefix, (TODO: load from config params)
-		$_prefix = "";
-		
-		// Initialise MySQL connection
-		//$this->_db = new db('mysql:host=localhost,dbname=ify', 'ify', 'OmVogOvCav8');
-		$this->_db = new Mysqlidb('localhost' ,'ify', 'OmVogOvCav8', 'ify');
+		$this->_conf = $conf;
+		$this->_db = $conf->getMySQLObject();
 	}
 
 	public function scanDir( $path ) {
 
-		global $conf;
-		$fullPath = $conf->getApp("root") . $path;
+		$conf = $this->_conf;
+		$fullPath = $conf->getConst("root") . $path;
 		$max = 1000;
 
 		// Check if it's a relative path or not
 		//if ($path[0] != "/")
 		//{
 		//	//Absolute path
-		//	$path = $conf->getApp('root').$path ;
+		//	$path = $conf->getConst('root').$path ;
 		//}
 			
 
@@ -70,10 +65,10 @@ class ifyDB {
 
 	public function addFileToDB($path) {
 
-		global $conf;
+		$conf = $this->_conf;
 
 		static $absJail;
-		$absJail = $conf->getApp('root') . DIRECTORY_SEPARATOR . $conf->get('jail_path');
+		$absJail = $conf->getConst('root') . DIRECTORY_SEPARATOR . $conf->get('jail_path');
 
 		$file = pathinfo($path);
 		$relPath = substr($file['dirname'], strlen($absJail));
@@ -152,7 +147,7 @@ class ifyDB {
 
 	//Return the full file path from DB
 	public function getFilePath($id) {
-		global $conf;
+		$conf = $this->_conf;
 		$db = $this->_db;
 
 		//echo "teststst";
@@ -163,7 +158,7 @@ class ifyDB {
 		if (count($result) == 1) {
 			// Object found, make the path
 			$result = $result[0];
-			return $conf->getApp('root') . DIRECTORY_SEPARATOR . $conf->get('jail_path') . $result['fileDir'] . DIRECTORY_SEPARATOR  . $result['fileName'];
+			return $conf->getConst('root') . DIRECTORY_SEPARATOR . $conf->get('jail_path') . $result['fileDir'] . DIRECTORY_SEPARATOR  . $result['fileName'];
 		} elseif (count($result) > 1) {
 			// Duplicate entry, something's really wrong in DB :/
 			doLog("ERROR", "Duplicate entry in DB for id $id. Something's really wrong in your DB :/");
@@ -204,7 +199,7 @@ class ifyDB {
 
 	}
 
-
+	// this function is ugly and simple function which does a basic search
 	public function userSearch($string) {
 		// Analyse user search query
 
@@ -221,27 +216,26 @@ class ifyDB {
 		return json_encode(array_values($return));
 	}
 
-	public function smartQuery($string, $select="all", $output="php") {
+
+	// This function is a method to query DB from IQL to MySQL
+	public function smartQuery($filter, $columns="all", $group="", $limit="", $order="") {
 		
 		// Initialisation
-		$where = "";
-		$group = "";
 		$limit = "";
-		$group = "";
-		$params = array ();
 
 
-
-
-		// WHERE PART
+		// WHERE PART (filter)
 		/////////////
-		if (empty($string) || $string == "*") {
+		$params = array();
+		$where = array();
+
+		if (empty($filter) || $filter == '*' || $filter == 'all') {
 			// Select all elements coz no filter
-			$where = "";
+			$where = '';
 			$params = array();
 		} else {
 			// Determine statement type
-			$result = $this->buildSentence($string);
+			$result = $this->buildSentence($filter);
 			if ($result['status'] == 0) {
 				// This is a smart query
 				$where = $result['msg'];
@@ -254,64 +248,113 @@ class ifyDB {
 					);
 				return $return['msg'];
 			} else {
-				l("ERROR", "This search query is not possible: $string");
+				l("ERROR", "This search query is not possible: $filter");
 			}
 		}
-		if (!empty($where)) $where = "WHERE ".$where;
-
-
-		// SELECT part
-		//////////////
-		switch ($select) {
-			case "all":
-				$select = "id, tagArtist, tagTitle, tagAlbum, tagGenre, tagYear";
-				$limit = " LIMIT 30";
-				break;
-			case "search":
-				$select = "tagArtist, tagTitle, tagAlbum";
-				$limit = " LIMIT 30";
-				break;
-			case "artists":
-				$select = "tagArtist, COUNT(tagArtist)";
-				$group = "tagArtist";
-				break;
-			case "albums":
-				$select = "tagAlbum, COUNT(tagAlbum)";
-				$group = "tagAlbum";
-				break;
-			case "genre":
-				$select = "tagGenre, COUNT(tagGenre)";
-				$group = "tagGenre";
-				break;
-			case "year":
-				$select = "tagYear, COUNT(tagYear)";
-				$group = "tagYear";
-				break;
-			case "titles":
-				$select = "tagTitle";
-				$limit = "";
-				break;
-			case "count":
-				$select = "COUNT(id)";
-				$limit = "";
-				break;
-			default:
-				$select = "id, tagArtist, tagTitle, tagAlbum, tagGenre";
-				$limit = " LIMIT 30";
+#var_dump($params);
+#var_dump($where);
+		if (!empty($where)) {
+			$where = ' WHERE ' . $where;
+		} else { 
+			$where = '';
 		}
-		$select = "SELECT ".$select;
-		if (!empty($group)) $group = "GROUP BY ".$group;
-		$limit = "";
+
+
+		// SELECT part (columns)
+		//////////////
+		$select = array();
+		if (empty($columns) || $columns == '*') {
+			$columns = 'all';
+		}
+		$columns = explode(' ', $columns);
+		foreach ($columns as $value) {
+
+			switch ($value) {
+				case "all":
+					array_push($select, 'id', 'tagArtist', 'tagTitle', 'tagAlbum', 'tagGenre', 'tagYear');
+					$limit = " LIMIT 30";
+					break;
+
+				case "artist":
+					array_push($select, 'tagArtist');
+					break;
+				case "count-artist":
+					array_push($select, 'COUNT(DISTINCT(tagArtist))');
+					break;
+
+				case "album":
+					array_push($select, 'tagAlbum');
+					break;
+				case "count-album":
+					array_push($select, 'COUNT(DISTINCT(tagAlbum))');
+					break;
+
+				case "genre":
+					array_push($select, 'tagGenre');
+					break;
+				case "count-genre":
+					array_push($select, 'COUNT(DISTINCT(tagGenre))');
+					break;
+
+				case "title":
+					array_push($select, 'tagTitle');
+					break;
+				case "count-title":
+					array_push($select, 'COUNT(tagTitle)');
+					break;
+
+				case "year":
+					array_push($select, 'tagGenre');
+					break;
+
+				//default:
+				//	array_push($select, 'id', 'tagArtist', 'tagTitle', 'tagAlbum', 'tagGenre');
+				//	$limit = " LIMIT 30";
+			}
+		}
+		$select = "SELECT " . implode(', ', $select);
+
+
+		// GROUP BY part (group)
+		////////////////////////
+		switch ($group) {
+			case 'artist';
+				$group = '`tagArtist`';
+				break;
+			case 'album';
+				$group = '`tagAlbum`';
+				break;
+			case 'title';
+				$group = '`tagTitle`';
+				break;
+			case 'year';
+				$group = '`tagYear`';
+				break;
+			case 'genre';
+				$group = '`tagGenre`';
+				break;
+			default;
+				$group = '';
+		}
+		if (!empty($group)) {
+			$group = " GROUP BY " . $group;
+		}
+
+
+		// LIMIT part (limit)
+		/////////////
+		// (not implemented yet)
+		$limit = '';
 
 
 		// Database Query
 		/////////////////
-		$query = $select." FROM `files` ".$where.$limit.$group;
+		$query = $select." FROM `files`".$where.$limit.$group;
 
-		//echo "<pre>";
-		//var_dump($query);
-		//var_dump($params);
-		//echo "</pre>";
+//		echo "<pre>";
+//		var_dump($query);
+//		var_dump($params);
+//		echo "</pre>";
 
 		// Execute the request
 		$db = $this->_db;
@@ -321,43 +364,16 @@ class ifyDB {
 			$result = $db->rawQuery($query, $params);
 		}
 
-		// Make the output
-		//////////////////
-		//print_r($result);
-		if ($output == "php") {
-			return $result;
-		} elseif ($output == "json") {
-			// Return 2D array
-			return json_encode($result);
-		} elseif ($output == "json-list") {
-			// return 1D array
-			return json_encode($result);
-		} elseif ($output == "html-table") {
-			// Return 2D array
-			$result = array_values($result);
-
-			$html = "";
-			foreach ($result as $line) {
-				$line = implode("</td><td>",array_values($line));
-				$html .= "<tr><td>".$line."</td></tr>";
-			}
-
-			return $html;
-		} elseif ($output == 'html-list') {
-			// Return 1D li
-			$return = array();
-			foreach ($result as $line){
-				array_push($return,implode(', ', $line));
-			}
-			return '<li>'.implode("</li><li>", $return).'</li>';
-		}
-
-
+		// Return a standard 2D array
+		return $result;
 	}
 
-
+	// This function identifies statements and build a complete MySQL request
 	function buildSentence($string) {
 
+#echo "<pre>";
+#var_dump($string);
+#echo "</pre>";
 
 		// Counts number of parenteheses
 		$count = 0;
@@ -371,7 +387,7 @@ class ifyDB {
 				break;
 		}
 
-		// Exits if parentheses are wrong
+		// Exit if parentheses are wrong
 		if ($count < 0 ) {
 			$result = array(
 				'status' => 1, 
@@ -402,17 +418,23 @@ class ifyDB {
 		This regex matches these strings: AND, OR, (, ), <smartStmt>, <generalStmt>
 		*/
 		$regex = '!(AND|OR|\(|\)|([^\s\(\)]{1,3}\"[^\"]*\")|([^\s\(\)]{1,3}\'[^\']*\')|[^\s]*)*!';
+		$regex = '!(AND|OR|\(|\)|([^\s\(\)]{1,3}\"[^\"]*\")|([^\s\(\)]{1,3}\'[^\']*\')|(\"[^\"]*\")|(\'[^\']*\')|[^\s]*)*!';
 		$match = array();
 
 	
 		preg_match_all ( $regex, $string, $match );
 		$match = $match[0];
 
+#echo "<pre>";
+#var_dump($string);
+#var_dump($match);
+#echo "</pre>";
 		$result = array() ;
 		$params = array() ;
 		foreach ($match as $word) {
 
 			if (in_array($word, array('', ' ', 'AND', 'OR', '(', ')')) == false) {
+
 				$stmt = $this->buildStatement($word);
 
 				if ($stmt['status'] == 0 ) {
@@ -438,7 +460,10 @@ class ifyDB {
 
 	}
 
+
+	// This function analyses one statement and convert it to MySQL syntax
 	private function buildStatement($string) {
+//echo "buildStatement executed";
 
 		//Simplified regex
 		// ([patgyln]) ([=:><!]) (("[^"]*")|('[^']*')|([^/s]*))
@@ -448,8 +473,11 @@ class ifyDB {
 		$query = "";
 		$result = array (0, "");
 		$match = array();
-		$regex = '/([patgyln])((<=)|(>=)|(!=)|[=:><!\]\[])(("[^"]*")|(\'[^\']*\')|([^\s]*))/';
+		$regex = '/([abtgyln])((<=)|(>=)|(!=)|[=:><!\]\[])(("[^\"]*")|(\'[^\']*\')|([^\s]*))/';
 
+#echo "<pre> string";
+#var_dump($string);
+#echo "</pre>";
 		preg_match($regex, $string, $match);
 		
 		#echo "Raw match: <pre>";
@@ -462,16 +490,25 @@ class ifyDB {
 		them in way get the correct fields. The var dump over may help
 		you to identify witch index is corresponding to you match ;-)
 		*/
+#echo "<pre>";
+#var_dump($match);
+#echo "</pre>";
 		if (count($match) > 6) {
 			$key = $match[1];
 			$op = $match[2];
 			$value = $match[6];
-			//l("INFO","Smart statement detecte: $key $op $value OU ".implode($match));
+//l("INFO","Smart statement detecte: $key $op $value OU ".implode($match, ' '));
 		} else {
 			//Build a query which will search a string in any tables
 
 			$result = array();
-			if ($string == '*' || $string == '%') {
+
+
+			$regex='/(\'|\")*"/';
+			$string = preg_replace($regex, "", $string);
+var_dump($string);
+
+			if (empty($string) || $string == '*' || $string == '%' || $string == 'all') {
 				$where = "";
 				$string = "";
 				$params = array();
@@ -493,10 +530,10 @@ class ifyDB {
 
 		// Query builder
 		switch ($key) {
-			case "p":
+			case "a":
 				$query .= "tagArtist";
 				break;
-			case "a":
+			case "b":
 				$query .= "tagAlbum";
 				break;
 			case "t":
@@ -582,8 +619,8 @@ class ifyDB {
 			return $result;
 		}
 
-		//var_dump($key);
-		//echo "<br>";
+//var_dump($key);
+//echo "<br>";
 
 
 		// Checking values
@@ -593,10 +630,17 @@ class ifyDB {
 
 		if (is_int(strpos("patg",$key))) {
 			// Looking for a string, and clean it
-			$regex='/^(\'|")|(\'|")$/';
+			$regex='/^(\'*|"*)|(\'|")$/';
 			$value = preg_replace($regex, "", $value);
 			$query .= ' ?';
-			$params[0] = "%".$value."%";
+#echo "<pre>";
+#var_dump($value);
+#echo "</pre>";
+			if (empty($value) || $value == 'all' || $value == '*') {
+				$params[0] = "%";
+			} else {
+				$params[0] = "%".$value."%";
+			}
 
 		} elseif (!is_int(strpos("[]",$op))) {
 			// Looking for a number
@@ -641,7 +685,7 @@ class ifyDB {
 				$params[1] = $match[2];
 			}
 		} else {
-			// Not possible body
+			// Not possible body, error case
 			$result = array(
 				'status' => 1,
 				'msg' => "IQL: '".$value."' is not an acceptable value"
@@ -655,7 +699,198 @@ class ifyDB {
 			'msg' => $query,
 			'params' => $params
 		);
+#echo "<pre>";
+#var_dump($result);
+#echo "</pre>";
 		return $result;
+	}
+
+
+
+	// This function helps to convert IQLv2 to SQL syntax
+	public function IQLParse($string) {
+		
+
+		$query = array();
+
+		// Extract words from string
+		# http://stackoverflow.com/questions/2202435/php-explode-the-string-but-treat-words-in-quotes-as-a-single-word
+		preg_match_all('/"(?:\\\\.|[^\\\\"])*"|\S+/', $string, $query);
+		$query = $query[0];
+
+
+		// Counts number of parenteheses
+		$count = 0;
+		foreach ($query as $value) {
+			if ($value == '('){
+				$count++;
+			} elseif ($value == ')') {
+				$count--;
+			}
+			if ($count < 0) {
+				break;
+			}
+		}
+		if ($count > 0) {
+			$result = array("status" =>1, 'msg' => "IQL: Too many opening parenthesis!");
+			return $result;
+		} elseif ($count < 0) {
+			$result = array("status" =>1, 'msg' => "IQL: Missing opening parenthesis!");
+			return $result;
+		}
+
+		// Syntax Mapping
+		$operator = array(
+			'!='		=>	array('string', '!=', 'string'),
+			'='			=>	array('string', '=', 'string'),
+			'LIKE'		=>	array('string', 'LIKE', 'string'),
+			'NOT LIKE'	=>	array('string', 'NOT LIKE', 'string'),
+			'<='		=>	array('int', '<=', 'int'),
+			'>='		=>	array('int', '>=', 'int'),
+			'<'			=>	array('int', '<', 'int'),
+			'>'			=>	array('int', '>', 'int'),
+			'['			=>	array('int', 'BETWEEN', 'int', 'AND', 'int'),
+			']'			=>	array('int', 'NOT BETWEEN', 'int', 'AND', 'int')
+		);
+		$field = array(
+			'ARTIST'	=>	array(
+							'type'	=>	'string',
+							'sql'		=>	'tagArtist'
+							),
+			'ALBUM'		=>	array(
+							'type'	=>	'string',
+							'sql'		=>	'tagAlbum'
+							),
+			'TITLE'		=>	array(
+							'type'	=>	'string',
+							'sql'		=>	'tagTitle'
+							),
+			'GENRE'		=>	array(
+							'type'	=>	'string',
+							'sql'		=>	'tagGenre'
+							),
+			'YEAR'		=>	array(
+							'type'	=>	'int',
+							'sql'		=>	'tagYear'
+							),
+			'LENGHT'	=>	array(
+							'type'	=>	'int',
+							'sql'		=>	'tagLenght'
+							),
+			'TRACK'		=>	array(
+							'type'	=>	'int',
+							'sql'		=>	'tagTrack'
+							),
+			'-?[0-9]+'		=>	array(
+							'type'	=>	'int',
+							'sql'		=>	''
+							),
+			'.*'		=>	array(
+							'type'	=>	'string',
+							'sql'		=>	''
+							)
+		);
+
+		$sentence = array();
+
+		foreach ( $query as $value) {
+			array_push($sentence, array(
+				'operator'		=>	array_key_exists($string, $operator),
+				'field'			=>	array_key_exists($string, $field),
+				'int'			=>	preg_match('/-?[0-9]+/', $value) || false,
+				'string'		=>	$value
+				));
+		}
+
+
+		// Detect operators
+		for ($i = 0; $i < count($query); $i++) {
+			
+
+echo "<pre>";
+var_dump($query[$i]);
+echo "TEST";
+var_dump($operator);
+echo "</pre>";
+
+			// Check of the key is an operator
+			if (array_key_exists($query[$i], $operator)) {
+				// Map to the existing scheme
+
+				echo "OKKKK JEZ";
+				$sheme = $operator[$query[$i]];
+
+				for ($j=0; $j < count($operator[$query[$i]]); $j++) {
+					$k = $i -1;
+					$word = $query[$k];
+					$pattern = $scheme($j);
+
+echo "<pre>";
+var_dump($word);
+var_dump($pattern);
+echo "</pre>";
+				}
+
+
+
+
+
+
+
+
+#		// Detect operators
+#		for ($i = 0; $i < count($query); $i++) {
+#			$string = $query[$i];
+#			$expression = '';
+#			if (array_key_exists($string, $operator)) {
+#				// This string is an otherator
+#				$sheme = $operator[$string];
+#
+#				// Rule: Only one argument before operator, as much as you want space separated argument after operator
+#				for ($j = 0; $j < count($sheme); $j++){
+#						} 
+#					// Analyse the previous element
+#					if (isset($query[$i - 1 + $j])){
+#						if ( array_key_exists($query[$i - 1 + $j], $field) ){
+#							// Previous value is a field \o/
+#							$expression = $query[$i--];
+#						} 
+#
+#
+#						// Analyse the field type
+#						if (array_key_exists($query[$i--], $field)) {
+#							// Previous value is a field \o/
+#							$expression = $query[$i--];
+#						} elseif (preg_match('/-?[0-9]+/')) {
+#							$query[$i--]
+#							// Previous value is a number \o/
+#							$expression = $query[$i--];
+#						} else {
+#							// Previous value is obviously a string \o/
+#							$expression = $query[$i--];
+#						}
+#					} else {
+#						$result = array("status" =>1, 'msg' => "IQL: Missing first field for '$string' operator!");
+#						return $result;
+#					}
+
+
+echo "<pre>";
+var_dump($string);
+var_dump($operator[$string]);
+var_dump($sheme);
+echo "</pre>";
+
+			}
+		}
+
+		$result = array("status" =>0, 'msg' => $query);
+		return $result;
+
+echo "<pre>";
+var_dump($query);
+echo "</pre>";
+
 	}
 }
 
