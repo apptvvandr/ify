@@ -7,12 +7,8 @@ class ifyIQL {
 
 
 	// Internal Syntaxes (Loco array, array)
-	private $_syntax_select;
-	private $_syntax_where;
-	private $_syntax_group;
-	private $_syntax_limit;
-	private $_syntax_order;
-
+	private $_syntax_base;
+	private $_syntax_query;
 
 
 	// Internal input arguments (IQL query, string)
@@ -40,11 +36,12 @@ class ifyIQL {
 
 		$this->_in_select="tagTitle";
 		$this->_in_where="";
-		$this->_in_group="";
-		$this->_in_limit=50;
+		$this->_in_group="artist";
+		$this->_in_limit="50";
 		$this->_in_order="";
 		
 	}
+
 
 	// This function set internal input variables
 	public function updateArgs(){
@@ -86,8 +83,199 @@ class ifyIQL {
 		$this->initArgs();
 
 
+		////////////////////////////////
+		// BASIC MYSQL SYNTAX DEFINITION
+		////////////////////////////////
+		$this->_syntax_base = array(
+
+
+		// Base patterns
+
+			// List of MySQL fields
+			"c_field"	=> new LazyAltParser(
+				array(
+					new StringParser("artist", function() {return "tagArtist";}),
+					new StringParser("album", function() {return "tagAlbum";}),
+					new StringParser("title", function() {return "tagTitle";}),
+					new StringParser("genre", function() {return "tagGenre";}),
+					new StringParser("year", function() {return "tagYear";}),
+					new StringParser("lenght", function() {return "lenghtLenght";}),
+					new StringParser("track", function() {return "tagTrack";}),
+
+					new StringParser("a", function() {return "tagArtist";}),
+					new StringParser("b", function() {return "tagAlbum";}),
+					new StringParser("t", function() {return "tagTitle";}),
+					new StringParser("g", function() {return "tagGenre";}),
+					new StringParser("y", function() {return "tagYear";}),
+					new StringParser("l", function() {return "fileLenght";}),
+					new StringParser("n", function() {return "tagTrack";})
+				)
+			),
+
+
+			// Basic function integration for fields
+			"c_field_extended"	=>	new LazyAltParser(
+				array(
+					"c_field",
+					new ConcParser(
+						array(
+							new StringParser("c_", function() {return "COUNT(";}),
+							"c_field",
+							new EmptyParser(function() {return ")";})
+						)
+					)
+				),
+				function($args){
+					//$args=func_get_args();
+
+					if (is_array($args)) {
+						$args=implode($args);
+					}
+					return $args;
+				}
+			),
+
+			
+			// Get the catch-all
+			"all"		=> new RegexParser(
+				"/^(c_)?(all|\*)\s*/",
+				function($count, $all) {
+					if (!empty($count)) {
+						return "COUNT(*)";
+					} else {
+						return "*";
+					}
+				}
+			),
+
+
+			// Separator definition
+			"c_sep"		=> new RegexParser(
+				"/^\s+/",
+				function() {
+					return ", ";
+				}
+			),
+
+
+	// Associations
+			"multi"			=> new ConcParser(
+				array(
+					"c_field",
+					new GreedyMultiParser(
+						new ConcParser(
+							array(
+								"c_sep",
+								"c_field"
+							)
+						),
+						0,
+						null
+					)
+				),
+				function($first) {
+					// Test if there are more than one expression
+					$other=func_get_args();
+					if (empty($other)) {
+						return $first;
+					}
+					else {
+						$first=array($first);
+						$other=$other[1];
+
+						foreach ($other as $value) {
+							#echo "tata";
+							#var_dump($value); 
+							array_push($first, implode($value));
+						}
+
+						$first=implode($first);
+						return $first;
+					}
+				}
+			),
+			"multi_extended"		=> new ConcParser(
+				array(
+					"c_field_extended",
+					new GreedyMultiParser(
+						new ConcParser(
+							array(
+								"c_sep",
+								"c_field_extended"
+							)
+						),
+						0,
+						null
+					)
+				),
+				function($first) {
+					// Test if there are more than one expression
+					$other=func_get_args();
+					if (empty($other)) {
+						return $first;
+					}
+					else {
+						$first=array($first);
+						$other=$other[1];
+
+						foreach ($other as $value) {
+							#echo "tata";
+							#var_dump($value); 
+							array_push($first, implode($value));
+						}
+
+						$first=implode($first);
+						return $first;
+					}
+				}
+			),
+
+
+
+
+	// Root rules
+			"syntax_select"	=> new LazyAltParser(
+				array(
+					"all",
+					"multi_extended",
+					new EmptyParser(function() {return "*";})
+				)
+			),
+			"syntax_group"	=> new LazyAltParser(
+				array(
+					"multi"
+				)
+			),
+			"syntax_limit"	=>	new RegexParser(
+				"/^(\s*(\d+)\s*,)?\s*(\d+)\s*/",
+				function($matches, $useless, $offset, $limit) {
+					if (empty($offset)) {
+						$offset= "0";
+					}
+					return " LIMIT $offset, $limit";
+				}	
+			),
+			"syntax_order"	=> new LazyAltParser(
+				array(
+					"multi",
+					new EmptyParser(function() {return null;})
+				),
+				function($arg) {
+					if (is_null($arg)) {
+						return "";
+					} else {
+						return " ORDER BY " . $arg . " ASC";
+					}
+				}
+			)
+		);
+
+
+
+		//////////////////////////////
 		// SQL WHERE syntax definition
-		$this->_syntax_where = array(
+		//////////////////////////////
+		$this->_syntax_query = array(
 
 				#
 				# Language basics
@@ -190,7 +378,10 @@ class ifyIQL {
 					array(
 						"v_string"
 					),
-					function($value) { $value = substr($value, 1, -1); return "( tagArtist LIKE '%".$value."%' OR tagAlbum LIKE '%".$value."%' OR tagTitle LIKE '%".$value."%' )"; }
+					function($value) {
+						$value = substr($value, 1, -1); 
+						return "( tagArtist LIKE '%".$value."%' OR tagAlbum LIKE '%".$value."%' OR tagTitle LIKE '%".$value."%' )";
+					}
 				),
 				
 
@@ -336,23 +527,65 @@ class ifyIQL {
 
 	}
 
-	public function parse() {
+	public function buildSQL() {
 		// Create SQL request
 
 
-		// Concat strings
+
+		// Processes: order
+		if (empty($this->_in_order)) {
+			$order="";
+		} else {
+			$sql_order=new Grammar(
+				"syntax_order",
+				$this->_syntax_base
+			);
+			$order=$sql_order->parse($this->_in_order);
+		}
+
+
+		// Processes: limit
+		if (empty($this->_in_limit)) {
+			$limit="";
+		} else {
+			$sql_limit=new Grammar(
+				"syntax_limit",
+				$this->_syntax_base
+			);
+			$limit=$sql_limit->parse($this->_in_limit);
+		}
+
+
+		// Processes: group
+		if (empty($this->_in_group)) {
+			$group="";
+		} else {
+			$sql_group=new Grammar(
+				"syntax_group",
+				$this->_syntax_base
+			);
+			$group=" GROUP BY " . $sql_group->parse($this->_in_group);
+		}
+
+
+		// Processes: select
+		$sql_select=new Grammar(
+			"syntax_select",
+			$this->_syntax_base
+		);
+		$select=$sql_select->parse($this->_in_select);
+
+
+		// Processes: where
 		$sql_where=new Grammar(
 			"syntax_where",
-			$this->_syntax_where
+			$this->_syntax_query
 		);
-		$result=$sql_where->parse($this->_in_where);
-
-		// Return string
-		var_dump($result);
-		echo "good result";
-		var_dump($result);
+		$where=$sql_where->parse($this->_in_where);
 
 
+
+		$result="SELECT " . $select . " FROM files WHERE " . $where . $group . $order . $limit;
 
 		return $result;
 

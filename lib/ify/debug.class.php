@@ -87,12 +87,12 @@ class ifyDebug {
 
 
 		// Try to get level
+		#echo "level= $arg";
 		if (in_array($arg, $this->levels)) 
 		{
 			$level = $arg;
 			$arg = array_shift($args);
 		} 
-		//elseif (gettype($arg) == "integer" && count($this->levels) <= $arg)
 		elseif (gettype($arg) == "integer" && count($this->levels) >= $arg)
 		{
 			$level = $this->levels[$arg];
